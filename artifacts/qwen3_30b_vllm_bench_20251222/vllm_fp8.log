@@ -1,0 +1,82 @@
+WARNING 12-22 14:59:24 [attention.py:82] Using VLLM_ATTENTION_BACKEND environment variable is deprecated and will be removed in v0.14.0 or v1.0.0, whichever is soonest. Please use --attention-config.backend command line argument or AttentionConfig(backend=...) config field instead.
+[0;36m(APIServer pid=35086)[0;0m INFO 12-22 14:59:24 [api_server.py:1351] vLLM API server version 0.13.0
+[0;36m(APIServer pid=35086)[0;0m INFO 12-22 14:59:24 [utils.py:253] non-default args: {'model_tag': 'nvidia/Qwen3-30B-A3B-FP8', 'host': '127.0.0.1', 'enable_force_include_usage': True, 'model': 'nvidia/Qwen3-30B-A3B-FP8', 'max_model_len': 4096, 'download_dir': '/data/bench/hf', 'gpu_memory_utilization': 0.95, 'max_num_seqs': 32}
+[0;36m(APIServer pid=35086)[0;0m Traceback (most recent call last):
+[0;36m(APIServer pid=35086)[0;0m   File "/data/bench/qwen25vl72b_vllm_bench_20251222/.venv/lib/python3.10/site-packages/huggingface_hub/utils/_http.py", line 402, in hf_raise_for_status
+[0;36m(APIServer pid=35086)[0;0m     response.raise_for_status()
+[0;36m(APIServer pid=35086)[0;0m   File "/data/bench/qwen25vl72b_vllm_bench_20251222/.venv/lib/python3.10/site-packages/requests/models.py", line 1026, in raise_for_status
+[0;36m(APIServer pid=35086)[0;0m     raise HTTPError(http_error_msg, response=self)
+[0;36m(APIServer pid=35086)[0;0m requests.exceptions.HTTPError: 401 Client Error: Unauthorized for url: https://huggingface.co/nvidia/Qwen3-30B-A3B-FP8/resolve/main/config.json
+[0;36m(APIServer pid=35086)[0;0m 
+[0;36m(APIServer pid=35086)[0;0m The above exception was the direct cause of the following exception:
+[0;36m(APIServer pid=35086)[0;0m 
+[0;36m(APIServer pid=35086)[0;0m Traceback (most recent call last):
+[0;36m(APIServer pid=35086)[0;0m   File "/data/bench/qwen25vl72b_vllm_bench_20251222/.venv/lib/python3.10/site-packages/transformers/utils/hub.py", line 479, in cached_files
+[0;36m(APIServer pid=35086)[0;0m     hf_hub_download(
+[0;36m(APIServer pid=35086)[0;0m   File "/data/bench/qwen25vl72b_vllm_bench_20251222/.venv/lib/python3.10/site-packages/huggingface_hub/utils/_validators.py", line 114, in _inner_fn
+[0;36m(APIServer pid=35086)[0;0m     return fn(*args, **kwargs)
+[0;36m(APIServer pid=35086)[0;0m   File "/data/bench/qwen25vl72b_vllm_bench_20251222/.venv/lib/python3.10/site-packages/huggingface_hub/file_download.py", line 1007, in hf_hub_download
+[0;36m(APIServer pid=35086)[0;0m     return _hf_hub_download_to_cache_dir(
+[0;36m(APIServer pid=35086)[0;0m   File "/data/bench/qwen25vl72b_vllm_bench_20251222/.venv/lib/python3.10/site-packages/huggingface_hub/file_download.py", line 1114, in _hf_hub_download_to_cache_dir
+[0;36m(APIServer pid=35086)[0;0m     _raise_on_head_call_error(head_call_error, force_download, local_files_only)
+[0;36m(APIServer pid=35086)[0;0m   File "/data/bench/qwen25vl72b_vllm_bench_20251222/.venv/lib/python3.10/site-packages/huggingface_hub/file_download.py", line 1655, in _raise_on_head_call_error
+[0;36m(APIServer pid=35086)[0;0m     raise head_call_error
+[0;36m(APIServer pid=35086)[0;0m   File "/data/bench/qwen25vl72b_vllm_bench_20251222/.venv/lib/python3.10/site-packages/huggingface_hub/file_download.py", line 1543, in _get_metadata_or_catch_error
+[0;36m(APIServer pid=35086)[0;0m     metadata = get_hf_file_metadata(
+[0;36m(APIServer pid=35086)[0;0m   File "/data/bench/qwen25vl72b_vllm_bench_20251222/.venv/lib/python3.10/site-packages/huggingface_hub/utils/_validators.py", line 114, in _inner_fn
+[0;36m(APIServer pid=35086)[0;0m     return fn(*args, **kwargs)
+[0;36m(APIServer pid=35086)[0;0m   File "/data/bench/qwen25vl72b_vllm_bench_20251222/.venv/lib/python3.10/site-packages/huggingface_hub/file_download.py", line 1460, in get_hf_file_metadata
+[0;36m(APIServer pid=35086)[0;0m     r = _request_wrapper(
+[0;36m(APIServer pid=35086)[0;0m   File "/data/bench/qwen25vl72b_vllm_bench_20251222/.venv/lib/python3.10/site-packages/huggingface_hub/file_download.py", line 283, in _request_wrapper
+[0;36m(APIServer pid=35086)[0;0m     response = _request_wrapper(
+[0;36m(APIServer pid=35086)[0;0m   File "/data/bench/qwen25vl72b_vllm_bench_20251222/.venv/lib/python3.10/site-packages/huggingface_hub/file_download.py", line 307, in _request_wrapper
+[0;36m(APIServer pid=35086)[0;0m     hf_raise_for_status(response)
+[0;36m(APIServer pid=35086)[0;0m   File "/data/bench/qwen25vl72b_vllm_bench_20251222/.venv/lib/python3.10/site-packages/huggingface_hub/utils/_http.py", line 452, in hf_raise_for_status
+[0;36m(APIServer pid=35086)[0;0m     raise _format(RepositoryNotFoundError, message, response) from e
+[0;36m(APIServer pid=35086)[0;0m huggingface_hub.errors.RepositoryNotFoundError: 401 Client Error. (Request ID: Root=1-69495ccc-5c02e11633a06a992726fe60;0acea250-ad77-470c-ba37-cceaa4b0158c)
+[0;36m(APIServer pid=35086)[0;0m 
+[0;36m(APIServer pid=35086)[0;0m Repository Not Found for url: https://huggingface.co/nvidia/Qwen3-30B-A3B-FP8/resolve/main/config.json.
+[0;36m(APIServer pid=35086)[0;0m Please make sure you specified the correct `repo_id` and `repo_type`.
+[0;36m(APIServer pid=35086)[0;0m If you are trying to access a private or gated repo, make sure you are authenticated. For more details, see https://huggingface.co/docs/huggingface_hub/authentication
+[0;36m(APIServer pid=35086)[0;0m Invalid username or password.
+[0;36m(APIServer pid=35086)[0;0m 
+[0;36m(APIServer pid=35086)[0;0m The above exception was the direct cause of the following exception:
+[0;36m(APIServer pid=35086)[0;0m 
+[0;36m(APIServer pid=35086)[0;0m Traceback (most recent call last):
+[0;36m(APIServer pid=35086)[0;0m   File "/data/bench/qwen25vl72b_vllm_bench_20251222/.venv/bin/vllm", line 7, in <module>
+[0;36m(APIServer pid=35086)[0;0m     sys.exit(main())
+[0;36m(APIServer pid=35086)[0;0m   File "/data/bench/qwen25vl72b_vllm_bench_20251222/.venv/lib/python3.10/site-packages/vllm/entrypoints/cli/main.py", line 73, in main
+[0;36m(APIServer pid=35086)[0;0m     args.dispatch_function(args)
+[0;36m(APIServer pid=35086)[0;0m   File "/data/bench/qwen25vl72b_vllm_bench_20251222/.venv/lib/python3.10/site-packages/vllm/entrypoints/cli/serve.py", line 60, in cmd
+[0;36m(APIServer pid=35086)[0;0m     uvloop.run(run_server(args))
+[0;36m(APIServer pid=35086)[0;0m   File "/data/bench/qwen25vl72b_vllm_bench_20251222/.venv/lib/python3.10/site-packages/uvloop/__init__.py", line 69, in run
+[0;36m(APIServer pid=35086)[0;0m     return loop.run_until_complete(wrapper())
+[0;36m(APIServer pid=35086)[0;0m   File "uvloop/loop.pyx", line 1518, in uvloop.loop.Loop.run_until_complete
+[0;36m(APIServer pid=35086)[0;0m   File "/data/bench/qwen25vl72b_vllm_bench_20251222/.venv/lib/python3.10/site-packages/uvloop/__init__.py", line 48, in wrapper
+[0;36m(APIServer pid=35086)[0;0m     return await main
+[0;36m(APIServer pid=35086)[0;0m   File "/data/bench/qwen25vl72b_vllm_bench_20251222/.venv/lib/python3.10/site-packages/vllm/entrypoints/openai/api_server.py", line 1398, in run_server
+[0;36m(APIServer pid=35086)[0;0m     await run_server_worker(listen_address, sock, args, **uvicorn_kwargs)
+[0;36m(APIServer pid=35086)[0;0m   File "/data/bench/qwen25vl72b_vllm_bench_20251222/.venv/lib/python3.10/site-packages/vllm/entrypoints/openai/api_server.py", line 1417, in run_server_worker
+[0;36m(APIServer pid=35086)[0;0m     async with build_async_engine_client(
+[0;36m(APIServer pid=35086)[0;0m   File "/usr/lib/python3.10/contextlib.py", line 199, in __aenter__
+[0;36m(APIServer pid=35086)[0;0m     return await anext(self.gen)
+[0;36m(APIServer pid=35086)[0;0m   File "/data/bench/qwen25vl72b_vllm_bench_20251222/.venv/lib/python3.10/site-packages/vllm/entrypoints/openai/api_server.py", line 172, in build_async_engine_client
+[0;36m(APIServer pid=35086)[0;0m     async with build_async_engine_client_from_engine_args(
+[0;36m(APIServer pid=35086)[0;0m   File "/usr/lib/python3.10/contextlib.py", line 199, in __aenter__
+[0;36m(APIServer pid=35086)[0;0m     return await anext(self.gen)
+[0;36m(APIServer pid=35086)[0;0m   File "/data/bench/qwen25vl72b_vllm_bench_20251222/.venv/lib/python3.10/site-packages/vllm/entrypoints/openai/api_server.py", line 198, in build_async_engine_client_from_engine_args
+[0;36m(APIServer pid=35086)[0;0m     vllm_config = engine_args.create_engine_config(usage_context=usage_context)
+[0;36m(APIServer pid=35086)[0;0m   File "/data/bench/qwen25vl72b_vllm_bench_20251222/.venv/lib/python3.10/site-packages/vllm/engine/arg_utils.py", line 1323, in create_engine_config
+[0;36m(APIServer pid=35086)[0;0m     maybe_override_with_speculators(
+[0;36m(APIServer pid=35086)[0;0m   File "/data/bench/qwen25vl72b_vllm_bench_20251222/.venv/lib/python3.10/site-packages/vllm/transformers_utils/config.py", line 508, in maybe_override_with_speculators
+[0;36m(APIServer pid=35086)[0;0m     config_dict, _ = PretrainedConfig.get_config_dict(
+[0;36m(APIServer pid=35086)[0;0m   File "/data/bench/qwen25vl72b_vllm_bench_20251222/.venv/lib/python3.10/site-packages/transformers/configuration_utils.py", line 662, in get_config_dict
+[0;36m(APIServer pid=35086)[0;0m     config_dict, kwargs = cls._get_config_dict(pretrained_model_name_or_path, **kwargs)
+[0;36m(APIServer pid=35086)[0;0m   File "/data/bench/qwen25vl72b_vllm_bench_20251222/.venv/lib/python3.10/site-packages/transformers/configuration_utils.py", line 721, in _get_config_dict
+[0;36m(APIServer pid=35086)[0;0m     resolved_config_file = cached_file(
+[0;36m(APIServer pid=35086)[0;0m   File "/data/bench/qwen25vl72b_vllm_bench_20251222/.venv/lib/python3.10/site-packages/transformers/utils/hub.py", line 322, in cached_file
+[0;36m(APIServer pid=35086)[0;0m     file = cached_files(path_or_repo_id=path_or_repo_id, filenames=[filename], **kwargs)
+[0;36m(APIServer pid=35086)[0;0m   File "/data/bench/qwen25vl72b_vllm_bench_20251222/.venv/lib/python3.10/site-packages/transformers/utils/hub.py", line 511, in cached_files
+[0;36m(APIServer pid=35086)[0;0m     raise OSError(
+[0;36m(APIServer pid=35086)[0;0m OSError: nvidia/Qwen3-30B-A3B-FP8 is not a local folder and is not a valid model identifier listed on 'https://huggingface.co/models'
+[0;36m(APIServer pid=35086)[0;0m If this is a private repository, make sure to pass a token having permission to this repo either by logging in with `hf auth login` or by passing `token=<your_token>`

@@ -1,0 +1,36 @@
+{
+  "endpoint": "http://127.0.0.1:8000/v1/chat/completions",
+  "model": "nvidia/Qwen3-30B-A3B-NVFP4",
+  "concurrency": 16,
+  "requests": 64,
+  "max_tokens": 256,
+  "temperature": 0.0,
+  "stream": false,
+  "ok": 64,
+  "errors": 0,
+  "total_time_s": 11.12302629199985,
+  "qps": 5.753829786955687,
+  "latency_s": {
+    "p50": 2.773145455499616,
+    "p95": 2.928490930249609,
+    "mean": 2.7704487026715015,
+    "min": 2.611215490003815,
+    "max": 2.9359825370047474
+  },
+  "ttft_s": {
+    "p50": null,
+    "p95": null,
+    "mean": null,
+    "min": null,
+    "max": null
+  },
+  "token_usage": {
+    "prompt_tokens_mean": 110.0,
+    "completion_tokens_mean": 256.0
+  },
+  "derived": {
+    "prompt_tps": 632.9212765651256,
+    "decode_tps": 1472.9804254606559,
+    "ms_per_output_token": 10.822065244810553
+  }
+}
