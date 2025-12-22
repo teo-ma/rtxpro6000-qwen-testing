@@ -143,6 +143,12 @@ cd /data/bench/qwen3_32b_vllm_bench_20251222
 | FP8 | Qwen/Qwen3-32B-FP8 | 1.4917 | 164.0849 | 381.8702 | 10.6898 | 10.8637 |
 | BF16 | Qwen/Qwen3-32B | 1.2582 | 138.3967 | 322.0868 | 12.7105 | 12.7653 |
 
+![Latency-qwen-30B-3Precision](images/Latency-qwen-30B-3Precision.png)
+
+![QPS-qwen-30B-3Precision](images/QPS-qwen-30B-3Precision.png)
+
+![Throughput-qwen-30B-3Precision](images/Throughput-qwen-30B-3Precision.png)
+
 ## 5. 结论与下一步
 
 - 在本次 1GPU（MIG 4g.96gb）与固定负载口径下：NVFP4 的吞吐最高，FP8 次之，BF16 最低。
