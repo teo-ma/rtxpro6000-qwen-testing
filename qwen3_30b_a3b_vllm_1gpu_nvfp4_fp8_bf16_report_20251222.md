@@ -9,7 +9,7 @@
 ### 1.1 测试对象
 
 - NVFP4：`nvidia/Qwen3-30B-A3B-NVFP4`
-- FP8：`nvidia/Qwen3-30B-A3B-FP8`
+- FP8：`Qwen/Qwen3-Coder-30B-A3B-Instruct-FP8`
 - BF16：`Qwen/Qwen3-30B-A3B`
 
 ### 1.2 统一口径（吞吐测试）
@@ -113,26 +113,17 @@ cd /data/bench/qwen3_30b_vllm_bench_20251222
 - latency：p50=2.7731s，p95=2.9285s
 - token_usage：prompt_tokens_mean=110.0，completion_tokens_mean=256.0
 
-### 4.2 FP8（nvidia/Qwen3-30B-A3B-FP8）
+### 4.2 FP8（Qwen/Qwen3-Coder-30B-A3B-Instruct-FP8）
 
-- 状态：本次 **未能完成**（拉取模型 `config.json` 时返回 401 Unauthorized）
-- vLLM 日志：`artifacts/qwen3_30b_vllm_bench_20251222/vllm_fp8.log`
+- 结果 JSON：`artifacts/qwen3_30b_vllm_bench_20251222/bench_fp8_coder_1gpu_c16_r64_mt256.json`
+- vLLM 日志：`artifacts/qwen3_30b_vllm_bench_20251222/vllm_fp8_coder.log`
 
-如何解锁后重试：
-
-1) 确认你的 Hugging Face 账号已获得该模型仓库访问权限（可能需要在网页端同意条款）
-2) 在 VM 上登录 Hugging Face：
-
-```bash
-huggingface-cli login
-# 或设置环境变量：export HF_TOKEN=...
-```
-
-3) 重新启动 vLLM：
-
-```bash
-/data/bench/qwen25vl72b_vllm_bench_20251222/.venv/bin/vllm serve nvidia/Qwen3-30B-A3B-FP8 ...
-```
+关键指标：
+- QPS：5.6388
+- prompt_tps：620.2680 tokens/s
+- decode_tps：1443.5327 tokens/s
+- latency：p50=2.6875s，p95=3.3812s
+- token_usage：prompt_tokens_mean=110.0，completion_tokens_mean=256.0
 
 ### 4.3 BF16（Qwen/Qwen3-30B-A3B）
 
@@ -152,9 +143,9 @@ huggingface-cli login
 |---|---|---:|---:|---:|---:|---:|
 | NVFP4 | nvidia/Qwen3-30B-A3B-NVFP4 | 5.7538 | 632.9213 | 1472.9804 | 2.7731 | 2.9285 |
 | BF16 | Qwen/Qwen3-30B-A3B | 5.3453 | 587.9872 | 1368.4067 | 2.9831 | 3.2879 |
-| FP8 | nvidia/Qwen3-30B-A3B-FP8 | N/A | N/A | N/A | N/A | N/A |
+| FP8 | Qwen/Qwen3-Coder-30B-A3B-Instruct-FP8 | 5.6388 | 620.2680 | 1443.5327 | 2.6875 | 3.3812 |
 
 ## 5. 结论与下一步
 
 - 在本次 1GPU（MIG 4g.96gb）口径下：NVFP4 相比 BF16 体现出更高吞吐（decode_tps 约 +7.6%，p50 latency 更低）。
-- FP8 版本本次因 Hugging Face 访问权限/鉴权问题未能完成；完成 `huggingface-cli login` 并确保账号具备权限后，可按相同命令快速补齐数据。
+- FP8（`Qwen/Qwen3-Coder-30B-A3B-Instruct-FP8`）已跑通；在相同口径下 decode_tps 与 NVFP4 接近，但 p95 延迟更高。
