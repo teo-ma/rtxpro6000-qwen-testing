@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>README.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+<body>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<h1 id="qwen25-vl-72bfp8-dynamicvllm-%E5%90%9E%E5%90%90%E5%AF%B9%E6%AF%941%C3%97-vs-2%C3%97-rtx-pro-6000mig--pcie--%E8%B7%A8-numa">Qwen2.5-VL-72B（FP8 dynamic）vLLM 吞吐对比：1× vs 2× RTX Pro 6000（MIG / PCIe / 跨 NUMA）</h1>
+<blockquote>
+<p>目标：在同一台 Azure VM（Standard_NC256ds_xl_RTXPRO6000BSE_v6，2× RTX Pro 6000 Blackwell，MIG 强制开启不可关闭）上，对比 <strong>1× MIG device</strong> 与 <strong>2× MIG device（跨 PCIe/SYS，跨 NUMA）</strong> 的推理吞吐量。</p>
+</blockquote>
+<h2 id="1-%E6%B5%8B%E8%AF%95%E7%8E%AF%E5%A2%83">1. 测试环境</h2>
+<ul>
+<li>云平台：Azure</li>
+<li>VM：Standard_NC256ds_xl_RTXPRO6000BSE_v6（256 vCPU，2 GPU）</li>
+<li>OS：Ubuntu 22.04.5 LTS（kernel 6.8.0-1044-azure）</li>
+<li>GPU：NVIDIA RTX Pro 6000 Blackwell DC-4-96Q ×2</li>
+<li>Driver/CUDA：NVIDIA Driver 580.105.08 / CUDA 13.0（nvidia-smi 报告）</li>
+<li>MIG：强制开启且不可关闭
+<ul>
+<li>GPU0：1× <code>MIG 4g.96gb Device 0</code></li>
+<li>GPU1：1× <code>MIG 4g.96gb Device 0</code></li>
+</ul>
+</li>
+<li>GPU 拓扑：GPU0 &lt;-&gt; GPU1 为 <code>SYS</code>（PCIe + 跨 NUMA 的 SMP interconnect）
+<ul>
+<li>GPU0 CPU Affinity：0-63（NUMA 0）</li>
+<li>GPU1 CPU Affinity：128-191（NUMA 2）</li>
+</ul>
+</li>
+<li>磁盘：<code>/data</code> 4TB 数据盘用于 HF cache / 日志 / 结果（根分区 <code>/</code> 约 29G，空间紧张）</li>
+</ul>
+<h2 id="2-%E6%B5%8B%E8%AF%95%E5%AF%B9%E8%B1%A1%E4%B8%8E%E7%B2%BE%E5%BA%A6%E8%AF%B4%E6%98%8E">2. 测试对象与精度说明</h2>
+<ul>
+<li>模型：<code>RedHatAI/Qwen2.5-VL-72B-Instruct-FP8-dynamic</code></li>
+<li>推理引擎：vLLM 0.13.0（OpenAI-compatible <code>vllm serve</code>）</li>
+<li>精度/量化：
+<ul>
+<li>权重：使用模型 checkpoint 自带的 <strong>compressed-tensors 量化配置</strong>（vLLM 日志显示 <code>quantization=compressed-tensors</code>）。</li>
+<li>KV cache：显式启用 FP8（<code>--kv-cache-dtype fp8</code>）。</li>
+<li>计算 dtype：vLLM 日志显示 <code>dtype=torch.bfloat16</code>（即除权重/kv-cache 外，算子计算为 BF16）。</li>
+</ul>
+</li>
+</ul>
+<p>说明：在该 FP8 dynamic 模型上，显式传 <code>--quantization fp8</code> 会与模型自带配置冲突，因此本次以 checkpoint 配置为准，确保“权重 FP8 + KV cache FP8”。</p>
+<h2 id="3-%E6%B5%8B%E8%AF%95%E6%96%B9%E6%B3%95%E7%BB%9F%E4%B8%80%E5%8F%A3%E5%BE%84">3. 测试方法（统一口径）</h2>
+<ul>
+<li>统一点：同一台 VM、同一套 vLLM/torch 环境、同一模型与 <code>max_model_len</code>、同一压测脚本与参数</li>
+<li>设备选择：
+<ul>
+<li>1GPU：<code>CUDA_VISIBLE_DEVICES=0</code>（1 个 MIG device）</li>
+<li>2GPU：<code>CUDA_VISIBLE_DEVICES=0,1</code>（2 个 MIG device，分别来自两张物理卡）+ <code>--tensor-parallel-size 2</code></li>
+</ul>
+</li>
+<li>Attention backend：为避免 flashinfer JIT 对 nvcc 的依赖，固定使用 TRITON attention backend（通过环境变量）</li>
+<li>压测工具：本仓库的 <code>tools/bench_openai.py</code>（拷贝到 VM 执行），对 <code>/v1/chat/completions</code> 发请求，并基于返回 <code>usage</code> 统计 token 吞吐</li>
+</ul>
+<h2 id="4-%E5%AE%9E%E6%B5%8B%E8%BF%87%E7%A8%8B%E4%B8%8E%E5%91%BD%E4%BB%A4">4. 实测过程与命令</h2>
+<h3 id="41-%E7%9B%AE%E5%BD%95%E4%B8%8E%E7%BC%93%E5%AD%98">4.1 目录与缓存</h3>
+<ul>
+<li>远端工作目录：<code>/data/bench/qwen25vl72b_vllm_bench_20251222/</code></li>
+<li>HF 下载目录：<code>/data/bench/hf</code></li>
+</ul>
+<h3 id="42-%E5%90%AF%E5%8A%A8-vllm1gpu--tp1">4.2 启动 vLLM（1GPU / TP=1）</h3>
+<blockquote>
+<p>通过 <code>ps aux</code> 捕获到的实际启动命令如下。</p>
+</blockquote>
+<pre class="hljs"><code><div>/data/bench/qwen25vl72b_vllm_bench_20251222/.venv/bin/vllm serve \
+  RedHatAI/Qwen2.5-VL-72B-Instruct-FP8-dynamic \
+  --download-dir /data/bench/hf \
+  --host 127.0.0.1 --port 8000 \
+  --tensor-parallel-size 1 \
+  --max-model-len 4096 \
+  --gpu-memory-utilization 0.95 \
+  --kv-cache-dtype fp8 \
+  --<span class="hljs-built_in">enable</span>-force-include-usage
+</div></code></pre>
+<h3 id="43-%E5%90%AF%E5%8A%A8-vllm2gpu--tp2">4.3 启动 vLLM（2GPU / TP=2）</h3>
+<p>首次尝试以 <code>--gpu-memory-utilization 0.95</code> 直接启动 TP=2 时，vLLM 在 <code>warming up sampler with 1024 dummy requests</code> 阶段触发 CUDA OOM。</p>
+<p>为保证服务可稳定启动且不影响本次压测并发（c=16），增加 <code>--max-num-seqs 32</code> 以降低 warmup 峰值占用：</p>
+<pre class="hljs"><code><div><span class="hljs-built_in">export</span> CUDA_VISIBLE_DEVICES=0,1
+<span class="hljs-built_in">export</span> VLLM_ATTENTION_BACKEND=TRITON_ATTN
+<span class="hljs-built_in">export</span> TMPDIR=/data/bench/tmp
+<span class="hljs-built_in">export</span> XDG_CACHE_HOME=/data/bench/cache
+
+nohup /data/bench/qwen25vl72b_vllm_bench_20251222/.venv/bin/vllm serve \
+  RedHatAI/Qwen2.5-VL-72B-Instruct-FP8-dynamic \
+  --download-dir /data/bench/hf \
+  --host 127.0.0.1 --port 8000 \
+  --tensor-parallel-size 2 \
+  --max-model-len 4096 \
+  --gpu-memory-utilization 0.95 \
+  --kv-cache-dtype fp8 \
+  --max-num-seqs 32 \
+  --<span class="hljs-built_in">enable</span>-force-include-usage \
+  &gt; logs/vllm_2gpu_retry.log 2&gt;&amp;1 &amp;
+</div></code></pre>
+<h3 id="44-%E5%8E%8B%E6%B5%8B%E5%91%BD%E4%BB%A4%E4%B8%A4%E7%BB%84%E5%AE%8C%E5%85%A8%E4%B8%80%E8%87%B4">4.4 压测命令（两组完全一致）</h3>
+<pre class="hljs"><code><div>python bench_openai.py \
+  --base-url http://127.0.0.1:8000 \
+  --model RedHatAI/Qwen2.5-VL-72B-Instruct-FP8-dynamic \
+  --concurrency 16 \
+  --requests 64 \
+  --max-tokens 256 \
+  --temperature 0.0 \
+  --timeout 1200 \
+  --prompt-file qwen_bench_prompt.txt \
+  --out results/bench_*.json
+</div></code></pre>
+<h2 id="5-%E7%BB%93%E6%9E%9C">5. 结果</h2>
+<h3 id="51-1gputp1">5.1 1GPU（TP=1）</h3>
+<ul>
+<li>结果文件（VM）：<code>/data/bench/qwen25vl72b_vllm_bench_20251222/results/bench_1gpu_c16_r64_mt256.json</code></li>
+</ul>
+<p>关键指标：</p>
+<ul>
+<li>QPS：1.0171</li>
+<li>prompt_tps：90.5189 tokens/s</li>
+<li>decode_tps：260.3688 tokens/s</li>
+<li>latency：p50=15.6923s，p95=15.8496s，mean=15.7242s</li>
+</ul>
+<p>原始 JSON：</p>
+<pre class="hljs"><code><div>{
+  <span class="hljs-attr">"endpoint"</span>: <span class="hljs-string">"http://127.0.0.1:8000/v1/chat/completions"</span>,
+  <span class="hljs-attr">"model"</span>: <span class="hljs-string">"RedHatAI/Qwen2.5-VL-72B-Instruct-FP8-dynamic"</span>,
+  <span class="hljs-attr">"concurrency"</span>: <span class="hljs-number">16</span>,
+  <span class="hljs-attr">"requests"</span>: <span class="hljs-number">64</span>,
+  <span class="hljs-attr">"max_tokens"</span>: <span class="hljs-number">256</span>,
+  <span class="hljs-attr">"temperature"</span>: <span class="hljs-number">0.0</span>,
+  <span class="hljs-attr">"stream"</span>: <span class="hljs-literal">false</span>,
+  <span class="hljs-attr">"ok"</span>: <span class="hljs-number">64</span>,
+  <span class="hljs-attr">"errors"</span>: <span class="hljs-number">0</span>,
+  <span class="hljs-attr">"total_time_s"</span>: <span class="hljs-number">62.92611732300065</span>,
+  <span class="hljs-attr">"qps"</span>: <span class="hljs-number">1.0170657705049095</span>,
+  <span class="hljs-attr">"latency_s"</span>: {
+    <span class="hljs-attr">"p50"</span>: <span class="hljs-number">15.692299124998499</span>,
+    <span class="hljs-attr">"p95"</span>: <span class="hljs-number">15.849577032000525</span>,
+    <span class="hljs-attr">"mean"</span>: <span class="hljs-number">15.724194198515647</span>,
+    <span class="hljs-attr">"min"</span>: <span class="hljs-number">15.664447743998608</span>,
+    <span class="hljs-attr">"max"</span>: <span class="hljs-number">15.861515120999684</span>
+  },
+  <span class="hljs-attr">"ttft_s"</span>: {
+    <span class="hljs-attr">"p50"</span>: <span class="hljs-literal">null</span>,
+    <span class="hljs-attr">"p95"</span>: <span class="hljs-literal">null</span>,
+    <span class="hljs-attr">"mean"</span>: <span class="hljs-literal">null</span>,
+    <span class="hljs-attr">"min"</span>: <span class="hljs-literal">null</span>,
+    <span class="hljs-attr">"max"</span>: <span class="hljs-literal">null</span>
+  },
+  <span class="hljs-attr">"token_usage"</span>: {
+    <span class="hljs-attr">"prompt_tokens_mean"</span>: <span class="hljs-number">89.0</span>,
+    <span class="hljs-attr">"completion_tokens_mean"</span>: <span class="hljs-number">256.0</span>
+  },
+  <span class="hljs-attr">"derived"</span>: {
+    <span class="hljs-attr">"prompt_tps"</span>: <span class="hljs-number">90.51885357493695</span>,
+    <span class="hljs-attr">"decode_tps"</span>: <span class="hljs-number">260.36883724925684</span>,
+    <span class="hljs-attr">"ms_per_output_token"</span>: <span class="hljs-number">61.42263358795175</span>
+  }
+}
+</div></code></pre>
+<h3 id="52-2gputp2%E8%B7%A8-pciesys">5.2 2GPU（TP=2，跨 PCIe/SYS）</h3>
+<ul>
+<li>结果文件（VM）：<code>/data/bench/qwen25vl72b_vllm_bench_20251222/results/bench_2gpu_c16_r64_mt256.json</code></li>
+</ul>
+<p>关键指标：</p>
+<ul>
+<li>QPS：1.3594</li>
+<li>prompt_tps：120.9863 tokens/s</li>
+<li>decode_tps：348.0055 tokens/s</li>
+<li>latency：p50=11.7613s，p95=11.7944s，mean=11.7622s</li>
+</ul>
+<p>原始 JSON：</p>
+<pre class="hljs"><code><div>{
+  <span class="hljs-attr">"endpoint"</span>: <span class="hljs-string">"http://127.0.0.1:8000/v1/chat/completions"</span>,
+  <span class="hljs-attr">"model"</span>: <span class="hljs-string">"RedHatAI/Qwen2.5-VL-72B-Instruct-FP8-dynamic"</span>,
+  <span class="hljs-attr">"concurrency"</span>: <span class="hljs-number">16</span>,
+  <span class="hljs-attr">"requests"</span>: <span class="hljs-number">64</span>,
+  <span class="hljs-attr">"max_tokens"</span>: <span class="hljs-number">256</span>,
+  <span class="hljs-attr">"temperature"</span>: <span class="hljs-number">0.0</span>,
+  <span class="hljs-attr">"stream"</span>: <span class="hljs-literal">false</span>,
+  <span class="hljs-attr">"ok"</span>: <span class="hljs-number">64</span>,
+  <span class="hljs-attr">"errors"</span>: <span class="hljs-number">0</span>,
+  <span class="hljs-attr">"total_time_s"</span>: <span class="hljs-number">47.079713666000316</span>,
+  <span class="hljs-attr">"qps"</span>: <span class="hljs-number">1.359396542936476</span>,
+  <span class="hljs-attr">"latency_s"</span>: {
+    <span class="hljs-attr">"p50"</span>: <span class="hljs-number">11.761318839000523</span>,
+    <span class="hljs-attr">"p95"</span>: <span class="hljs-number">11.794378725249771</span>,
+    <span class="hljs-attr">"mean"</span>: <span class="hljs-number">11.762167871265603</span>,
+    <span class="hljs-attr">"min"</span>: <span class="hljs-number">11.728382113999032</span>,
+    <span class="hljs-attr">"max"</span>: <span class="hljs-number">11.799717240999598</span>
+  },
+  <span class="hljs-attr">"ttft_s"</span>: {
+    <span class="hljs-attr">"p50"</span>: <span class="hljs-literal">null</span>,
+    <span class="hljs-attr">"p95"</span>: <span class="hljs-literal">null</span>,
+    <span class="hljs-attr">"mean"</span>: <span class="hljs-literal">null</span>,
+    <span class="hljs-attr">"min"</span>: <span class="hljs-literal">null</span>,
+    <span class="hljs-attr">"max"</span>: <span class="hljs-literal">null</span>
+  },
+  <span class="hljs-attr">"token_usage"</span>: {
+    <span class="hljs-attr">"prompt_tokens_mean"</span>: <span class="hljs-number">89.0</span>,
+    <span class="hljs-attr">"completion_tokens_mean"</span>: <span class="hljs-number">256.0</span>
+  },
+  <span class="hljs-attr">"derived"</span>: {
+    <span class="hljs-attr">"prompt_tps"</span>: <span class="hljs-number">120.98629232134637</span>,
+    <span class="hljs-attr">"decode_tps"</span>: <span class="hljs-number">348.00551499173787</span>,
+    <span class="hljs-attr">"ms_per_output_token"</span>: <span class="hljs-number">45.94596824713126</span>
+  }
+}
+</div></code></pre>
+<h3 id="53-%E5%AF%B9%E6%AF%94%E6%B1%87%E6%80%BB%E5%90%8C%E5%8F%A3%E5%BE%84c16--r64--maxtokens256">5.3 对比汇总（同口径：c=16 / r=64 / max_tokens=256）</h3>
+<table>
+<thead>
+<tr>
+<th>配置</th>
+<th style="text-align:right">QPS</th>
+<th style="text-align:right">prompt_tps</th>
+<th style="text-align:right">decode_tps</th>
+<th style="text-align:right">p50 latency (s)</th>
+<th style="text-align:right">p95 latency (s)</th>
+<th style="text-align:right">ms/output_token</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1GPU（TP=1）</td>
+<td style="text-align:right">1.0171</td>
+<td style="text-align:right">90.5189</td>
+<td style="text-align:right">260.3688</td>
+<td style="text-align:right">15.6923</td>
+<td style="text-align:right">15.8496</td>
+<td style="text-align:right">61.4226</td>
+</tr>
+<tr>
+<td>2GPU（TP=2）</td>
+<td style="text-align:right">1.3594</td>
+<td style="text-align:right">120.9863</td>
+<td style="text-align:right">348.0055</td>
+<td style="text-align:right">11.7613</td>
+<td style="text-align:right">11.7944</td>
+<td style="text-align:right">45.9460</td>
+</tr>
+</tbody>
+</table>
+<p>2GPU 相对 1GPU 的提升：</p>
+<ul>
+<li>QPS：约 1.34×</li>
+<li>decode_tps：约 1.34×</li>
+<li>平均延迟：约 0.75×（降低约 25%）</li>
+</ul>
+<h4 id="531-bar-charttoken-%E5%90%9E%E5%90%90%E5%AF%B9%E6%AF%94">5.3.1 Bar chart（Token 吞吐对比）</h4>
+<blockquote>
+<p>说明：下图只对比同量纲的 token 吞吐（prompt_tps / decode_tps），避免把 QPS 与 latency 混在同一坐标系。</p>
+</blockquote>
+<pre><code class="language-mermaid"><div class="mermaid">xychart-beta
+  title "1GPU vs 2GPU token throughput"
+  x-axis ["prompt_tps", "decode_tps"]
+  y-axis "tokens/s" 0 --> 400
+  bar "1GPU" [90.52, 260.37]
+  bar "2GPU" [120.99, 348.01]
+</div></code></pre>
+<h2 id="6-%E7%BB%93%E8%AE%BA%E4%B8%8E%E5%A4%87%E6%B3%A8">6. 结论与备注</h2>
+<ul>
+<li>结论（基于本次固定口径）：在该 VM 上，2× MIG device（跨 PCIe/SYS，跨 NUMA）相对 1× MIG device 的吞吐提升约 <strong>1.34×</strong>，未达到线性 2×。</li>
+<li>主要影响因素推断：
+<ul>
+<li>GPU0&lt;-&gt;GPU1 为 <code>SYS</code> 且跨 NUMA，TP=2 时的张量并行通信开销更高；</li>
+<li>MIG 强制开启（每卡仅 1× <code>4g.96gb</code>），可用计算/带宽形态与“整卡直通”不同。</li>
+</ul>
+</li>
+<li>工程备注：
+<ul>
+<li>2GPU 启动阶段需要通过 <code>--max-num-seqs</code> 降低 warmup 峰值占用，否则会在 sampler warmup 时 OOM；本次设置为 32，不影响 c=16 的压测并发。</li>
+<li>vLLM 日志提示 FP8 attention scaling factor 可能未校准（q/prob_scale=1.0），这主要影响精度风险；本次聚焦吞吐对比。</li>
+</ul>
+</li>
+</ul>
+
+</body>
+</html>
