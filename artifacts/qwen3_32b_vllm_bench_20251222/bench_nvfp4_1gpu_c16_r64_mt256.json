@@ -1,0 +1,36 @@
+{
+  "endpoint": "http://127.0.0.1:8000/v1/chat/completions",
+  "model": "RedHatAI/Qwen3-32B-NVFP4",
+  "concurrency": 16,
+  "requests": 64,
+  "max_tokens": 256,
+  "temperature": 0.0,
+  "stream": false,
+  "ok": 64,
+  "errors": 0,
+  "total_time_s": 27.0154317399938,
+  "qps": 2.369016368716922,
+  "latency_s": {
+    "p50": 6.757714206501987,
+    "p95": 6.7949592964996555,
+    "mean": 6.745025343859311,
+    "min": 6.662794034004037,
+    "max": 6.797269234994019
+  },
+  "ttft_s": {
+    "p50": null,
+    "p95": null,
+    "mean": null,
+    "min": null,
+    "max": null
+  },
+  "token_usage": {
+    "prompt_tokens_mean": 110.0,
+    "completion_tokens_mean": 256.0
+  },
+  "derived": {
+    "prompt_tps": 260.59180055886145,
+    "decode_tps": 606.4681903915321,
+    "ms_per_output_token": 26.347755249450433
+  }
+}

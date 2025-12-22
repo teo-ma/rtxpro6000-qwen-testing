@@ -1,0 +1,36 @@
+{
+  "endpoint": "http://127.0.0.1:8000/v1/chat/completions",
+  "model": "Qwen/Qwen3-32B-FP8",
+  "concurrency": 16,
+  "requests": 64,
+  "max_tokens": 256,
+  "temperature": 0.0,
+  "stream": false,
+  "ok": 64,
+  "errors": 0,
+  "total_time_s": 42.904630765995535,
+  "qps": 1.4916804749832224,
+  "latency_s": {
+    "p50": 10.689767773503263,
+    "p95": 10.863720228247985,
+    "mean": 10.71024787803151,
+    "min": 10.614935087003687,
+    "max": 10.867005480999069
+  },
+  "ttft_s": {
+    "p50": null,
+    "p95": null,
+    "mean": null,
+    "min": null,
+    "max": null
+  },
+  "token_usage": {
+    "prompt_tokens_mean": 110.0,
+    "completion_tokens_mean": 256.0
+  },
+  "derived": {
+    "prompt_tps": 164.08485224815448,
+    "decode_tps": 381.87020159570494,
+    "ms_per_output_token": 41.83690577356059
+  }
+}
