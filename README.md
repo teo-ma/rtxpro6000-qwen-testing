@@ -1,4 +1,4 @@
-## vLLM on RTX Pro 6000（Blackwell / MIG）评测与报告
+## Qwen on RTX Pro 6000（Blackwell / MIG）评测与报告
 
 这个仓库用于沉淀在同一台 Azure VM（Standard_NC256ds_xl_RTXPRO6000BSE_v6，2× RTX Pro 6000 Blackwell，MIG 强制开启）上完成的：
 
