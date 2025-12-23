@@ -40,6 +40,8 @@
   - FP8：35/40（0.875）
   - BF16：35/40（0.875）
 
+![Qwen3-32B（40 题）可判定答案准确度对比](images/qwen3_32b_vllm_1gpu_accuracy_nvfp4_fp8_bf16_40questions.png)
+
 ### 4) Qwen3-32B 标准基准（7 维度）评测方案与记录
 
 - 报告：[`qwen3_32b_vllm_1gpu_standard_benchmarks_nvfp4_fp8_bf16_report_20251222.md`](qwen3_32b_vllm_1gpu_standard_benchmarks_nvfp4_fp8_bf16_report_20251222.md)

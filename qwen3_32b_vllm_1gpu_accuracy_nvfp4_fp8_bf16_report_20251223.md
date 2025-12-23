@@ -100,6 +100,8 @@ curl -s http://127.0.0.1:8000/v1/models | jq .
 | FP8 | Qwen/Qwen3-32B-FP8 | 35/40 | 0.875 |
 | BF16 | Qwen/Qwen3-32B | 35/40 | 0.875 |
 
+![Qwen3-32B（40 题）可判定答案准确度对比](images/qwen3_32b_vllm_1gpu_accuracy_nvfp4_fp8_bf16_40questions.png)
+
 ## 4. 结论与下一步
 
 - 在这套 40 题的可判定集合上，FP8 与 BF16 的通过率一致，NVFP4 略低。
