@@ -1,0 +1,18 @@
+{
+  "endpoint": "http://127.0.0.1:8000/v1/chat/completions",
+  "model": "RedHatAI/Qwen3-32B-NVFP4",
+  "concurrency": 4,
+  "max_tokens": 256,
+  "temperature": 0.0,
+  "count": 40,
+  "ok": 34,
+  "accuracy": 0.85,
+  "total_time_s": 2.5327899550029542,
+  "latency_s": {
+    "mean": 0.24393554064954515
+  },
+  "token_usage": {
+    "prompt_tokens_mean": 54.95,
+    "completion_tokens_mean": 8.3
+  }
+}

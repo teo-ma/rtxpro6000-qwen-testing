@@ -1,199 +1,76 @@
-# Qwen2.5-VL-72B（FP8 dynamic）vLLM 吞吐对比：1× vs 2× RTX Pro 6000（MIG / PCIe / 跨 NUMA）
+## myrtx6000：vLLM on RTX Pro 6000（Blackwell / MIG）评测与报告
 
-> 目标：在同一台 Azure VM（Standard_NC256ds_xl_RTXPRO6000BSE_v6，2× RTX Pro 6000 Blackwell，MIG 强制开启不可关闭）上，对比 **1× MIG device** 与 **2× MIG device（跨 PCIe/SYS，跨 NUMA）** 的推理吞吐量。
+这个仓库用于沉淀在同一台 Azure VM（Standard_NC256ds_xl_RTXPRO6000BSE_v6，2× RTX Pro 6000 Blackwell，MIG 强制开启）上完成的：
 
-## 1. 测试环境
+- vLLM 推理吞吐压测（OpenAI-compatible `/v1/chat/completions`）
+- Qwen3-32B 三精度（NVFP4 / FP8 / BF16）准确度/一致性小集合评测
+- Qwen3-32B 三精度标准基准（MMLU Pro / GPQA / HLE / LiveCodeBench / SciCode / MATH-500 / AIME 2024）评测方案与进展
 
-- 云平台：Azure
-- VM：Standard_NC256ds_xl_RTXPRO6000BSE_v6（256 vCPU，2 GPU）
-- OS：Ubuntu 22.04.5 LTS（kernel 6.8.0-1044-azure）
-- GPU：NVIDIA RTX Pro 6000 Blackwell DC-4-96Q ×2
-- Driver/CUDA：NVIDIA Driver 580.105.08 / CUDA 13.0（nvidia-smi 报告）
-- MIG：强制开启且不可关闭
-  - GPU0：1× `MIG 4g.96gb Device 0`
-  - GPU1：1× `MIG 4g.96gb Device 0`
-- GPU 拓扑：GPU0 <-> GPU1 为 `SYS`（PCIe + 跨 NUMA 的 SMP interconnect）
-  - GPU0 CPU Affinity：0-63（NUMA 0）
-  - GPU1 CPU Affinity：128-191（NUMA 2）
-- 磁盘：`/data` 4TB 数据盘用于 HF cache / 日志 / 结果（根分区 `/` 约 29G，空间紧张）
+> README 只做“概览与导航”。详细过程、完整命令与原始结果以各自报告为准。
 
-## 2. 测试对象与精度说明
+## 报告导航（按测试类型）
 
-- 模型：`RedHatAI/Qwen2.5-VL-72B-Instruct-FP8-dynamic`
-- 推理引擎：vLLM 0.13.0（OpenAI-compatible `vllm serve`）
-- 精度/量化：
-  - 权重：使用模型 checkpoint 自带的 **compressed-tensors 量化配置**（vLLM 日志显示 `quantization=compressed-tensors`）。
-  - KV cache：显式启用 FP8（`--kv-cache-dtype fp8`）。
-  - 计算 dtype：vLLM 日志显示 `dtype=torch.bfloat16`（即除权重/kv-cache 外，算子计算为 BF16）。
+### 1) Qwen2.5-VL-72B（FP8 dynamic）吞吐：1× vs 2× MIG（跨 NUMA）
 
-说明：在该 FP8 dynamic 模型上，显式传 `--quantization fp8` 会与模型自带配置冲突，因此本次以 checkpoint 配置为准，确保“权重 FP8 + KV cache FP8”。
+- 报告：[`qwen2_5_vl_72b_fp8_vllm_1gpu_vs_2gpu_report_20251222.md`](qwen2_5_vl_72b_fp8_vllm_1gpu_vs_2gpu_report_20251222.md)
+- 结果速览（c=16 / r=64 / max_tokens=256）：
+  - 1× MIG（TP=1）：decode_tps ≈ 260.37 tokens/s
+  - 2× MIG（TP=2）：decode_tps ≈ 348.01 tokens/s
+  - 注：2× MIG 启动时为规避 warmup OOM 使用了 `--max-num-seqs 32`，详见报告
 
-## 3. 测试方法（统一口径）
+![1gpu-vs-2gpu-rtxpro6000](images/1gpu-vs-2gpu-rtxpro6000.jpg)
 
-- 统一点：同一台 VM、同一套 vLLM/torch 环境、同一模型与 `max_model_len`、同一压测脚本与参数
-- 设备选择：
-  - 1GPU：`CUDA_VISIBLE_DEVICES=0`（1 个 MIG device）
-  - 2GPU：`CUDA_VISIBLE_DEVICES=0,1`（2 个 MIG device，分别来自两张物理卡）+ `--tensor-parallel-size 2`
-- Attention backend：为避免 flashinfer JIT 对 nvcc 的依赖，固定使用 TRITON attention backend（通过环境变量）
-- 压测工具：本仓库的 `tools/bench_openai.py`（拷贝到 VM 执行），对 `/v1/chat/completions` 发请求，并基于返回 `usage` 统计 token 吞吐
+### 2) Qwen3-32B（NVFP4 / FP8 / BF16）吞吐（1× MIG）
 
-## 4. 实测过程与命令
+- 报告：[`qwen3_32b_vllm_1gpu_nvfp4_fp8_bf16_report_20251222.md`](qwen3_32b_vllm_1gpu_nvfp4_fp8_bf16_report_20251222.md)
+- 结果速览（同口径：c=16 / r=64 / max_tokens=256）：
+  - NVFP4：decode_tps ≈ 606.47 tokens/s（最高）
+  - FP8：decode_tps ≈ 381.87 tokens/s
+  - BF16：decode_tps ≈ 322.09 tokens/s
 
-### 4.1 目录与缓存
+![Throughput-qwen-30B-3Precision](images/Throughput-qwen-30B-3Precision.png)
+![QPS-qwen-30B-3Precision](images/QPS-qwen-30B-3Precision.png)
+![Latency-qwen-30B-3Precision](images/Latency-qwen-30B-3Precision.png)
 
-- 远端工作目录：`/data/bench/qwen25vl72b_vllm_bench_20251222/`
-- HF 下载目录：`/data/bench/hf`
+### 3) Qwen3-32B（NVFP4 / FP8 / BF16）“可判定答案”准确度（40 题小集合）
 
-### 4.2 启动 vLLM（1GPU / TP=1）
+- 报告：[`qwen3_32b_vllm_1gpu_accuracy_nvfp4_fp8_bf16_report_20251223.md`](qwen3_32b_vllm_1gpu_accuracy_nvfp4_fp8_bf16_report_20251223.md)
+- 结果速览（40 题）：
+  - NVFP4：34/40（0.85）
+  - FP8：35/40（0.875）
+  - BF16：35/40（0.875）
 
-> 通过 `ps aux` 捕获到的实际启动命令如下。
+### 4) Qwen3-32B 标准基准（7 维度）评测方案与记录
 
-```bash
-/data/bench/qwen25vl72b_vllm_bench_20251222/.venv/bin/vllm serve \
-  RedHatAI/Qwen2.5-VL-72B-Instruct-FP8-dynamic \
-  --download-dir /data/bench/hf \
-  --host 127.0.0.1 --port 8000 \
-  --tensor-parallel-size 1 \
-  --max-model-len 4096 \
-  --gpu-memory-utilization 0.95 \
-  --kv-cache-dtype fp8 \
-  --enable-force-include-usage
-```
+- 报告：[`qwen3_32b_vllm_1gpu_standard_benchmarks_nvfp4_fp8_bf16_report_20251222.md`](qwen3_32b_vllm_1gpu_standard_benchmarks_nvfp4_fp8_bf16_report_20251222.md)
+- 说明：
+  - 该报告聚焦“如何在单 MIG + vLLM 下跑通 7 个维度”的方法与可复现命令，表格结果随进展回填
+  - HLE（`cais/hle`）为 gated；GPQA（`Idavidrein/gpqa`）也可能需要权限/登录，未授权时会标注 N/A 或无法下载
 
-### 4.3 启动 vLLM（2GPU / TP=2）
+## 仓库结构
 
-首次尝试以 `--gpu-memory-utilization 0.95` 直接启动 TP=2 时，vLLM 在 `warming up sampler with 1024 dummy requests` 阶段触发 CUDA OOM。
+- `tools/`
+  - `bench_openai.py`：OpenAI-compatible 压测脚本（统计 QPS / prompt_tps / decode_tps / latency）
+  - `eval_openai_accuracy.py`：40 题小集合准确度评测（温度 0，提取最终答案评分）
+  - `eval_codegen_pass1_vllm.py`：代码类数据集 pass@1（生成代码并执行 tests）
+  - `summarize_lmeval_results.py`：汇总 lm-eval 输出 JSON 到 Markdown
+- `evalsets/`
+  - `qwen3_32b_accuracy_suite_v1.jsonl`：40 题“可判定答案”小集合
+- `artifacts/`
+  - 评测原始 JSON、stdout、日志等（以日期目录分组）
+- `images/`
+  - 报告中引用的图表
 
-为保证服务可稳定启动且不影响本次压测并发（c=16），增加 `--max-num-seqs 32` 以降低 warmup 峰值占用：
+## 复现提示（最小原则）
 
-```bash
-export CUDA_VISIBLE_DEVICES=0,1
-export VLLM_ATTENTION_BACKEND=TRITON_ATTN
-export TMPDIR=/data/bench/tmp
-export XDG_CACHE_HOME=/data/bench/cache
+- 强约束：推理必须使用 vLLM；Qwen3-32B 三精度对比默认只用 1 个 MIG device（例如 `CUDA_VISIBLE_DEVICES=0`）
+- 缓存建议：将 HF cache / datasets cache / TMPDIR 指向 `/data`（避免根分区空间不足）
+- 具体可复现命令：请直接以对应报告中的 “环境与命令（VM 上执行）” 小节为准
 
-nohup /data/bench/qwen25vl72b_vllm_bench_20251222/.venv/bin/vllm serve \
-  RedHatAI/Qwen2.5-VL-72B-Instruct-FP8-dynamic \
-  --download-dir /data/bench/hf \
-  --host 127.0.0.1 --port 8000 \
-  --tensor-parallel-size 2 \
-  --max-model-len 4096 \
-  --gpu-memory-utilization 0.95 \
-  --kv-cache-dtype fp8 \
-  --max-num-seqs 32 \
-  --enable-force-include-usage \
-  > logs/vllm_2gpu_retry.log 2>&1 &
-```
+## 注意事项
 
-### 4.4 压测命令（两组完全一致）
-
-```bash
-python bench_openai.py \
-  --base-url http://127.0.0.1:8000 \
-  --model RedHatAI/Qwen2.5-VL-72B-Instruct-FP8-dynamic \
-  --concurrency 16 \
-  --requests 64 \
-  --max-tokens 256 \
-  --temperature 0.0 \
-  --timeout 1200 \
-  --prompt-file qwen_bench_prompt.txt \
-  --out results/bench_*.json
-```
-
-## 5. 结果
-
-### 5.1 1GPU（TP=1）
-
-- 结果文件（VM）：`/data/bench/qwen25vl72b_vllm_bench_20251222/results/bench_1gpu_c16_r64_mt256.json`
-
-关键指标：
-- QPS：1.0171
-- prompt_tps：90.5189 tokens/s
-- decode_tps：260.3688 tokens/s
-- latency：p50=15.6923s，p95=15.8496s，mean=15.7242s
-
-原始 JSON：
-```json
-{
-  "endpoint": "http://127.0.0.1:8000/v1/chat/completions",
-  "model": "RedHatAI/Qwen2.5-VL-72B-Instruct-FP8-dynamic",
-  "concurrency": 16,
-  "requests": 64,
-  "max_tokens": 256,
-  "temperature": 0.0,
-  "stream": false,
-  "ok": 64,
-  "errors": 0,
-  "total_time_s": 62.92611732300065,
-  "qps": 1.0170657705049095,
-  "latency_s": {
-    "p50": 15.692299124998499,
-    "p95": 15.849577032000525,
-    "mean": 15.724194198515647,
-    "min": 15.664447743998608,
-    "max": 15.861515120999684
-  },
-  "ttft_s": {
-    "p50": null,
-    "p95": null,
-    "mean": null,
-    "min": null,
-    "max": null
-  },
-  "token_usage": {
-    "prompt_tokens_mean": 89.0,
-    "completion_tokens_mean": 256.0
-  },
-  "derived": {
-    "prompt_tps": 90.51885357493695,
-    "decode_tps": 260.36883724925684,
-    "ms_per_output_token": 61.42263358795175
-  }
-}
-```
-
-### 5.2 2GPU（TP=2，跨 PCIe/SYS）
-
-- 结果文件（VM）：`/data/bench/qwen25vl72b_vllm_bench_20251222/results/bench_2gpu_c16_r64_mt256.json`
-
-关键指标：
-- QPS：1.3594
-- prompt_tps：120.9863 tokens/s
-- decode_tps：348.0055 tokens/s
-- latency：p50=11.7613s，p95=11.7944s，mean=11.7622s
-
-原始 JSON：
-```json
-{
-  "endpoint": "http://127.0.0.1:8000/v1/chat/completions",
-  "model": "RedHatAI/Qwen2.5-VL-72B-Instruct-FP8-dynamic",
-  "concurrency": 16,
-  "requests": 64,
-  "max_tokens": 256,
-  "temperature": 0.0,
-  "stream": false,
-  "ok": 64,
-  "errors": 0,
-  "total_time_s": 47.079713666000316,
-  "qps": 1.359396542936476,
-  "latency_s": {
-    "p50": 11.761318839000523,
-    "p95": 11.794378725249771,
-    "mean": 11.762167871265603,
-    "min": 11.728382113999032,
-    "max": 11.799717240999598
-  },
-  "ttft_s": {
-    "p50": null,
-    "p95": null,
-    "mean": null,
-    "min": null,
-    "max": null
-  },
-  "token_usage": {
-    "prompt_tokens_mean": 89.0,
-    "completion_tokens_mean": 256.0
-  },
+- gated 数据集：遇到 `DatasetNotFoundError: ... is a gated dataset` 时，需要在 Hugging Face 申请访问并在 VM 上登录后再跑。
+- 指标口径：标准基准与小集合准确度不是同一类指标；对比时请以报告中注明的口径为准。
   "derived": {
     "prompt_tps": 120.98629232134637,
     "decode_tps": 348.00551499173787,

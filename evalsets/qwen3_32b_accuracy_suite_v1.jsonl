@@ -1,0 +1,40 @@
+{"id":"001","type":"number","prompt":"只输出一个数字：37*19 等于多少？","expected":"703"}
+{"id":"002","type":"number","prompt":"只输出一个数字：125+378 等于多少？","expected":"503"}
+{"id":"003","type":"number","prompt":"只输出一个数字：2048/64 等于多少？","expected":"32"}
+{"id":"004","type":"number","prompt":"只输出一个数字：15 的平方是多少？","expected":"225"}
+{"id":"005","type":"number","prompt":"只输出一个数字：2^10 等于多少？","expected":"1024"}
+{"id":"006","type":"number","prompt":"只输出一个数字：1 到 100 的整数和是多少？","expected":"5050"}
+{"id":"007","type":"number","prompt":"只输出一个数字：99*99 等于多少？","expected":"9801"}
+{"id":"008","type":"number","prompt":"只输出一个数字：12345+6789 等于多少？","expected":"19134"}
+{"id":"009","type":"number","prompt":"只输出一个数字：1000000-1 等于多少？","expected":"999999"}
+{"id":"010","type":"number","prompt":"只输出一个数字：7!（7 的阶乘）等于多少？","expected":"5040"}
+{"id":"011","type":"exact","prompt":"只回答“是”或“否”：所有偶数都能被 2 整除。","expected":"是"}
+{"id":"012","type":"exact","prompt":"只回答“是”或“否”：17 是偶数。","expected":"否"}
+{"id":"013","type":"exact","prompt":"只回答“是”或“否”：0 是偶数。","expected":"是"}
+{"id":"014","type":"exact","prompt":"只回答“是”或“否”：闰年一定能被 4 整除。（不考虑世纪例外）","expected":"是"}
+{"id":"015","type":"exact","prompt":"只回答“真”或“假”：命题“如果下雨则地面湿”与其逆否命题等价。","expected":"真"}
+{"id":"016","type":"exact","prompt":"按要求输出：请只输出字符串“hello-world”（不含引号）。","expected":"hello-world"}
+{"id":"017","type":"exact","prompt":"按要求输出：请只输出“42”（不含引号）。","expected":"42"}
+{"id":"018","type":"exact","prompt":"按要求输出：请只输出一个英文逗号“,”（不含引号）。","expected":","}
+{"id":"019","type":"exact","prompt":"按要求输出：请只输出一个中文句号“。”（不含引号）。","expected":"。"}
+{"id":"020","type":"exact","prompt":"按要求输出：请只输出 JSON：{\"a\":1,\"b\":2}，不要输出其它内容。","expected":"{\"a\":1,\"b\":2}"}
+{"id":"021","type":"contains","prompt":"只输出一个 IPv4 地址：将 192.168.001.010 规范化（去掉多余前导零），不要输出其它内容。","expected":"192.168.1.10"}
+{"id":"022","type":"exact","prompt":"只输出一个字符串：把“ABC”转成小写。","expected":"abc"}
+{"id":"023","type":"exact","prompt":"只输出一个字符串：把“foo_bar”中的下划线换成短横线。","expected":"foo-bar"}
+{"id":"024","type":"exact","prompt":"只输出一个字符串：反转字符串“stressed”。","expected":"desserts"}
+{"id":"025","type":"exact","prompt":"只输出一个字符串：把“  trim me  ”两端空格去掉。输出结果应为 trim me。","expected":"trim me"}
+{"id":"026","type":"number","prompt":"只输出一个数字：二进制 101101 转十进制是多少？","expected":"45"}
+{"id":"027","type":"number","prompt":"只输出一个数字：十六进制 FF 转十进制是多少？","expected":"255"}
+{"id":"028","type":"number","prompt":"只输出一个数字：将 3.14 四舍五入到最接近的整数是多少？","expected":"3"}
+{"id":"029","type":"number","prompt":"只输出一个数字：将 3.5 四舍五入到最接近的整数（.5 进位）是多少？","expected":"4"}
+{"id":"030","type":"number","prompt":"只输出一个数字：最小的质数是多少？","expected":"2"}
+{"id":"031","type":"number","prompt":"只输出一个数字：19 是第几个质数？（从 2 开始计数）","expected":"8"}
+{"id":"032","type":"exact","prompt":"只输出一个字符串：ISO 8601 日期 2025-12-23 的年份是多少？","expected":"2025"}
+{"id":"033","type":"exact","prompt":"只输出一个字符串：把“2025-12-23”中的“-”替换成“/”。","expected":"2025/12/23"}
+{"id":"034","type":"exact","prompt":"只输出一个字符串：把“a,b,c”按逗号分隔后再用“|”连接。","expected":"a|b|c"}
+{"id":"035","type":"number","prompt":"只输出一个数字：求 1/8 的小数表示（有限小数），输出到完整精确值。","expected":"0.125"}
+{"id":"036","type":"number","prompt":"只输出一个数字：0.125 乘以 1000 等于多少？","expected":"125"}
+{"id":"037","type":"exact","prompt":"只输出一个字符串：将“GitHub Copilot”中的空格替换为下划线。","expected":"GitHub_Copilot"}
+{"id":"038","type":"exact","prompt":"只输出一个字符串：将“MiG”转成大写。","expected":"MIG"}
+{"id":"039","type":"exact","prompt":"只输出一个字符串：把“1,2,3,4,5”中所有逗号去掉。","expected":"12345"}
+{"id":"040","type":"number","prompt":"只输出一个数字：一个半小时等于多少分钟？","expected":"90"}
