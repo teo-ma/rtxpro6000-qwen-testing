@@ -42,12 +42,28 @@
 
 ![Qwen3-32B（40 题）可判定答案准确度对比](images/qwen3_32b_vllm_1gpu_accuracy_nvfp4_fp8_bf16_40questions.png)
 
-### 4) Qwen3-32B 标准基准（7 维度）评测方案与记录
+### 4) Qwen3-14B（BF16 基线 / Mine （Quantized NVFP4） / NVIDIA NVFP4）PPL 代理准确度对比
 
-- 报告：[`qwen3_32b_vllm_1gpu_standard_benchmarks_nvfp4_fp8_bf16_report_20251222.md`](qwen3_32b_vllm_1gpu_standard_benchmarks_nvfp4_fp8_bf16_report_20251222.md)
-- 说明：
-  - 该报告聚焦“如何在单 MIG + vLLM 下跑通 7 个维度”的方法与可复现命令，表格结果随进展回填
-  - HLE（`cais/hle`）为 gated；GPQA（`Idavidrein/gpqa`）也可能需要权限/登录，未授权时会标注 N/A 或无法下载
+- 报告：[`qwen3_14b_nvfp4_quant_and_eval.md`](qwen3_14b_nvfp4_quant_and_eval.md)
+- 量化说明：Mine（Quantized NVFP4）是以 Hugging Face 的 `Qwen/Qwen3-14B`（BF16）为起点，使用 vLLM/llm-compressor 的 oneshot PTQ 流程在校准数据上做量化校准后，导出为 vLLM 可直接加载的 NVFP4 `compressed-tensors` 格式模型（推理时使用 `quantization=compressed-tensors`）。对比项中的 NVIDIA NVFP4 为 NVIDIA 发布的 `nvidia/Qwen3-14B-NVFP4` 版本。
+- 指标说明：这里用 vLLM 的 `prompt_logprobs` 计算 token-level NLL/PPL 作为“代理准确度”（越低越好）；同时给出以 BF16=100 的 Relative Score（越高越好）。
+- 结果速览（PPL/NLL：数值越低越好；Relative Score：数值越高越好，BF16=100）：
+  - WikiText-2（test，kept_texts=132，tokens=23922）：
+    - BF16：PPL=1.687084，NLL=0.523002
+    - Mine（Quantized NVFP4）：PPL=1.709212，NLL=0.536032
+    - NVIDIA NVFP4：PPL=1.739074，NLL=0.553353
+  - UltraChat-200K（test_sft，kept_texts=200，tokens=228323）：
+    - BF16：PPL=1.461068，NLL=0.379167
+    - Mine（Quantized NVFP4）：PPL=1.470275，NLL=0.385449
+    - NVIDIA NVFP4：PPL=1.481108，NLL=0.392791
+  - 总对比（两套数据按 token 加权汇总）：
+    - BF16：Overall PPL=1.481134，Score=100.00
+    - Mine（Quantized NVFP4）：Overall PPL=1.491422，Score=99.31
+    - NVIDIA NVFP4：Overall PPL=1.503834，Score=98.49
+
+![Qwen3-14B Relative Score（BF16=100，PPL proxy）](images/qwen3_14b_nvfp4_ppl_proxy_score.png)
+
+
 
 ## 仓库结构
 
