@@ -11,7 +11,7 @@
 ## 1. VM 登录
 
 ```bash
-ssh -i ~/.ssh/azure_id_rsa azureuser@20.112.150.26
+ssh -i ~/.ssh/azure_id_rsa azureuser@<ip address>
 ```
 
 本 VM 上数据盘为 `/data`（不是 `/mnt/data`），因此本文默认使用 `/data/...`。
@@ -47,7 +47,7 @@ export TMPDIR=/data/tmp
 ```bash
 scp -i ~/.ssh/azure_id_rsa \
   scripts/qwen3_14b_nvfp4_nocalib.py \
-  azureuser@20.112.150.26:/data/nvfp4_work/
+  azureuser@<ip address>:/data/nvfp4_work/
 ```
 
 ---

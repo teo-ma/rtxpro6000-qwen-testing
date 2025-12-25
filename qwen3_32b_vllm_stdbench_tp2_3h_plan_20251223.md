@@ -62,7 +62,7 @@
 ## 4. VM 连接
 
 ```bash
-ssh -i ~/.ssh/azure_id_rsa azureuser@20.112.150.26
+ssh -i ~/.ssh/azure_id_rsa azureuser@<ip address>
 ```
 
 ## 5. VM 环境变量（统一设置）

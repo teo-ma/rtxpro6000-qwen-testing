@@ -38,7 +38,7 @@
 ### 2.1 SSH 登录
 
 ```bash
-ssh -i ~/.ssh/azure_id_rsa azureuser@20.112.150.26
+ssh -i ~/.ssh/azure_id_rsa azureuser@<ip address>
 ```
 
 ### 2.2 远端工作目录

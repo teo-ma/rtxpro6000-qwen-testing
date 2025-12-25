@@ -5,7 +5,7 @@ WARNING 12-22 14:59:46 [attention.py:82] Using VLLM_ATTENTION_BACKEND environmen
 [0;36m(APIServer pid=35300)[0;0m INFO 12-22 14:59:46 [model.py:1661] Using max model len 4096
 [0;36m(APIServer pid=35300)[0;0m INFO 12-22 14:59:47 [scheduler.py:230] Chunked prefill is enabled with max_num_batched_tokens=8192.
 [0;36m(EngineCore_DP0 pid=35496)[0;0m INFO 12-22 14:59:54 [core.py:93] Initializing a V1 LLM engine (v0.13.0) with config: model='Qwen/Qwen3-30B-A3B', speculative_config=None, tokenizer='Qwen/Qwen3-30B-A3B', skip_tokenizer_init=False, tokenizer_mode=auto, revision=None, tokenizer_revision=None, trust_remote_code=False, dtype=torch.bfloat16, max_seq_len=4096, download_dir='/data/bench/hf', load_format=auto, tensor_parallel_size=1, pipeline_parallel_size=1, data_parallel_size=1, disable_custom_all_reduce=False, quantization=None, enforce_eager=False, kv_cache_dtype=auto, device_config=cuda, structured_outputs_config=StructuredOutputsConfig(backend='auto', disable_fallback=False, disable_any_whitespace=False, disable_additional_properties=False, reasoning_parser='', reasoning_parser_plugin='', enable_in_reasoning=False), observability_config=ObservabilityConfig(show_hidden_metrics_for_version=None, otlp_traces_endpoint=None, collect_detailed_traces=None, kv_cache_metrics=False, kv_cache_metrics_sample=0.01, cudagraph_metrics=False, enable_layerwise_nvtx_tracing=False), seed=0, served_model_name=Qwen/Qwen3-30B-A3B, enable_prefix_caching=True, enable_chunked_prefill=True, pooler_config=None, compilation_config={'level': None, 'mode': <CompilationMode.VLLM_COMPILE: 3>, 'debug_dump_path': None, 'cache_dir': '', 'compile_cache_save_format': 'binary', 'backend': 'inductor', 'custom_ops': ['none'], 'splitting_ops': ['vllm::unified_attention', 'vllm::unified_attention_with_output', 'vllm::unified_mla_attention', 'vllm::unified_mla_attention_with_output', 'vllm::mamba_mixer2', 'vllm::mamba_mixer', 'vllm::short_conv', 'vllm::linear_attention', 'vllm::plamo2_mamba_mixer', 'vllm::gdn_attention_core', 'vllm::kda_attention', 'vllm::sparse_attn_indexer'], 'compile_mm_encoder': False, 'compile_sizes': [], 'compile_ranges_split_points': [8192], 'inductor_compile_config': {'enable_auto_functionalized_v2': False, 'combo_kernels': True, 'benchmark_combo_kernel': True}, 'inductor_passes': {}, 'cudagraph_mode': <CUDAGraphMode.FULL_AND_PIECEWISE: (2, 1)>, 'cudagraph_num_of_warmups': 1, 'cudagraph_capture_sizes': [1, 2, 4, 8, 16, 24, 32, 40, 48, 56, 64], 'cudagraph_copy_inputs': False, 'cudagraph_specialize_lora': True, 'use_inductor_graph_partition': False, 'pass_config': {'fuse_norm_quant': False, 'fuse_act_quant': False, 'fuse_attn_quant': False, 'eliminate_noops': True, 'enable_sp': False, 'fuse_gemm_comms': False, 'fuse_allreduce_rms': False}, 'max_cudagraph_capture_size': 64, 'dynamic_shapes_config': {'type': <DynamicShapesType.BACKED: 'backed'>, 'evaluate_guards': False}, 'local_cache_dir': None}
-[0;36m(EngineCore_DP0 pid=35496)[0;0m INFO 12-22 14:59:55 [parallel_state.py:1203] world_size=1 rank=0 local_rank=0 distributed_init_method=tcp://10.0.0.4:37783 backend=nccl
+[0;36m(EngineCore_DP0 pid=35496)[0;0m INFO 12-22 14:59:55 [parallel_state.py:1203] world_size=1 rank=0 local_rank=0 distributed_init_method=tcp://<ip address>:37783 backend=nccl
 [0;36m(EngineCore_DP0 pid=35496)[0;0m INFO 12-22 14:59:55 [parallel_state.py:1411] rank 0 in world size 1 is assigned as DP rank 0, PP rank 0, PCP rank 0, TP rank 0, EP rank 0
 [0;36m(EngineCore_DP0 pid=35496)[0;0m INFO 12-22 14:59:55 [gpu_model_runner.py:3562] Starting to load model Qwen/Qwen3-30B-A3B...
 [0;36m(EngineCore_DP0 pid=35496)[0;0m INFO 12-22 14:59:56 [cuda.py:315] Using AttentionBackendEnum.TRITON_ATTN backend.
@@ -14,24 +14,42 @@ WARNING 12-22 14:59:46 [attention.py:82] Using VLLM_ATTENTION_BACKEND environmen
 [0;36m(EngineCore_DP0 pid=35496)[0;0m We recommend installing via `pip install torch-c-dlpack-ext`
 [0;36m(EngineCore_DP0 pid=35496)[0;0m   warnings.warn(
 [0;36m(EngineCore_DP0 pid=35496)[0;0m INFO 12-22 15:00:10 [weight_utils.py:487] Time spent downloading weights for Qwen/Qwen3-30B-A3B: 12.760045 seconds
-[0;36m(EngineCore_DP0 pid=35496)[0;0m Loading safetensors checkpoint shards:   0% Completed | 0/16 [00:00<?, ?it/s]
-[0;36m(EngineCore_DP0 pid=35496)[0;0m Loading safetensors checkpoint shards:   6% Completed | 1/16 [00:00<00:13,  1.07it/s]
-[0;36m(EngineCore_DP0 pid=35496)[0;0m Loading safetensors checkpoint shards:  12% Completed | 2/16 [00:01<00:12,  1.13it/s]
-[0;36m(EngineCore_DP0 pid=35496)[0;0m Loading safetensors checkpoint shards:  19% Completed | 3/16 [00:02<00:07,  1.67it/s]
-[0;36m(EngineCore_DP0 pid=35496)[0;0m Loading safetensors checkpoint shards:  25% Completed | 4/16 [00:02<00:08,  1.39it/s]
-[0;36m(EngineCore_DP0 pid=35496)[0;0m Loading safetensors checkpoint shards:  31% Completed | 5/16 [00:03<00:08,  1.29it/s]
-[0;36m(EngineCore_DP0 pid=35496)[0;0m Loading safetensors checkpoint shards:  38% Completed | 6/16 [00:04<00:08,  1.23it/s]
-[0;36m(EngineCore_DP0 pid=35496)[0;0m Loading safetensors checkpoint shards:  44% Completed | 7/16 [00:05<00:07,  1.18it/s]
-[0;36m(EngineCore_DP0 pid=35496)[0;0m Loading safetensors checkpoint shards:  50% Completed | 8/16 [00:06<00:06,  1.18it/s]
-[0;36m(EngineCore_DP0 pid=35496)[0;0m Loading safetensors checkpoint shards:  56% Completed | 9/16 [00:07<00:05,  1.17it/s]
-[0;36m(EngineCore_DP0 pid=35496)[0;0m Loading safetensors checkpoint shards:  62% Completed | 10/16 [00:08<00:05,  1.17it/s]
-[0;36m(EngineCore_DP0 pid=35496)[0;0m Loading safetensors checkpoint shards:  69% Completed | 11/16 [00:09<00:04,  1.15it/s]
-[0;36m(EngineCore_DP0 pid=35496)[0;0m Loading safetensors checkpoint shards:  75% Completed | 12/16 [00:09<00:03,  1.17it/s]
-[0;36m(EngineCore_DP0 pid=35496)[0;0m Loading safetensors checkpoint shards:  81% Completed | 13/16 [00:10<00:02,  1.16it/s]
-[0;36m(EngineCore_DP0 pid=35496)[0;0m Loading safetensors checkpoint shards:  88% Completed | 14/16 [00:11<00:01,  1.15it/s]
-[0;36m(EngineCore_DP0 pid=35496)[0;0m Loading safetensors checkpoint shards:  94% Completed | 15/16 [00:12<00:00,  1.12it/s]
-[0;36m(EngineCore_DP0 pid=35496)[0;0m Loading safetensors checkpoint shards: 100% Completed | 16/16 [00:13<00:00,  1.14it/s]
-[0;36m(EngineCore_DP0 pid=35496)[0;0m Loading safetensors checkpoint shards: 100% Completed | 16/16 [00:13<00:00,  1.19it/s]
+[0;36m(EngineCore_DP0 pid=35496)[0;0m 
+Loading safetensors checkpoint shards:   0% Completed | 0/16 [00:00<?, ?it/s]
+[0;36m(EngineCore_DP0 pid=35496)[0;0m 
+Loading safetensors checkpoint shards:   6% Completed | 1/16 [00:00<00:13,  1.07it/s]
+[0;36m(EngineCore_DP0 pid=35496)[0;0m 
+Loading safetensors checkpoint shards:  12% Completed | 2/16 [00:01<00:12,  1.13it/s]
+[0;36m(EngineCore_DP0 pid=35496)[0;0m 
+Loading safetensors checkpoint shards:  19% Completed | 3/16 [00:02<00:07,  1.67it/s]
+[0;36m(EngineCore_DP0 pid=35496)[0;0m 
+Loading safetensors checkpoint shards:  25% Completed | 4/16 [00:02<00:08,  1.39it/s]
+[0;36m(EngineCore_DP0 pid=35496)[0;0m 
+Loading safetensors checkpoint shards:  31% Completed | 5/16 [00:03<00:08,  1.29it/s]
+[0;36m(EngineCore_DP0 pid=35496)[0;0m 
+Loading safetensors checkpoint shards:  38% Completed | 6/16 [00:04<00:08,  1.23it/s]
+[0;36m(EngineCore_DP0 pid=35496)[0;0m 
+Loading safetensors checkpoint shards:  44% Completed | 7/16 [00:05<00:07,  1.18it/s]
+[0;36m(EngineCore_DP0 pid=35496)[0;0m 
+Loading safetensors checkpoint shards:  50% Completed | 8/16 [00:06<00:06,  1.18it/s]
+[0;36m(EngineCore_DP0 pid=35496)[0;0m 
+Loading safetensors checkpoint shards:  56% Completed | 9/16 [00:07<00:05,  1.17it/s]
+[0;36m(EngineCore_DP0 pid=35496)[0;0m 
+Loading safetensors checkpoint shards:  62% Completed | 10/16 [00:08<00:05,  1.17it/s]
+[0;36m(EngineCore_DP0 pid=35496)[0;0m 
+Loading safetensors checkpoint shards:  69% Completed | 11/16 [00:09<00:04,  1.15it/s]
+[0;36m(EngineCore_DP0 pid=35496)[0;0m 
+Loading safetensors checkpoint shards:  75% Completed | 12/16 [00:09<00:03,  1.17it/s]
+[0;36m(EngineCore_DP0 pid=35496)[0;0m 
+Loading safetensors checkpoint shards:  81% Completed | 13/16 [00:10<00:02,  1.16it/s]
+[0;36m(EngineCore_DP0 pid=35496)[0;0m 
+Loading safetensors checkpoint shards:  88% Completed | 14/16 [00:11<00:01,  1.15it/s]
+[0;36m(EngineCore_DP0 pid=35496)[0;0m 
+Loading safetensors checkpoint shards:  94% Completed | 15/16 [00:12<00:00,  1.12it/s]
+[0;36m(EngineCore_DP0 pid=35496)[0;0m 
+Loading safetensors checkpoint shards: 100% Completed | 16/16 [00:13<00:00,  1.14it/s]
+[0;36m(EngineCore_DP0 pid=35496)[0;0m 
+Loading safetensors checkpoint shards: 100% Completed | 16/16 [00:13<00:00,  1.19it/s]
 [0;36m(EngineCore_DP0 pid=35496)[0;0m 
 [0;36m(EngineCore_DP0 pid=35496)[0;0m INFO 12-22 15:00:24 [default_loader.py:308] Loading weights took 13.54 seconds
 [0;36m(EngineCore_DP0 pid=35496)[0;0m INFO 12-22 15:00:25 [gpu_model_runner.py:3659] Model loading took 56.8814 GiB memory and 28.630541 seconds
@@ -44,8 +62,24 @@ WARNING 12-22 14:59:46 [attention.py:82] Using VLLM_ATTENTION_BACKEND environmen
 [0;36m(EngineCore_DP0 pid=35496)[0;0m INFO 12-22 15:01:20 [gpu_worker.py:375] Available KV cache memory: 33.16 GiB
 [0;36m(EngineCore_DP0 pid=35496)[0;0m INFO 12-22 15:01:20 [kv_cache_utils.py:1291] GPU KV cache size: 362,224 tokens
 [0;36m(EngineCore_DP0 pid=35496)[0;0m INFO 12-22 15:01:20 [kv_cache_utils.py:1296] Maximum concurrency for 4,096 tokens per request: 88.43x
-[0;36m(EngineCore_DP0 pid=35496)[0;0m Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):   0%|          | 0/11 [00:00<?, ?it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):   9%|▉         | 1/11 [00:00<00:04,  2.47it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  18%|█▊        | 2/11 [00:00<00:02,  4.43it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  27%|██▋       | 3/11 [00:00<00:01,  5.91it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  45%|████▌     | 5/11 [00:00<00:00,  7.67it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  55%|█████▍    | 6/11 [00:00<00:00,  8.22it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  73%|███████▎  | 8/11 [00:01<00:00,  9.07it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  91%|█████████ | 10/11 [00:01<00:00,  9.48it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE): 100%|██████████| 11/11 [00:01<00:00,  5.79it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE): 100%|██████████| 11/11 [00:01<00:00,  6.43it/s]
-[0;36m(EngineCore_DP0 pid=35496)[0;0m Capturing CUDA graphs (decode, FULL):   0%|          | 0/7 [00:00<?, ?it/s]Capturing CUDA graphs (decode, FULL):  14%|█▍        | 1/7 [00:00<00:00,  8.87it/s]Capturing CUDA graphs (decode, FULL):  29%|██▊       | 2/7 [00:00<00:00,  6.83it/s]Capturing CUDA graphs (decode, FULL):  57%|█████▋    | 4/7 [00:00<00:00,  8.66it/s]Capturing CUDA graphs (decode, FULL):  86%|████████▌ | 6/7 [00:00<00:00,  9.51it/s]Capturing CUDA graphs (decode, FULL): 100%|██████████| 7/7 [00:00<00:00,  9.25it/s]
+[0;36m(EngineCore_DP0 pid=35496)[0;0m 
+Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):   0%|          | 0/11 [00:00<?, ?it/s]
+Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):   9%|▉         | 1/11 [00:00<00:04,  2.47it/s]
+Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  18%|█▊        | 2/11 [00:00<00:02,  4.43it/s]
+Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  27%|██▋       | 3/11 [00:00<00:01,  5.91it/s]
+Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  45%|████▌     | 5/11 [00:00<00:00,  7.67it/s]
+Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  55%|█████▍    | 6/11 [00:00<00:00,  8.22it/s]
+Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  73%|███████▎  | 8/11 [00:01<00:00,  9.07it/s]
+Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  91%|█████████ | 10/11 [00:01<00:00,  9.48it/s]
+Capturing CUDA graphs (mixed prefill-decode, PIECEWISE): 100%|██████████| 11/11 [00:01<00:00,  5.79it/s]
+Capturing CUDA graphs (mixed prefill-decode, PIECEWISE): 100%|██████████| 11/11 [00:01<00:00,  6.43it/s]
+[0;36m(EngineCore_DP0 pid=35496)[0;0m 
+Capturing CUDA graphs (decode, FULL):   0%|          | 0/7 [00:00<?, ?it/s]
+Capturing CUDA graphs (decode, FULL):  14%|█▍        | 1/7 [00:00<00:00,  8.87it/s]
+Capturing CUDA graphs (decode, FULL):  29%|██▊       | 2/7 [00:00<00:00,  6.83it/s]
+Capturing CUDA graphs (decode, FULL):  57%|█████▋    | 4/7 [00:00<00:00,  8.66it/s]
+Capturing CUDA graphs (decode, FULL):  86%|████████▌ | 6/7 [00:00<00:00,  9.51it/s]
+Capturing CUDA graphs (decode, FULL): 100%|██████████| 7/7 [00:00<00:00,  9.25it/s]
 [0;36m(EngineCore_DP0 pid=35496)[0;0m INFO 12-22 15:01:23 [gpu_model_runner.py:4587] Graph capturing finished in 3 secs, took 0.14 GiB
 [0;36m(EngineCore_DP0 pid=35496)[0;0m INFO 12-22 15:01:23 [core.py:259] init engine (profile, create kv cache, warmup model) took 58.31 seconds
 [0;36m(APIServer pid=35300)[0;0m INFO 12-22 15:01:24 [api_server.py:1099] Supported tasks: ['generate']
