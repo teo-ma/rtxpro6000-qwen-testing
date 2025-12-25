@@ -83,17 +83,17 @@
     - BF16：PPL=1.687084，NLL=0.523002
     - 自制量化 NVFP4（有校准）：PPL=1.709212，NLL=0.536032
     - NVIDIA NVFP4：PPL=1.739074，NLL=0.553353
-    - 自制量化 NVFP4（无校准）：PPL=1.706852，NLL=0.534650（注：评测前对 input_global_scale 做了修复）
+    - 自制量化 NVFP4（无校准）：PPL=1.706852，NLL=0.534650
   - UltraChat-200K（test_sft，kept_texts=200，tokens=228323）：
     - BF16：PPL=1.461068，NLL=0.379167
     - 自制量化 NVFP4（有校准）：PPL=1.470275，NLL=0.385449
     - NVIDIA NVFP4：PPL=1.481108，NLL=0.392791
-    - 自制量化 NVFP4（无校准）：PPL=1.484568，NLL=0.395124（注：评测前对 input_global_scale 做了修复）
+    - 自制量化 NVFP4（无校准）：PPL=1.484568，NLL=0.395124
   - 总对比（两套数据按 token 加权汇总）：
     - BF16：Overall PPL=1.481134，Score=100.00
     - 自制量化 NVFP4（有校准）：Overall PPL=1.491422，Score=99.31
     - NVIDIA NVFP4：Overall PPL=1.503834，Score=98.49
-    - 自制量化 NVFP4（无校准）：Overall PPL=1.504343，Score=98.46（注：评测前对 input_global_scale 做了修复）
+    - 自制量化 NVFP4（无校准）：Overall PPL=1.504343，Score=98.46
 
 ![Qwen3-14B Relative Score（BF16=100，PPL proxy）](images/qwen3_14b_nvfp4_ppl_proxy_score.png)
 

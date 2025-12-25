@@ -210,7 +210,7 @@ $$
 | 自制量化 NVFP4（有校准） | 1.491422 | 99.31 |
 | NVIDIA NVFP4 | 1.503834 | 98.49 |
 
-补充：自制量化 NVFP4（无校准）结果复用自无校准报告：Overall PPL=1.504343，Score=98.46（注：评测前对 input_global_scale 做了修复）。
+补充：自制量化 NVFP4（无校准）结果复用自无校准报告：Overall PPL=1.504343，Score=98.46。
 
 ![Qwen3-14B Relative Score（BF16=100，PPL proxy）](images/qwen3_14b_nvfp4_ppl_proxy_score.png)
 
