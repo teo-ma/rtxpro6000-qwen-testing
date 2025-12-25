@@ -1,9 +1,11 @@
-# Qwen/Qwen3-14B → NVFP4：量化全过程与三模型准确度对比（vLLM / llm-compressor）
+# Qwen/Qwen3-14B → NVFP4：量化全过程与四模型准确度对比（vLLM / llm-compressor）
 
 本文将两部分合并为一份完整记录：
 
 1) 在 Azure VM（1× NVIDIA RTX Pro 6000 Blackwell 96GB）上，将 Hugging Face 的 `Qwen/Qwen3-14B` 做 PTQ 并导出为 vLLM 可加载的 **NVFP4（compressed-tensors）** 模型
-2) 使用 vLLM 的 `prompt_logprobs` 计算 token-level NLL / PPL，对 **BF16 vs 自制量化 NVFP4 vs NVIDIA NVFP4** 做代理准确度对比（含总对比表格与 Bar Chart）
+2) 使用 vLLM 的 `prompt_logprobs` 计算 token-level NLL / PPL，对 **BF16 vs 自制量化 NVFP4（有校准） vs NVIDIA NVFP4 vs 自制量化 NVFP4（无校准）** 做代理准确度对比（含总对比表格与 Bar Chart）
+
+说明：本文的“无校准”模型评测数值复用自无校准报告（不重复跑），见 `qwen3_14b_nvfp4_no_calib_quant.md`。
 
 ---
 
@@ -142,15 +144,16 @@ vllm serve /mnt/data/models/Qwen3-14B-NVFP4 \
 
 ---
 
-## 8. 三模型准确度对比（PPL 代理指标）
+## 8. 四模型准确度对比（PPL 代理指标）
 
 这里的“PPL 代理”指的是：不做问答/判题，而是用模型对给定文本的逐 token 预测概率来衡量“语言建模贴合度”。直观上，模型越确定下一个 token 应该是什么，PPL 越低；越不确定，PPL 越高。它不能替代标准基准的准确率，但很适合用来快速比较量化前后是否出现明显退化。
 
 ### 8.1 对比模型
 
 - BF16 baseline：`Qwen/Qwen3-14B`
-- 自制量化 NVFP4：`/mnt/data/models/Qwen3-14B-NVFP4`
+- 自制量化 NVFP4（有校准）：`/mnt/data/models/Qwen3-14B-NVFP4`
 - NVIDIA NVFP4：`/mnt/data/models/nvidia-Qwen3-14B-NVFP4`（HF：`nvidia/Qwen3-14B-NVFP4`）
+- 自制量化 NVFP4（无校准）：见无校准报告 `qwen3_14b_nvfp4_no_calib_quant.md`
 
 ### 8.2 数据集与采样规则
 
@@ -183,18 +186,20 @@ $$
 | 模型 | PPL | NLL | tokens |
 |---|---:|---:|---:|
 | BF16（Qwen/Qwen3-14B） | 1.687084 | 0.523002 | 23922 |
-| 自制量化 NVFP4 | 1.709212 | 0.536032 | 23922 |
+| 自制量化 NVFP4（有校准） | 1.709212 | 0.536032 | 23922 |
 | NVIDIA NVFP4 | 1.739074 | 0.553353 | 23922 |
+| 自制量化 NVFP4（无校准） | 1.706852 | 0.534650 | 23922 |
 
 **UltraChat-200K（test_sft）**
 
 | 模型 | PPL | NLL | tokens |
 |---|---:|---:|---:|
 | BF16（Qwen/Qwen3-14B） | 1.461068 | 0.379167 | 228323 |
-| 自制量化 NVFP4 | 1.470275 | 0.385449 | 228323 |
+| 自制量化 NVFP4（有校准） | 1.470275 | 0.385449 | 228323 |
 | NVIDIA NVFP4 | 1.481108 | 0.392791 | 228323 |
+| 自制量化 NVFP4（无校准） | 1.484568 | 0.395124 | 228323 |
 
-### 8.5 三模型“总对比”（BF16=100%，PPL 代理分数）
+### 8.5 四模型“总对比”（BF16=100%，PPL 代理分数）
 
 这里将两套数据的 NLL 按 token 数加权汇总，再换算成 overall PPL，并将 BF16 归一化为 100%。
 
@@ -209,18 +214,21 @@ $$
 | BF16（Qwen/Qwen3-14B） | 1.481134 | 100.00 |
 | 自制量化 NVFP4（有校准） | 1.491422 | 99.31 |
 | NVIDIA NVFP4 | 1.503834 | 98.49 |
+| 自制量化 NVFP4（无校准） | 1.504343 | 98.46 |
 
-补充：自制量化 NVFP4（无校准）结果复用自无校准报告：Overall PPL=1.504343，Score=98.46。
+说明：无校准模型数值复用自无校准报告（不重复跑）。
 
 ![Qwen3-14B Relative Score（BF16=100，PPL proxy）](images/qwen3_14b_nvfp4_ppl_proxy_score.png)
 
 ---
 
-## 9. 复现（三模型评测）
+## 9. 复现（四模型评测）
 
-仓库脚本：`scripts/compare_3models_ppl.py`
+有校准评测脚本：`scripts/compare_3models_ppl.py`（脚本名为历史原因；本页整体汇总为四模型，额外的无校准结果见无校准报告）
 
 结果文件：`results/compare_3models_results.json`
+
+无校准模型评测与复现：见无校准报告 `qwen3_14b_nvfp4_no_calib_quant.md`。
 
 在远端运行：
 

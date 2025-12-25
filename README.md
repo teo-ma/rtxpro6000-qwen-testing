@@ -72,7 +72,7 @@
 
 ### 5) Qwen3-14B（BF16 基线 / 自制量化 NVFP4（有校准） / NVIDIA NVFP4 / 自制量化 NVFP4（无校准））准确度对比
 
-- 有校准量化报告（有校准三模型基线）：[`qwen3_14b_nvfp4_quant_and_eval.md`](qwen3_14b_nvfp4_quant_and_eval.md)
+- 有校准量化报告（有校准基线：BF16 / AWQ / NVFP4（有校准））：[`qwen3_14b_nvfp4_quant_and_eval.md`](qwen3_14b_nvfp4_quant_and_eval.md)
 - 无校准量化报告：[`qwen3_14b_nvfp4_no_calib_quant.md`](qwen3_14b_nvfp4_no_calib_quant.md)
 - 测试方式：Perplexity（PPL）代理。PPL 代理就是用一小段代表性文本来快速估算模型的困惑度（Perplexity），判断模型语言预测能力是否下降。
   它比完整基准测试更轻量，可用于量化前后的精度快速对比。
