@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="860" height="420" viewBox="0 0 860 420">
+<rect x="0" y="0" width="100%" height="100%" fill="#ffffff"/>
+<text x="430.0" y="32" text-anchor="middle" font-size="20" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Arial">Qwen3-32B TP=2 LiveBench（BF16=100% 相对分数）</text>
+<text x="430.0" y="54" text-anchor="middle" font-size="13" fill="#555" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Arial">release=2024-11-25 · n=1000/model · 2025-12-25</text>
+<line x1="90" y1="330.0" x2="820" y2="330.0" stroke="#e6e6e6" stroke-width="1"/>
+<text x="80" y="334.0" text-anchor="end" font-size="12" fill="#555" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Arial">0%</text>
+<line x1="90" y1="280.4761904761905" x2="820" y2="280.4761904761905" stroke="#e6e6e6" stroke-width="1"/>
+<text x="80" y="284.4761904761905" text-anchor="end" font-size="12" fill="#555" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Arial">20%</text>
+<line x1="90" y1="230.95238095238096" x2="820" y2="230.95238095238096" stroke="#e6e6e6" stroke-width="1"/>
+<text x="80" y="234.95238095238096" text-anchor="end" font-size="12" fill="#555" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Arial">40%</text>
+<line x1="90" y1="181.42857142857142" x2="820" y2="181.42857142857142" stroke="#e6e6e6" stroke-width="1"/>
+<text x="80" y="185.42857142857142" text-anchor="end" font-size="12" fill="#555" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Arial">60%</text>
+<line x1="90" y1="131.9047619047619" x2="820" y2="131.9047619047619" stroke="#e6e6e6" stroke-width="1"/>
+<text x="80" y="135.9047619047619" text-anchor="end" font-size="12" fill="#555" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Arial">80%</text>
+<line x1="90" y1="82.38095238095238" x2="820" y2="82.38095238095238" stroke="#e6e6e6" stroke-width="1"/>
+<text x="80" y="86.38095238095238" text-anchor="end" font-size="12" fill="#555" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Arial">100%</text>
+<line x1="90" y1="70" x2="90" y2="330" stroke="#333" stroke-width="1"/>
+<line x1="90" y1="330" x2="820" y2="330" stroke="#333" stroke-width="1"/>
+<rect x="90.0" y="82.38095238095238" width="224.66666666666666" height="247.61904761904762" fill="#1f77b4"/>
+<text x="202.33333333333331" y="74.38095238095238" text-anchor="middle" font-size="13" font-weight="600" fill="#111" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Arial">100.00%</text>
+<text x="202.33333333333331" y="358" text-anchor="middle" font-size="14" fill="#111" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Arial">BF16</text>
+<text x="202.33333333333331" y="378" text-anchor="middle" font-size="12" fill="#555" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Arial">+0.00pp vs BF16</text>
+<rect x="342.66666666666663" y="91.47410388078656" width="224.66666666666666" height="238.52589611921343" fill="#ff7f0e"/>
+<text x="454.99999999999994" y="83.47410388078656" text-anchor="middle" font-size="13" font-weight="600" fill="#111" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Arial">96.33%</text>
+<text x="454.99999999999994" y="358" text-anchor="middle" font-size="14" fill="#111" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Arial">FP8</text>
+<text x="454.99999999999994" y="378" text-anchor="middle" font-size="12" fill="#555" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Arial">-3.67pp vs BF16</text>
+<rect x="595.3333333333333" y="81.7469955830902" width="224.66666666666666" height="248.2530044169098" fill="#2ca02c"/>
+<text x="707.6666666666666" y="73.7469955830902" text-anchor="middle" font-size="13" font-weight="600" fill="#111" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Arial">100.26%</text>
+<text x="707.6666666666666" y="358" text-anchor="middle" font-size="14" fill="#111" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Arial">NVFP4</text>
+<text x="707.6666666666666" y="378" text-anchor="middle" font-size="12" fill="#555" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Arial">+0.26pp vs BF16</text>
+<text x="90" y="52" text-anchor="start" font-size="12" fill="#555" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Arial">Relative score (BF16=100%)</text>
+</svg>

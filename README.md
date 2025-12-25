@@ -35,6 +35,10 @@
 ### 3) Qwen3-32B（NVFP4 / FP8 / BF16）“可判定答案”准确度（40 题小集合）
 
 - 报告：[`qwen3_32b_vllm_1gpu_accuracy_nvfp4_fp8_bf16_report_20251223.md`](qwen3_32b_vllm_1gpu_accuracy_nvfp4_fp8_bf16_report_20251223.md)
+-   测试目的：使用小题集进行粗粒度测试，评估三种精度模型的正确率差异，为后续复杂综合测试场景中的模型选择提供基础参考依据。
+
+
+
 - 结果速览（40 题）：
   - NVFP4：34/40（0.85）
   - FP8：35/40（0.875）
@@ -42,24 +46,54 @@
 
 ![Qwen3-32B（40 题）可判定答案准确度对比](images/qwen3_32b_vllm_1gpu_accuracy_nvfp4_fp8_bf16_40questions.png)
 
-### 4) Qwen3-14B（BF16 基线 / Mine （Quantized NVFP4） / NVIDIA NVFP4）PPL 代理准确度对比
+### 4) Qwen3-32B（BF16 / FP8 / NVFP4）LiveBench 准确度对比（TP=2）
 
-- 报告：[`qwen3_14b_nvfp4_quant_and_eval.md`](qwen3_14b_nvfp4_quant_and_eval.md)
-- 量化说明：Mine（Quantized NVFP4）是以 Hugging Face 的 `Qwen/Qwen3-14B`（BF16）为起点，使用 vLLM/llm-compressor 的 oneshot PTQ 流程在校准数据上做量化校准后，导出为 vLLM 可直接加载的 NVFP4 `compressed-tensors` 格式模型（推理时使用 `quantization=compressed-tensors`）。对比项中的 NVIDIA NVFP4 为 NVIDIA 发布的 `nvidia/Qwen3-14B-NVFP4` 版本。
+- 报告：[`qwen3_32b_vllm_tp2_livebench_report_20251225.md`](qwen3_32b_vllm_tp2_livebench_report_20251225.md)
+- 原始产物：`artifacts/qwen3_32b_vllm_tp2_livebench_20251225/`
+
+测试描述（2025-12-25）：
+
+- LiveBench：一个动态、定期更新的 LLM 评测基准，旨在减少数据污染和过拟合。它包含多个领域的真实任务（如数学、编程、推理等），并定期发布新版本。本次测试使用 `2024-11-25` release，`bench_name=live_bench`，`question_source=huggingface`
+- 推理后端：vLLM OpenAI-compatible API（TP=2，2× RTX Pro 6000 Blackwell / MIG）
+- 样本量：每个精度 1000 题（ground-truth judge 输出按均值汇总）
+
+结果速览（BF16=100%）：
+
+| 精度 | Overall mean | BF16=100% 相对分数 | 相对 BF16 差距 |
+|---|---:|---:|---:|
+| BF16 | 0.278556 | 100.00% | +0.00pp |
+| FP8 | 0.268326 | 96.33% | -3.67pp |
+| NVFP4 | 0.279269 | 100.26% | +0.26pp |
+
+![LiveBench relative score bar](images/qwen3_32b_tp2_livebench_relative_bar_20251225.svg)
+
+**NVFP4 在 LiveBench 上的 +0.26pp 优势属于统计误差范围，并非真实性能提升。** 三种精度（BF16/FP8/NVFP4）的准确度整体处于同一水平线。
+
+
+### 5) Qwen3-14B（BF16 基线 / 自制量化 NVFP4（有校准） / NVIDIA NVFP4 / 自制量化 NVFP4（无校准））准确度对比
+
+- 有校准量化报告（有校准三模型基线）：[`qwen3_14b_nvfp4_quant_and_eval.md`](qwen3_14b_nvfp4_quant_and_eval.md)
+- 无校准量化报告：[`qwen3_14b_nvfp4_no_calib_quant.md`](qwen3_14b_nvfp4_no_calib_quant.md)
+- 测试方式：Perplexity（PPL）代理。PPL 代理就是用一小段代表性文本来快速估算模型的困惑度（Perplexity），判断模型语言预测能力是否下降。
+  它比完整基准测试更轻量，可用于量化前后的精度快速对比。
+  在 NVFP4、FP8 等量化实验中，PPL 代理常作为首要、最快速的精度健康检查指标。
 - 指标说明：这里用 vLLM 的 `prompt_logprobs` 计算 token-level NLL/PPL 作为“代理准确度”（越低越好）；同时给出以 BF16=100 的 Relative Score（越高越好）。
 - 结果速览（PPL/NLL：数值越低越好；Relative Score：数值越高越好，BF16=100）：
   - WikiText-2（test，kept_texts=132，tokens=23922）：
     - BF16：PPL=1.687084，NLL=0.523002
-    - Mine（Quantized NVFP4）：PPL=1.709212，NLL=0.536032
+    - 自制量化 NVFP4（有校准）：PPL=1.709212，NLL=0.536032
     - NVIDIA NVFP4：PPL=1.739074，NLL=0.553353
+    - 自制量化 NVFP4（无校准）：PPL=1.706852，NLL=0.534650（注：评测前对 input_global_scale 做了修复）
   - UltraChat-200K（test_sft，kept_texts=200，tokens=228323）：
     - BF16：PPL=1.461068，NLL=0.379167
-    - Mine（Quantized NVFP4）：PPL=1.470275，NLL=0.385449
+    - 自制量化 NVFP4（有校准）：PPL=1.470275，NLL=0.385449
     - NVIDIA NVFP4：PPL=1.481108，NLL=0.392791
+    - 自制量化 NVFP4（无校准）：PPL=1.484568，NLL=0.395124（注：评测前对 input_global_scale 做了修复）
   - 总对比（两套数据按 token 加权汇总）：
     - BF16：Overall PPL=1.481134，Score=100.00
-    - Mine（Quantized NVFP4）：Overall PPL=1.491422，Score=99.31
+    - 自制量化 NVFP4（有校准）：Overall PPL=1.491422，Score=99.31
     - NVIDIA NVFP4：Overall PPL=1.503834，Score=98.49
+    - 自制量化 NVFP4（无校准）：Overall PPL=1.504343，Score=98.46（注：评测前对 input_global_scale 做了修复）
 
 ![Qwen3-14B Relative Score（BF16=100，PPL proxy）](images/qwen3_14b_nvfp4_ppl_proxy_score.png)
 
@@ -83,44 +117,8 @@
 
 - 强约束：推理必须使用 vLLM；Qwen3-32B 三精度对比默认只用 1 个 MIG device（例如 `CUDA_VISIBLE_DEVICES=0`）
 - 缓存建议：将 HF cache / datasets cache / TMPDIR 指向 `/data`（避免根分区空间不足）
-- 具体可复现命令：请直接以对应报告中的 “环境与命令（VM 上执行）” 小节为准
 
 ## 注意事项
 
 - gated 数据集：遇到 `DatasetNotFoundError: ... is a gated dataset` 时，需要在 Hugging Face 申请访问并在 VM 上登录后再跑。
 - 指标口径：标准基准与小集合准确度不是同一类指标；对比时请以报告中注明的口径为准。
-  "derived": {
-    "prompt_tps": 120.98629232134637,
-    "decode_tps": 348.00551499173787,
-    "ms_per_output_token": 45.94596824713126
-  }
-}
-```
-
-### 5.3 对比汇总（同口径：c=16 / r=64 / max_tokens=256）
-
-| 配置 | QPS | prompt_tps | decode_tps | p50 latency (s) | p95 latency (s) | ms/output_token |
-|---|---:|---:|---:|---:|---:|---:|
-| 1GPU（TP=1） | 1.0171 | 90.5189 | 260.3688 | 15.6923 | 15.8496 | 61.4226 |
-| 2GPU（TP=2） | 1.3594 | 120.9863 | 348.0055 | 11.7613 | 11.7944 | 45.9460 |
-
-2GPU 相对 1GPU 的提升：
-- QPS：约 1.34×
-- decode_tps：约 1.34×
-- 平均延迟：约 0.75×（降低约 25%）
-
-#### 5.3.1 Bar chart（Token 吞吐对比）
-
-> 说明：下图只对比同量纲的 token 吞吐（prompt_tps / decode_tps），避免把 QPS 与 latency 混在同一坐标系。
-
-![1GPU vs 2GPU token throughput（prompt_tps / decode_tps）](images/1gpu-vs-2gpu-rtxpro6000.jpg)
-
-## 6. 结论与备注
-
-- 结论（基于本次固定口径）：在该 VM 上，2× MIG device（跨 PCIe/SYS，跨 NUMA）相对 1× MIG device 的吞吐提升约 **1.34×**，未达到线性 2×。
-- 主要影响因素推断：
-  - GPU0<->GPU1 为 `SYS` 且跨 NUMA，TP=2 时的张量并行通信开销更高；
-  - MIG 强制开启（每卡仅 1× `4g.96gb`），可用计算/带宽形态与“整卡直通”不同。
-- 工程备注：
-  - 2GPU 启动阶段需要通过 `--max-num-seqs` 降低 warmup 峰值占用，否则会在 sampler warmup 时 OOM；本次设置为 32，不影响 c=16 的压测并发。
-  - vLLM 日志提示 FP8 attention scaling factor 可能未校准（q/prob_scale=1.0），这主要影响精度风险；本次聚焦吞吐对比。

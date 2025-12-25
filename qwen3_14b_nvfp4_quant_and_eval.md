@@ -3,14 +3,14 @@
 本文将两部分合并为一份完整记录：
 
 1) 在 Azure VM（1× NVIDIA RTX Pro 6000 Blackwell 96GB）上，将 Hugging Face 的 `Qwen/Qwen3-14B` 做 PTQ 并导出为 vLLM 可加载的 **NVFP4（compressed-tensors）** 模型
-2) 使用 vLLM 的 `prompt_logprobs` 计算 token-level NLL / PPL，对 **BF16 vs Ours (Quantized NVFP4) vs NVIDIA NVFP4** 做代理准确度对比（含总对比表格与 Bar Chart）
+2) 使用 vLLM 的 `prompt_logprobs` 计算 token-level NLL / PPL，对 **BF16 vs 自制量化 NVFP4 vs NVIDIA NVFP4** 做代理准确度对比（含总对比表格与 Bar Chart）
 
 ---
 
 ## 1. 目标与产物
 
 - 目标：把 `Qwen/Qwen3-14B` 量化为 NVFP4，并能被 vLLM 通过 `quantization=compressed-tensors` 稳定加载与生成
-- 产物目录（Ours / Quantized）：`/mnt/data/models/Qwen3-14B-NVFP4`
+- 产物目录（自制量化 NVFP4）：`/mnt/data/models/Qwen3-14B-NVFP4`
 
 ---
 
@@ -144,10 +144,12 @@ vllm serve /mnt/data/models/Qwen3-14B-NVFP4 \
 
 ## 8. 三模型准确度对比（PPL 代理指标）
 
+这里的“PPL 代理”指的是：不做问答/判题，而是用模型对给定文本的逐 token 预测概率来衡量“语言建模贴合度”。直观上，模型越确定下一个 token 应该是什么，PPL 越低；越不确定，PPL 越高。它不能替代标准基准的准确率，但很适合用来快速比较量化前后是否出现明显退化。
+
 ### 8.1 对比模型
 
 - BF16 baseline：`Qwen/Qwen3-14B`
-- Ours (Quantized NVFP4)：`/mnt/data/models/Qwen3-14B-NVFP4`
+- 自制量化 NVFP4：`/mnt/data/models/Qwen3-14B-NVFP4`
 - NVIDIA NVFP4：`/mnt/data/models/nvidia-Qwen3-14B-NVFP4`（HF：`nvidia/Qwen3-14B-NVFP4`）
 
 ### 8.2 数据集与采样规则
@@ -181,7 +183,7 @@ $$
 | 模型 | PPL | NLL | tokens |
 |---|---:|---:|---:|
 | BF16（Qwen/Qwen3-14B） | 1.687084 | 0.523002 | 23922 |
-| Ours (Quantized NVFP4) | 1.709212 | 0.536032 | 23922 |
+| 自制量化 NVFP4 | 1.709212 | 0.536032 | 23922 |
 | NVIDIA NVFP4 | 1.739074 | 0.553353 | 23922 |
 
 **UltraChat-200K（test_sft）**
@@ -189,7 +191,7 @@ $$
 | 模型 | PPL | NLL | tokens |
 |---|---:|---:|---:|
 | BF16（Qwen/Qwen3-14B） | 1.461068 | 0.379167 | 228323 |
-| Ours (Quantized NVFP4) | 1.470275 | 0.385449 | 228323 |
+| 自制量化 NVFP4 | 1.470275 | 0.385449 | 228323 |
 | NVIDIA NVFP4 | 1.481108 | 0.392791 | 228323 |
 
 ### 8.5 三模型“总对比”（BF16=100%，PPL 代理分数）
@@ -205,17 +207,12 @@ $$
 | 模型 | Overall PPL | 相对分数（BF16=100） |
 |---|---:|---:|
 | BF16（Qwen/Qwen3-14B） | 1.481134 | 100.00 |
-| Ours (Quantized NVFP4) | 1.491422 | 99.31 |
+| 自制量化 NVFP4（有校准） | 1.491422 | 99.31 |
 | NVIDIA NVFP4 | 1.503834 | 98.49 |
 
-```mermaid
-%%{init: {"xyChart": {"showDataLabel": true}, "themeVariables": {"xyChart": {"plotColorPalette": "#1E88E5,#FBC02D,#43A047"}}} }%%
-xychart-beta
-    title "Relative Score (BF16=100, PPL proxy)"
-    x-axis ["BF16","Ours (NVFP4)","NVIDIA (NVFP4)"]
-    y-axis "Score" 0 --> 100
-  bar [100.00, 99.31, 98.49]
-```
+补充：自制量化 NVFP4（无校准）结果复用自无校准报告：Overall PPL=1.504343，Score=98.46（注：评测前对 input_global_scale 做了修复）。
+
+![Qwen3-14B Relative Score（BF16=100，PPL proxy）](images/qwen3_14b_nvfp4_ppl_proxy_score.png)
 
 ---
 
@@ -249,5 +246,5 @@ python /mnt/data/nvfp4_work/compare_3models_ppl.py
 ## 10. 局限与改进方向
 
 - 本评测为有限样本的 PPL 代理指标，不能替代标准基准（MMLU/GSM8K 等）。
-- vLLM 加载 Ours (Quantized NVFP4) 的 tokenizer 时曾出现“regex pattern”警告；如需更严格的对比，建议强制 3 个模型使用同一 tokenizer 配置/版本后复测。
+- vLLM 加载自制量化 NVFP4 的 tokenizer 时曾出现“regex pattern”警告；如需更严格的对比，建议强制 3 个模型使用同一 tokenizer 配置/版本后复测。
 - 若要更贴近真实推理场景，可增加：更长上下文、不同领域数据、以及生成任务的定性/定量评测。

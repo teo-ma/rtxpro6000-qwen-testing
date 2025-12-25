@@ -1,0 +1,728 @@
+WARNING:huggingface_hub.utils._http:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Questions from live_bench/coding/LCB_generation
+Questions from live_bench/coding/coding_completion
+Questions from live_bench/data_analysis/tablejoin
+Questions from live_bench/data_analysis/tablereformat
+Questions from live_bench/data_analysis/cta
+Questions from live_bench/instruction_following/summarize
+Questions from live_bench/instruction_following/simplify
+Questions from live_bench/instruction_following/story_generation
+Questions from live_bench/instruction_following/paraphrase
+Questions from live_bench/math/math_comp
+Questions from live_bench/math/olympiad
+Questions from live_bench/math/AMPS_Hard
+Questions from live_bench/reasoning/web_of_lies_v2
+Questions from live_bench/reasoning/spatial
+Questions from live_bench/reasoning/zebra_puzzle
+Questions from live_bench/language/typos
+Questions from live_bench/language/plot_unscrambling
+Questions from live_bench/language/connections
+Running 1000 questions together across 1 benchmark(s)
+Loading model answers from 18 directories
+models: ['qwen3-32b-bf16']
+Stats:
+{
+    "total_num_questions": 1000,
+    "total_num_matches": 1000,
+    "agentic_coding_matches": 0,
+    "old_instruction_following_matches": 200,
+    "normal_matches": 800,
+    "model_list": [
+        "qwen3-32b-bf16"
+    ],
+    "output_paths": [
+        "data/live_bench/math/math_comp/model_judgment/ground_truth_judgment.jsonl",
+        "data/live_bench/language/connections/model_judgment/ground_truth_judgment.jsonl",
+        "data/live_bench/instruction_following/paraphrase/model_judgment/ground_truth_judgment.jsonl",
+        "data/live_bench/math/olympiad/model_judgment/ground_truth_judgment.jsonl",
+        "data/live_bench/reasoning/web_of_lies_v2/model_judgment/ground_truth_judgment.jsonl",
+        "data/live_bench/instruction_following/story_generation/model_judgment/ground_truth_judgment.jsonl",
+        "data/live_bench/data_analysis/cta/model_judgment/ground_truth_judgment.jsonl",
+        "data/live_bench/coding/LCB_generation/model_judgment/ground_truth_judgment.jsonl",
+        "data/live_bench/instruction_following/summarize/model_judgment/ground_truth_judgment.jsonl",
+        "data/live_bench/language/typos/model_judgment/ground_truth_judgment.jsonl",
+        "data/live_bench/reasoning/zebra_puzzle/model_judgment/ground_truth_judgment.jsonl",
+        "data/live_bench/data_analysis/tablereformat/model_judgment/ground_truth_judgment.jsonl",
+        "data/live_bench/math/AMPS_Hard/model_judgment/ground_truth_judgment.jsonl",
+        "data/live_bench/language/plot_unscrambling/model_judgment/ground_truth_judgment.jsonl",
+        "data/live_bench/instruction_following/simplify/model_judgment/ground_truth_judgment.jsonl",
+        "data/live_bench/reasoning/spatial/model_judgment/ground_truth_judgment.jsonl",
+        "data/live_bench/coding/coding_completion/model_judgment/ground_truth_judgment.jsonl",
+        "data/live_bench/data_analysis/tablejoin/model_judgment/ground_truth_judgment.jsonl"
+    ]
+}
+Processing 200 old instruction following matches
+question: 0b041d87e0bba1a5db140a69ef8fd4e844f1f0f0b86be7a6ceba5f9edf36d584, turn: 1, model: qwen3-32b-bf16, score: 1.0, 
+question: f78e08310e88c279b1a01f6e2287b69174786bffa80754ffa5221a3538ccd53e, turn: 1, model: qwen3-32b-bf16, score: 0.3333333333333333, 
+question: e82f3903e07a703bc0a123ce7c33fdb48ed0392424e78fee0838fbdf04a4df89, turn: 1, model: qwen3-32b-bf16, score: 1.0, 
+question: 984ab3f5d20d4bb9694a47dc794da39c1e7a59adaf39585b9c8ffb0d5111ae3c, turn: 1, model: qwen3-32b-bf16, score: 0.0, 
+question: 9af81c3651e6dd1c32e5dd02d05afbf258fa3b471b4f4894cb4d257e496a8242, turn: 1, model: qwen3-32b-bf16, score: 1.0, 
+question: 02b82146fcd90e18dad8f8ef85bd5566a2c7540429fc8e03c73b98dac3f58cf4, turn: 1, model: qwen3-32b-bf16, score: 1.0, 
+question: 1f2f5fc2ab5a7a257d29e9cf4ddfee43ad6bc343122e11423f1f522912f940ff, turn: 1, model: qwen3-32b-bf16, score: 1.0, 
+question: 9b13bd6ec24b6d26838c0a27178a5ed74299275f5518b3ee9e5ea26a03ffd2a1, turn: 1, model: qwen3-32b-bf16, score: 1.0, 
+question: e29beb219634e4a62b3f73e853caa1b0e33244b1440359606b6f3daa4206e003, turn: 1, model: qwen3-32b-bf16, score: 1.0, 
+question: 63ae6008ffc825bf4aabb6b2969197dec9e87f199c6aedcc76c54d3b113ff17a, turn: 1, model: qwen3-32b-bf16, score: 1.0, 
+question: 2c3f86f578e93981bec447960c57fc27daf35b6fd9eaeb6cbf1ca1611853b6e1, turn: 1, model: qwen3-32b-bf16, score: 0.375, 
+question: 979c5d0c754222c9d9757fddb9564cc5c7876173edf233f69b5462a712466694, turn: 1, model: qwen3-32b-bf16, score: 1.0, 
+question: d4c0187b436a03f645e0ef2bd4e72c1583ebb3b8b1ca03bd84be3e16a6e9c223, turn: 1, model: qwen3-32b-bf16, score: 0.3333333333333333, 
+question: 6fa2d259825104c3019420951a6e630d73677c5c1aabab666248e863d120403b, turn: 1, model: qwen3-32b-bf16, score: 0.0, 
+question: abdb9b2d6ffcdd4cb4cab63b383b0fa5fbd401ec089428ac786c8f6ec7ab6139, turn: 1, model: qwen3-32b-bf16, score: 1.0, 
+question: 1fb8a9d0877b746f95e08dc3e108563fc01d3248e8bb5000fabe88e1f6feaddd, turn: 1, model: qwen3-32b-bf16, score: 1.0, 
+question: 8fc1c5c49e21ae211841962d87b332743f571538fcecf0bc44108598842df7ee, turn: 1, model: qwen3-32b-bf16, score: 1.0, 
+question: 39b9b97d7dc68b98be2609ea101b96cbd2743f69d1264ea5f36783a153a6e5f3, turn: 1, model: qwen3-32b-bf16, score: 0.375, 
+question: cae6b835d8aefac4f354d30676962129b3b08095f75897ba18bd7a403fe0d8ea, turn: 1, model: qwen3-32b-bf16, score: 1.0, 
+question: 65f0b561647e5d1bccd78b101ab6fb2ba861d05683c1a808000b83dd9e603b1b, turn: 1, model: qwen3-32b-bf16, score: 1.0, 
+question: 329f04c43b93f6b787a2ef8a8e23519bc113196e6affc837dd6badb51cd17145, turn: 1, model: qwen3-32b-bf16, score: 0.0, 
+question: 7f6e3623888be18ab716eff34ca80323a3f170c281796f64d4774fa9374d950d, turn: 1, model: qwen3-32b-bf16, score: 0.3333333333333333, 
+question: cf121245e24dce51fbdf1d60d037dfc056e3972738f923b254c7abc284c4d8e1, turn: 1, model: qwen3-32b-bf16, score: 1.0, 
+question: 6a1fff311d0d39fef27617abe6b809814913a11884d20e04c682a549e6503d38, turn: 1, model: qwen3-32b-bf16, score: 1.0, 
+question: 96a85977383a63cf50e74a23ebc0f70f933c9235d3fbbe875627dbe02891e4a7, turn: 1, model: qwen3-32b-bf16, score: 1.0, 
+question: 97b8d476070e441ae3cbf21a3b76a0fae697cf5c42b39821a7c288ae5a5ca4a9, turn: 1, model: qwen3-32b-bf16, score: 1.0, 
+question: 86e77df574c229f5015ab227531f11742074933160fbd8284cb7a3b0768f7b71, turn: 1, model: qwen3-32b-bf16, score: 1.0, 
+question: 4c41685c0bb5f593ea74fedee931ebb02dad4867184729ca36c036e0f3df0781, turn: 1, model: qwen3-32b-bf16, score: 0.125, 
+question: ac21b975232ecbcbf0a37170b6f5a7255b8fd633c2b24e97654401d106e585c0, turn: 1, model: qwen3-32b-bf16, score: 1.0, 
+question: ea77eae86c3ed7f4d23bd01b7890e281f98d7ab6c2ea49311db5494eafa2015f, turn: 1, model: qwen3-32b-bf16, score: 0.375, 
+question: 469c2a921e910fce7859e4c351f41c9a4cda6b028386904aa22afa09cbba5351, turn: 1, model: qwen3-32b-bf16, score: 1.0, 
+question: 9b3d5fef87fc68026f614821c663fa8a3079863cd2d764079b1dec871dc1fce1, turn: 1, model: qwen3-32b-bf16, score: 1.0, 
+question: 3bde3f0d0cc7481da49d15758f8c32dbfff6eb2184c2cbd3fbbd15665ec8102d, turn: 1, model: qwen3-32b-bf16, score: 0.375, 
+question: 5a6864d656004973677f4ddef001d352f07fa88a69eb555546c5a052ee1b24bc, turn: 1, model: qwen3-32b-bf16, score: 0.3333333333333333, 
+question: 90b9c26ea6ed97a9a32086f78b0e85cc09ad9578eff9cb2eff8dc272a1c798c1, turn: 1, model: qwen3-32b-bf16, score: 1.0, 
+question: 7d8d20235ccf9386317255362c8ceb92a6f68c87a9fab3b346fcb45af731d2a9, turn: 1, model: qwen3-32b-bf16, score: 1.0, 
+question: 2f6354487148a4a2641e5ed1e0983603374a1f8c66f1d2eebe5892dd9735d1d6, turn: 1, model: qwen3-32b-bf16, score: 0.375, 
+question: b94af60f1bbcdd0bee763a97ff20433dedd06d297164e2f58afc05436d29f813, turn: 1, model: qwen3-32b-bf16, score: 1.0, 
+question: 126dc38dc54c62e924d47a259e4236e596583c91d33ef6b22af272e9819c8201, turn: 1, model: qwen3-32b-bf16, score: 1.0, 
+question: 7b7a30a9a020f334521b2a1aa2a96a6bfb3fef0d12e55ea2967842a5139d1871, turn: 1, model: qwen3-32b-bf16, score: 1.0, 
+question: 1a06f223c7988766f6c876404f04df808915b4bb08d1fca784eadec17e502973, turn: 1, model: qwen3-32b-bf16, score: 1.0, 
+question: d17e20f53e46befedb93ee30550a5e5a7d2e708aa1d8fe6d41d29f29c9d12ef7, turn: 1, model: qwen3-32b-bf16, score: 1.0, 
+question: 9abae9301cde986f568f3574cc06eda36c8600cfbef988bd6336899468ee98f4, turn: 1, model: qwen3-32b-bf16, score: 1.0, 
+question: c39904f20dfdd5f63c9260a65d2b8e9c7b5b189a1ee9609f92faccaf27ed99ab, turn: 1, model: qwen3-32b-bf16, score: 1.0, 
+question: e743373c521ba048e978ac6eaa78c203838a40f8220f1c5014e01d0a5daf3442, turn: 1, model: qwen3-32b-bf16, score: 0.3333333333333333, 
+question: eefd7562fb00c75f1c032054480f823ac688a51107058c6c70baca63bc74b053, turn: 1, model: qwen3-32b-bf16, score: 0.375, 
+question: 35f0f1ed2343d39d4b33f4da26d7c7a0eb846d974a59bcf275cbaf70a12536cd, turn: 1, model: qwen3-32b-bf16, score: 1.0, 
+question: 2a31c6e6b5ec6b4327e64720d10df1cb390535a102652285ee32e2f07266835c, turn: 1, model: qwen3-32b-bf16, score: 1.0, 
+question: affff79c4cf07a359064bf13493146f9f7ff0c000d66c252edf680cb0e5f48a1, turn: 1, model: qwen3-32b-bf16, score: 0.3333333333333333, 
+question: 8350d5bcdf58307739a0842fe34bb74b33d5e300ef685062af53f0b5d487e813, turn: 1, model: qwen3-32b-bf16, score: 1.0, 
+question: a8ff1f46c588f8dab171556261ff33a9785e49f73156ea77a387c53068511608, turn: 1, model: qwen3-32b-bf16, score: 1.0, 
+question: 7bd166b01a70c8f1b498aaabd7bcf1e308d35a82ad44a405339784be520c9635, turn: 1, model: qwen3-32b-bf16, score: 1.0, 
+question: e06b6e253b633911d84214cf18e27eeae06fb5f75e5508c243bb603e4be1ce8e, turn: 1, model: qwen3-32b-bf16, score: 1.0, 
+question: 7207f8bdfd39e9d5a0f4576eaed8a1c78752bf92c2d499cff300abf94a86955d, turn: 1, model: qwen3-32b-bf16, score: 0.125, 
+question: 257f9f71d60e6b2cd95f6b59d14a0fb876b74ff85708c64a3d95fe6eb7b41eaf, turn: 1, model: qwen3-32b-bf16, score: 0.25, 
+question: e065313a7cdd2a0bf8f5c970a24928aa7fb8d199a4747df99215aec0f4f51d58, turn: 1, model: qwen3-32b-bf16, score: 1.0, 
+question: dcacfcb88597163556905d4a6aad0e337b4fcc88014b91ca8ee779389e2e5761, turn: 1, model: qwen3-32b-bf16, score: 1.0, 
+question: ab93699af24f729ee26d853c8885b8abb2e4f3e5fec9727d46ffb27f67174b6c, turn: 1, model: qwen3-32b-bf16, score: 1.0, 
+question: b20533225ebe74930e1e91660add78af4196fcc13f2352ec713b60ab999800e7, turn: 1, model: qwen3-32b-bf16, score: 1.0, 
+question: 83abd879ba285c5f33f0d8d5eef70f098ab054a37c856c9d138026d7cb9ab403, turn: 1, model: qwen3-32b-bf16, score: 0.0, 
+question: 0996be1780ea1ac0e68d98e0bed513b23ec11b212c3461884e28c3a752a00efc, turn: 1, model: qwen3-32b-bf16, score: 1.0, 
+question: 4b88c81df93686c39275ffe3bf73852240a06ec4c92f89b8a530f738a3830b87, turn: 1, model: qwen3-32b-bf16, score: 1.0, 
+question: 8d3db0e8713de5992e009f42809bfa864b4eb7cd6a8f6d4d86f4fa0f21024617, turn: 1, model: qwen3-32b-bf16, score: 0.4, 
+question: 13387ce0db59d53e6fad49b8356fcb3cb58cb4582bd299efd90b5eedbadb0f04, turn: 1, model: qwen3-32b-bf16, score: 1.0, 
+question: 1b5fe52ce32803fee6244bb9f3af341e20f4ba1d91f7563d4ae906ef6edd51ce, turn: 1, model: qwen3-32b-bf16, score: 1.0, 
+question: 5300030a849d07c65c205b019f44006fd005c433dd06ac2f00e4acf9284b56c2, turn: 1, model: qwen3-32b-bf16, score: 1.0, 
+question: 7816bff85a425b431910e7d25ecf58e84b16d7dc1f149480923b88a8932d2089, turn: 1, model: qwen3-32b-bf16, score: 1.0, 
+question: a98ad49f679ca8bdc79c031eb582b25bb761814698c9538dffe01d0cf46efd98, turn: 1, model: qwen3-32b-bf16, score: 0.3333333333333333, 
+question: 763023d40a0647379be587c1027fcbcaf3197bbb03b2ce63b6e63abab0dd4ab3, turn: 1, model: qwen3-32b-bf16, score: 0.4, 
+question: ae0ffd84f8b9b97d2f8fdaf8c1f9c659a79e07d265f8be0af277fd3b557da7f5, turn: 1, model: qwen3-32b-bf16, score: 0.4, 
+question: 73a7f4da7e81307cbddd2abe3a518b95d422623abf64567430aee4c4113a4673, turn: 1, model: qwen3-32b-bf16, score: 1.0, 
+question: 74a083fdb825626889f5c081409f89ff5a2ec2a7a3052650ab207ebd5721a072, turn: 1, model: qwen3-32b-bf16, score: 1.0, 
+question: 3e0515a9b104bc3a165c1fd6eddb70f56449a08b3336eaea4d954674a24e448d, turn: 1, model: qwen3-32b-bf16, score: 1.0, 
+question: 55c905c1118b25e2f93a98d860be0c3c1735f467d8d2919c982553a564331bac, turn: 1, model: qwen3-32b-bf16, score: 1.0, 
+question: 0503923535fbd8badfb2ccf38989b36a8ecaa2eda332a4b515bb13932421fecd, turn: 1, model: qwen3-32b-bf16, score: 0.4166666666666667, 
+question: 44cf13ee8de6e43308289a3df719f2b4dccb2060c4259597ba67c9c29623e41d, turn: 1, model: qwen3-32b-bf16, score: 0.1, 
+question: 32355cb46ac48786a2c6cf9a092531598565f62f7933e06f77b2bcd464cd2ba6, turn: 1, model: qwen3-32b-bf16, score: 0.375, 
+question: 7f4a16efda30d81dc7a58992cfcc1bfb0054967387b3d7cbaf382bb4bda1e002, turn: 1, model: qwen3-32b-bf16, score: 0.3333333333333333, 
+question: efc8c16d4a45788d0442b788832999dd0221714858f134de2039bd594e084af5, turn: 1, model: qwen3-32b-bf16, score: 1.0, 
+question: 1e722a1c202524599d7ba345986b4709bf662b6f8d7f54f9c018e9d9086c1830, turn: 1, model: qwen3-32b-bf16, score: 1.0, 
+question: c6835e10ecd1dbbb3fd81e29e389366511a23ad5f59d6d3a1c107e38c09aee63, turn: 1, model: qwen3-32b-bf16, score: 1.0, 
+question: 1d5e9498696d690af72db04177e8469a9fc8adb1b85228735878a9650abd8ae7, turn: 1, model: qwen3-32b-bf16, score: 1.0, 
+question: a97937243fae41814bc4eb5f8fdf69d00bf48880fa8fb1f9a7306332a8f7effb, turn: 1, model: qwen3-32b-bf16, score: 1.0, 
+question: 441c3b0f98847106a2fccc55234d20485223e87f95fe9887ea6e0e6b978b2d39, turn: 1, model: qwen3-32b-bf16, score: 1.0, 
+question: 0e3720b5a1a1a2c62bbdf378ec61629fe6c93938afd69454e92e6b87ed9e9823, turn: 1, model: qwen3-32b-bf16, score: 1.0, 
+question: 9c6d263815e379f0b48bfb113f67f3e2c0b2ab27485b76ae19e4e9f32cbf07ab, turn: 1, model: qwen3-32b-bf16, score: 1.0, 
+question: 8df1306760bf9fefc9413a262714e95558af3d823bc7171331830db33ba10728, turn: 1, model: qwen3-32b-bf16, score: 0.4, 
+question: d8c3162824625c25d1ec1f4d2d1a3e48e0e0a268d5fe4bf8786ac892e9365bdb, turn: 1, model: qwen3-32b-bf16, score: 1.0, 
+question: e1677c9b0ea080b3b209ddc602ce6df1c1cc6e44ced22c1dc17264e85a2b67b5, turn: 1, model: qwen3-32b-bf16, score: 1.0, 
+question: 7061c2d96c6d115e38c8bfb9188b26288a1abfd7f445797f4787fb1520661541, turn: 1, model: qwen3-32b-bf16, score: 1.0, 
+question: 77b0d92b8c174846eb6e247732cf556425226986a552b208ec107a5e8faeaba8, turn: 1, model: qwen3-32b-bf16, score: 0.3, 
+question: 6a2e3c538be99a7326b31726d64718c23256a828a904999ee00974a9c95c5677, turn: 1, model: qwen3-32b-bf16, score: 1.0, 
+question: 3cd2799b94d44aa465eaf78457ad34451b6e6d881809e6cf961ac6ba0ce41d70, turn: 1, model: qwen3-32b-bf16, score: 1.0, 
+question: 3738904100c2bdedbff71d56c62b8f08227983077affc498f848087138c6bfff, turn: 1, model: qwen3-32b-bf16, score: 1.0, 
+question: 640ff19c6b75d95b263deb3cc7654347e36a362fa8e2c21331bd82c7ea25306b, turn: 1, model: qwen3-32b-bf16, score: 1.0, 
+question: 40040515aecaa05f9c4c3bc8c647d6c972bcfe8e364996bf9a2979e788bd129a, turn: 1, model: qwen3-32b-bf16, score: 1.0, 
+question: 987dd3cb27ad2493e13a14329797817bf9d8843d3abcf8ff6ca2fe94983901ac, turn: 1, model: qwen3-32b-bf16, score: 1.0, 
+question: 89cceb226ce254c226614e2ef6d0416a2a90a43b8e37de1b98fe5dc55f0c4452, turn: 1, model: qwen3-32b-bf16, score: 1.0, 
+question: 98d51917bb7b2376c67b86ff0178116684b878a254c72dab20d2382566ae4ab3, turn: 1, model: qwen3-32b-bf16, score: 1.0, 
+question: 62db016c84cdff5830988079bd3618801e6d929f3eac7b99b73fbb250e17a0ce, turn: 1, model: qwen3-32b-bf16, score: 1.0, 
+question: 76699c7eabb6e93d7f83e8dada4634091be60af3d52ad4e3d41881bd1633cda1, turn: 1, model: qwen3-32b-bf16, score: 1.0, 
+question: 17854a4f3ee38888982a95aa5b240ed428714943c35b4ad185f754cebb5b29af, turn: 1, model: qwen3-32b-bf16, score: 0.3333333333333333, 
+question: 45b2b49b7d512ce1d39340eb8ccea81d4ae11d237f25eb3c9599c3e99d0d5e8c, turn: 1, model: qwen3-32b-bf16, score: 0.375, 
+question: f1d80363e45e3d74ff216f632ef51639f3eb73ce57aed2d46251119466716220, turn: 1, model: qwen3-32b-bf16, score: 0.375, 
+question: 3d384d57ad1d293a7747beb55353c83c03472cfc5d03d90acbf2c0f37e6b84c3, turn: 1, model: qwen3-32b-bf16, score: 0.375, 
+question: 006d27d0a338a42a35e7d50e01bfd5b8e502897097c15ab7a4b01a6e38c6bf4b, turn: 1, model: qwen3-32b-bf16, score: 0.0, 
+question: c0ad0a8be5febc0ce0e92f38925d9985a04cff53495c61be3c978e8c3076d7fd, turn: 1, model: qwen3-32b-bf16, score: 0.3333333333333333, 
+question: 98938243da14035b7618c295f52e20341880db15918c8ee19b16475bf7a0767f, turn: 1, model: qwen3-32b-bf16, score: 1.0, 
+question: afb9acd72d96db629195ec7761134e39ab5d39cfc03486ec91b6e1582f1be20d, turn: 1, model: qwen3-32b-bf16, score: 0.25, 
+question: 71d079525c95cd874224f0f3f5d0c2604b37c9acc7ba57e340e3af95c5abc9f9, turn: 1, model: qwen3-32b-bf16, score: 1.0, 
+question: a55b1054b1b76ae59f5dbbeb178c7033831aa356529c641c51436d702f11388b, turn: 1, model: qwen3-32b-bf16, score: 1.0, 
+question: d7b934711b98d115e78266febd8c9caba4a3e99f5de3246a7b36171a5d37ba93, turn: 1, model: qwen3-32b-bf16, score: 1.0, 
+question: beaa0bcfabc7fb0ef9be7afd46b33c1eeae56168a65423a1104d7b5e0042c019, turn: 1, model: qwen3-32b-bf16, score: 1.0, 
+question: 15a04d320c993aaedd8e2e9918e71683f331884c84b5816719236f373f831e05, turn: 1, model: qwen3-32b-bf16, score: 1.0, 
+question: 60190416f20733f1307b983eddd6ef349f1273324e6049ac6e9cfb5a8986b355, turn: 1, model: qwen3-32b-bf16, score: 0.375, 
+question: e02faeeb797678cda7c1f9a4777f029750063f4b33732791fc6f9fc91762ff65, turn: 1, model: qwen3-32b-bf16, score: 1.0, 
+question: 425a0c3acd761293fc3d925177333f91e9652fb1ff91b22258f14b086624c838, turn: 1, model: qwen3-32b-bf16, score: 0.16666666666666666, 
+question: 0f7d9c4e9e52b68d21b2c8a04f685bc992ea144fbf9b9e5441339ef29c40610f, turn: 1, model: qwen3-32b-bf16, score: 1.0, 
+question: 42df65283184c31527f8de3add005c74c25e06ee43dc24ac9ba69b3c2d38bc9b, turn: 1, model: qwen3-32b-bf16, score: 1.0, 
+question: d994e90dbdaa211f30c77fc72b4915c28f7e91ad57bec4b13af8b55582c68075, turn: 1, model: qwen3-32b-bf16, score: 1.0, 
+question: a5648e44dd117cadfafdbdccd2543ff9d80ac5e48e5022efcc7a8345ef364250, turn: 1, model: qwen3-32b-bf16, score: 1.0, 
+question: c0e4dc6b1c4cca07e408c5952ee4013a46a8663f0fc7684453ed5ce56b87e0c9, turn: 1, model: qwen3-32b-bf16, score: 1.0, 
+question: 21f4f5c292c5f8ce8c12f0c04b8919ea81af86717e6f03740e21437acf602bfc, turn: 1, model: qwen3-32b-bf16, score: 1.0, 
+question: d215f136dd28c2a6025790c860970c60e5b06184c62a05dbf343512be0e0a366, turn: 1, model: qwen3-32b-bf16, score: 1.0, 
+question: 35429a8692dc7256b27f4c45abb36b4b33f86bb982c0c29965faaa6c8cc34d66, turn: 1, model: qwen3-32b-bf16, score: 1.0, 
+question: 97b5ba44d119ec4e50f122198f9049b4c2de8ec6191488dc69654f34eb5a54e3, turn: 1, model: qwen3-32b-bf16, score: 1.0, 
+question: e2c7a0f0938892d93840717da56911ccad14da745ca461fb38c32215e0a77696, turn: 1, model: qwen3-32b-bf16, score: 1.0, 
+question: 1b09cc8158b5a64a86811f45c389ae6517d798b89640ad6c6059e98c7dd83b83, turn: 1, model: qwen3-32b-bf16, score: 1.0, 
+question: 05dd93ecefb22fdd5d3a5d396616c472436ffcebfa9c0d95fedda3ff661a11fa, turn: 1, model: qwen3-32b-bf16, score: 1.0, 
+question: 97c9703d0bf7f996429f32b52bfa704e1908d411488a8ef76d151e7b6d5702ad, turn: 1, model: qwen3-32b-bf16, score: 1.0, 
+question: d7607dec42363e3828a0c31e98bb99fb6e58ce05b8cbeee4414a520f693948d2, turn: 1, model: qwen3-32b-bf16, score: 0.375, 
+question: 309f90f2b74f7916a6a280e64232fe19b870f699133ed3f81449870672867fa7, turn: 1, model: qwen3-32b-bf16, score: 1.0, 
+question: dbb381035a3f08c31a59c46c5018491c18641e970e12dbde471a00afcff6ca26, turn: 1, model: qwen3-32b-bf16, score: 1.0, 
+question: c20b82f04aa9a5c4deb8722352aa0d8297f2245973109556abbe50e5b756c96e, turn: 1, model: qwen3-32b-bf16, score: 1.0, 
+question: 8e2cdce6c9acca68e148d560e76df9a9acd652ce2e3f2fab7cad89f7bf2aeb05, turn: 1, model: qwen3-32b-bf16, score: 1.0, 
+question: c193be57467a07b1c3a90271673cda9a5828906902e0e8c3aa0b25fb3d46d5a8, turn: 1, model: qwen3-32b-bf16, score: 1.0, 
+question: 681e0647847abfb10f13da61b27f8347e1e16242d8662f16cb6465ca85018f31, turn: 1, model: qwen3-32b-bf16, score: 0.3333333333333333, 
+question: 177ccbc243d5867c5dfda52a0dde4585016747ec63e1d3bf8511f109258212ca, turn: 1, model: qwen3-32b-bf16, score: 0.3333333333333333, 
+question: 7b2da96656605701102e0600b1fba272a630422f6a5858276c1ee8d4373cce97, turn: 1, model: qwen3-32b-bf16, score: 1.0, 
+question: b53b8c4094b8d3c178658afd22b9b52650a67ca59abe7d3fa0e0d79ca2169b05, turn: 1, model: qwen3-32b-bf16, score: 1.0, 
+question: d3919fa302f33fe30caae89da7722915f88e27d6ba44fbac6db24c3ec4f067c2, turn: 1, model: qwen3-32b-bf16, score: 1.0, 
+question: 3c582f6d13ac1cf0b33aa6e3cdc0a1baf42f1cd1da7080f96b0fadebb5a8b71d, turn: 1, model: qwen3-32b-bf16, score: 1.0, 
+question: dbf2644a22244d678a05dab31e931414656027ac2b4ca9095efc1ebf0903048d, turn: 1, model: qwen3-32b-bf16, score: 1.0, 
+question: f7b6ab7fff6e44155779dcb52205e5fa8d61701005b32e6b0cc527e681549acb, turn: 1, model: qwen3-32b-bf16, score: 0.375, 
+question: ce85ea09bd1b45d602a41bdf37410fa01280217d3c187e360101931d2353bae7, turn: 1, model: qwen3-32b-bf16, score: 0.375, 
+question: 30813a0174cef54c60bb121f95e328f69c750cc63a764b93fdbe26b4c41e5c3e, turn: 1, model: qwen3-32b-bf16, score: 1.0, 
+question: 699d35c9bc63c9ef5eaa6a7ec032f096ebfa1af8cc61b66312a95938c041e2ab, turn: 1, model: qwen3-32b-bf16, score: 1.0, 
+question: 1ed6a0a2c7b4b879b3f6b6bdc77f297735aae9c255fbd5210fb4b7bafce80aac, turn: 1, model: qwen3-32b-bf16, score: 1.0, 
+question: 649f08464328ecc126391dc2f7bd95015a497abf5983cb3fd543617c6ec188e7, turn: 1, model: qwen3-32b-bf16, score: 1.0, 
+question: 78324955c8a77181942b601b73d8fb7767cd55e3d28e040d2f97375f69976667, turn: 1, model: qwen3-32b-bf16, score: 1.0, 
+question: d2adc0a1fad83dc359b9b10550d05c3b551685dbd85ca6f9f68721a7ecdc4785, turn: 1, model: qwen3-32b-bf16, score: 0.3333333333333333, 
+question: f4cbfc58a683894a66b028420969bb75a35fe4acda1bd3dce0024062c11b2041, turn: 1, model: qwen3-32b-bf16, score: 1.0, 
+question: 91b1079c3dd6f0c003bb20f34f3783141cbc55926e6e3001ba18eaba3acc169e, turn: 1, model: qwen3-32b-bf16, score: 1.0, 
+question: f3472a74bc480a915c2a3875c505fd5b3ebe475d25cefdae9447002ed88b0106, turn: 1, model: qwen3-32b-bf16, score: 0.4, 
+question: da578f206820d6be4519d710c3872a4c217f97f111b1f09c89b8e9ad675ce88d, turn: 1, model: qwen3-32b-bf16, score: 1.0, 
+question: 693c559e842aadf93ddcaba5f140c97aac1419c23fda3c1038c7a690c13b1213, turn: 1, model: qwen3-32b-bf16, score: 0.4, 
+question: e7981d47a1a5a7e8c80a6d59399b198d940ef3a0ca33f5e5205e39a0836759cc, turn: 1, model: qwen3-32b-bf16, score: 1.0, 
+question: 9d4cec7f4f8538857423ef9a58757d7cd17a4d83d8e113ae5f7a5c788ba6463e, turn: 1, model: qwen3-32b-bf16, score: 1.0, 
+question: 804067a46a36538721b46a001cb1a39167aeac890889c84c4a3ec8946df855d1, turn: 1, model: qwen3-32b-bf16, score: 0.16666666666666666, 
+question: 480806ded46fba8711fafa728041b8e2fd0a40d9f8e4be4ea7c77ec7101e1a50, turn: 1, model: qwen3-32b-bf16, score: 0.25, 
+question: 410213754fe7db03895021fa4febcc863e254349b5d67646e92beb22ced4150b, turn: 1, model: qwen3-32b-bf16, score: 0.4, 
+question: 58a355a7c63a2be44b6181016d32db1d9f209f6d0d82d71f900f4bb5971e42f3, turn: 1, model: qwen3-32b-bf16, score: 1.0, 
+question: d5fbbb49de002618754cf40e38a38597778be9b7270db18aec5312ab3626646e, turn: 1, model: qwen3-32b-bf16, score: 1.0, 
+question: badbda157954ea39f1e24095f70d4f69ad8b72786e80775265de7272018e6b31, turn: 1, model: qwen3-32b-bf16, score: 1.0, 
+question: be9fa970fb432051a4cd4a7ebe9a820b24efbc8a450ddfd1963cdd0b87748fe4, turn: 1, model: qwen3-32b-bf16, score: 1.0, 
+question: 919a86065fcd3fe76a70621045b367724ac71f00ac156f0397fafa84b99230ca, turn: 1, model: qwen3-32b-bf16, score: 1.0, 
+question: 55b713ae1b78dff614707df952ea42548f543397307c164fccd65561c2a0941e, turn: 1, model: qwen3-32b-bf16, score: 1.0, 
+question: 290ddccaf7a24527b8bcc08ea3e07ca14d86f7224c9ccbb03442da4efac0840b, turn: 1, model: qwen3-32b-bf16, score: 1.0, 
+question: 15c6b7596ca96c40d0c142303178478af8d3f9d0f780d2fbad65e0fa411970b7, turn: 1, model: qwen3-32b-bf16, score: 0.16666666666666666, 
+question: 12511f1ecaf9b43b03990406cbc2634eb438a570f7083526de0a4ca894d64371, turn: 1, model: qwen3-32b-bf16, score: 1.0, 
+question: ff7a17eb1dba0fc66f092f90004874e629b2efc6ec5a1203b66a46d9ae749fba, turn: 1, model: qwen3-32b-bf16, score: 1.0, 
+question: c7b94d923f84984a887cad0ea46b22f7ea0088c10ec6e9e6b11ba8f9f18ea669, turn: 1, model: qwen3-32b-bf16, score: 0.25, 
+question: 0cf5814b25d7aa0420a7d6d8f03e0ccd977c61fb996be04f8c3221153ba1f005, turn: 1, model: qwen3-32b-bf16, score: 1.0, 
+question: cac27bd258fe503db270cac5f1b5b7e67a16a603323a4c87118290815224ba8a, turn: 1, model: qwen3-32b-bf16, score: 1.0, 
+question: 35df8fcec24c52c406addabcc9af0ac0b7aef329efb29c4384f53e4ea7a89fb7, turn: 1, model: qwen3-32b-bf16, score: 1.0, 
+question: 4671725af24cc8ec52ea8f7424c951274b68cefdb18564131d5938060c77dc56, turn: 1, model: qwen3-32b-bf16, score: 1.0, 
+question: 28225eb304ee633f078b9fb205f678e689ec92b0112d3d5f4f9c5d3391f5a67b, turn: 1, model: qwen3-32b-bf16, score: 1.0, 
+question: 7625b93a9f4aaa0c746ab2698b8adbc66ce263a95f1035654b881c81f8083160, turn: 1, model: qwen3-32b-bf16, score: 1.0, 
+question: 64567c0d3c90ccc2c9a6a8c49461f039236f2cb2932ac452dcb237c51560ab3b, turn: 1, model: qwen3-32b-bf16, score: 1.0, 
+question: bee240a0fddbbecbd89c9ec02ac8e412c0b219609cc876eb5cf6f8e58f71a0c6, turn: 1, model: qwen3-32b-bf16, score: 0.16666666666666666, 
+question: dab0e3e74f8e31526d20c92dd0167e7825b547fa664110e5c674ab3e5407c448, turn: 1, model: qwen3-32b-bf16, score: 1.0, 
+question: 4a1477836cc454a1cc8b3a9a0e383c3abd8ce837dc670f7e396561b1cdf84f56, turn: 1, model: qwen3-32b-bf16, score: 0.25, 
+question: 9f43f64520ead693ff0e6f05c139423ce1509a8f7e8ca8a43184fdda5100cb80, turn: 1, model: qwen3-32b-bf16, score: 0.3333333333333333, 
+question: 2ff571574542a8b55e3f5f6dde84aaae82a7f75ef56b61fe7f4a09bce170546d, turn: 1, model: qwen3-32b-bf16, score: 1.0, 
+question: 804a762a881c117a97334d4c0b60bf44632cc14f93310a4af6588e8fa71fd1ae, turn: 1, model: qwen3-32b-bf16, score: 1.0, 
+question: 0a0385df33f3d95602ab7f1a78de0bfc276cd8067d27336188e84341cdd02032, turn: 1, model: qwen3-32b-bf16, score: 0.4, 
+question: 6d106383360988b0f4a661ed2b5ca6bb4aa0282d19a3b5a5a495823a77302d9d, turn: 1, model: qwen3-32b-bf16, score: 1.0, 
+question: 9fc4e446b51db65ab044d7c682934237c6d7f5d95ce42deccaac467cdc3e59c1, turn: 1, model: qwen3-32b-bf16, score: 0.3333333333333333, 
+question: a365e843fd014371b5de486fb1f161db1a3497dd3338268d33d5569f5f4d7185, turn: 1, model: qwen3-32b-bf16, score: 1.0, 
+question: 8fd92857688597d5e95a553331eb23c2020540c9cb6fb93ce9d6c0f13197aea9, turn: 1, model: qwen3-32b-bf16, score: 1.0, 
+question: f1425aa8a7be412d92d033667c5b37e2ca3e56b2a051e94f8381105bc6d4ad78, turn: 1, model: qwen3-32b-bf16, score: 1.0, 
+question: e0d7b854424266401aea4f8c4081861b5424fc4aa0548e83579229ebfcd859d7, turn: 1, model: qwen3-32b-bf16, score: 1.0, 
+question: 8c22986a688217ccbcb012c0e5b95acf6b0f6464501e0df4a0cf50c3526767d5, turn: 1, model: qwen3-32b-bf16, score: 0.3, 
+question: 6bf63f504a4aec3fcd329841b5eb5346c2655dfd877d7eb1546214ff1bb44442, turn: 1, model: qwen3-32b-bf16, score: 1.0, 
+question: a2e9e6dfb13c827230a83fedd2c9cc0c2aad8faafda399486a48d606f7589b92, turn: 1, model: qwen3-32b-bf16, score: 1.0, 
+question: 2e1fca49ccefcb602c916a6302c061d32aa0eda95112e7cd2ed2506d50811caf, turn: 1, model: qwen3-32b-bf16, score: 0.4, 
+question: 0f90f3ed7d95e22249b1376b7f31afddcf5f6de2f813cd91d64f4f3c47bfb129, turn: 1, model: qwen3-32b-bf16, score: 0.0, 
+question: 4d4a99c7e19822bf77a525e715685d2113afa6b704b2dd4d80e579ad291f75bb, turn: 1, model: qwen3-32b-bf16, score: 0.375, 
+question: 1597a46fa20861cb667a3233363762f3f6df6f4a51fd205fd6b496cfc3f47c09, turn: 1, model: qwen3-32b-bf16, score: 1.0, 
+question: 4c0c2eb1a759ded986ddfbba277e6ac4d0eec9853a8871ae843dffd8c7829a9b, turn: 1, model: qwen3-32b-bf16, score: 1.0, 
+Processing 800 normal matches
+Evaluating 1...
+question: eecef5ebcd4b0224ec2404b15759eae2703c32db82dc7fd711af23c0dffc888a, model: qwen3-32b-bf16, score: 0, 
+Evaluating 1...
+question: 0664f46bd7bf6217d229be6762834af2aa642e7b97b14469f478c93a382ee520, model: qwen3-32b-bf16, score: 0, 
+Evaluating 1...
+question: f62daa0a810a70c8048484566eb0dcfb331b5299ce2a104f71cbbed4a98ed2b1, model: qwen3-32b-bf16, score: 0, 
+Evaluating 1...
+question: 65369f81842e0735d0dd6619a120d5760217c9b8ac481de89cc20983ea555953, model: qwen3-32b-bf16, score: 0, 
+Evaluating 1...
+question: 6cb0c2d9892875f79d632e273efd7ae3fa4ccb324fbce753673b8314aa80c737, model: qwen3-32b-bf16, score: 0, 
+Evaluating 1...
+question: 88d41d97990a9e7f990eb8eb71440d007fd194758ce2c3fe00b77e186fd65c3d, model: qwen3-32b-bf16, score: 0, 
+Evaluating 1...
+question: 507f6dbb4e7d52e6f645b33aa73096e076769e196010810eeca84820375d4211, model: qwen3-32b-bf16, score: 0, 
+Evaluating 1...
+question: 7ac5182f5b8a86a644e912d6146da1290f785382a6c178512d8348a055e0a976, model: qwen3-32b-bf16, score: 0, 
+Evaluating 1...
+question: 412707cd401e505990ba7dcc4fae0938537212b798cafd0cabd0ec75220baecf, model: qwen3-32b-bf16, score: 0, 
+Evaluating 1...
+question: 75a3057122fddbd336b3e9a664d6254556cc1854312b07188cb719b9636a0acc, model: qwen3-32b-bf16, score: 0, 
+Evaluating 1...
+question: 5a17ebccc62403424aaaa96b3fe4b93604c49ef84c15556490d7e86b10b5126f, model: qwen3-32b-bf16, score: 0, 
+Evaluating 1...
+question: 63a5960e3858d9b8ca8f734d21ac4828a9d96f67596da0b29f7b3c6b1298aee2, model: qwen3-32b-bf16, score: 0, 
+Evaluating 1...
+question: 0c1688303f94019295a1fe3d5d691494e6226647d863fbaf7205cd12573d1dd5, model: qwen3-32b-bf16, score: 0, 
+Evaluating 1...
+question: 3e0ba617402710c701decb2edec4b14fb15a84d74dd02510fd932f3902be1827, model: qwen3-32b-bf16, score: 0, 
+Evaluating 1...
+question: 832eb791ff0dae774b2f1d75ba01356d9f49fead0dacaa466d83fb1e59a8dd78, model: qwen3-32b-bf16, score: 0, 
+Evaluating 1...
+question: 09c0c67ed82f00989b1c9c48646e2c31c89b81dd2afc922cf241ba082afef18b, model: qwen3-32b-bf16, score: 0, 
+Evaluating 1...
+question: a762c0ca6500a33a975869105641d3d4fbaf897051bacc2d6fbe83bc3de23bd9, model: qwen3-32b-bf16, score: 0, 
+Evaluating 1...
+question: 3de555bbcef9919a92a742dd969301eaea38baee624b4c4851e6a495cc83b3cf, model: qwen3-32b-bf16, score: 0, 
+Evaluating 1...
+question: 109469ec1296f25ee25bc3a09e4265a5df823816b438d97cb3d2ba15717626b5, model: qwen3-32b-bf16, score: 0, 
+Evaluating 1...
+question: 89cad09d866391980ddbdbe8208870d1792916fc0e7862f2f27744153ccf9eea, model: qwen3-32b-bf16, score: 0, 
+Evaluating 1...
+question: 8b720a5b61bea0e6a0dcfba224824fff2f48c1d21ef3ae9695d3ec9c84f621d1, model: qwen3-32b-bf16, score: 0, 
+Evaluating 1...
+question: e1e226d29b9ab59fc2de2d719a0e7117572f7bd9dc375709a92a673987c1b29d, model: qwen3-32b-bf16, score: 0, 
+Evaluating 1...
+question: 5a126374e3885ec262a06ef4f7eaafd34477f3bc68ba8e6b04123c2c32e7352d, model: qwen3-32b-bf16, score: 0, 
+Evaluating 1...
+question: d414f7768eb066f524236800aa2dbb8a4554f2e4abc22a99ef88fe30cbcc308e, model: qwen3-32b-bf16, score: 0, 
+Evaluating 1...
+question: 6afe4974569ffea0733fb153fa9bc6ea75c6ada73e3095b7a3efb65fabbfae06, model: qwen3-32b-bf16, score: 0, 
+Evaluating 1...
+question: ef2c6b4ab2f09b2f310eff0a1e7c7e22e9ed12a554aa667dc9d7162fdb123f50, model: qwen3-32b-bf16, score: 0, 
+Evaluating 1...
+question: 01c73e7f5bd7b486915f97829994aca9b95d6116c510d9f3781b5399dea066bd, model: qwen3-32b-bf16, score: 0, 
+Evaluating 1...
+question: 23132a8725620697e72843b28d711947911252925ddaec701e17d85564165c4f, model: qwen3-32b-bf16, score: 0, 
+Evaluating 1...
+question: 27c31c63ff778ef9594589756be22b75959369914a5b4fae17fa3255927e1dc4, model: qwen3-32b-bf16, score: 1, 
+Evaluating 1...
+question: 89101e97bd95e50c1d5d9db784d73f2894a20e4c2ed3e67cf124c7959f8ab4dd, model: qwen3-32b-bf16, score: 0, 
+Evaluating 1...
+question: 176daded29d196e2697bff1351ef4a77c31ffad3757b20405a6c7a346af31ddb, model: qwen3-32b-bf16, score: 0, 
+Evaluating 1...
+question: a326807520b5d18b9a6fa534c086ba3ba53ec6481d9a30222b1b09a6b6699483, model: qwen3-32b-bf16, score: 0, 
+Evaluating 1...
+question: e882b58cb776d5ecbd45f20da44a2628df326ee12c927f4ebb751222629601b1, model: qwen3-32b-bf16, score: 0, 
+Evaluating 1...
+question: 7c1f49314f2c261404fdd7c795620c2fc92d4545bdccc3fc59a15cf3193dba0b, model: qwen3-32b-bf16, score: 0, 
+Evaluating 1...
+question: 992a18bff05e5db69cfeadf0d02b6dfd2808c0997c86e3cc1abb5a4fbd550c70, model: qwen3-32b-bf16, score: 0, 
+Evaluating 1...
+question: 03741bcada4e970eedeb7f28fdf45c496779b98f3df8e513f992a51cf072f67c, model: qwen3-32b-bf16, score: 1, 
+Evaluating 1...
+question: ffdb71c563e5f8e936ab2649a069bfbdbebcde991c6ae11a2e83ec18c0d8e50d, model: qwen3-32b-bf16, score: 0, 
+Evaluating 1...
+question: 306525ba191d9f60529c2b5a3b3fb659106ca56db058b66b4181904705a84aab, model: qwen3-32b-bf16, score: 0, 
+Evaluating 1...
+question: 3d2aec36cd900b962211c24ae69daf2692f7200fe06d34c7a236d531d0a3c17f, model: qwen3-32b-bf16, score: 0, 
+Evaluating 1...
+question: ccf40d3ba5eed106abc518f7c58a4a72b5c1f732ec33cad5e0617b54ff46fa22, model: qwen3-32b-bf16, score: 0, 
+Evaluating 1...
+question: d5213885ecf30ec0d5b6fa5e53af31eb5ed207d3257b2ae8843b1eed735ac7a5, model: qwen3-32b-bf16, score: 0, 
+Evaluating 1...
+question: df00a4688e96b001f32ffd39913ae151bfa14034bdca636193c96974529f7cf9, model: qwen3-32b-bf16, score: 0, 
+Evaluating 1...
+question: c675d9db6b456f793da486f16102468ed1e241bbb7846039608b2c0f9c5d1012, model: qwen3-32b-bf16, score: 0, 
+Evaluating 1...
+question: 5a87f768962bad5e67430639470f03835d0f2abf3fb39f38cf96145ce768f485, model: qwen3-32b-bf16, score: 0, 
+Evaluating 1...
+question: 3375d42f6db384f62b159eb89a85d715736790fd1abb380760ffbd12339fd4d5, model: qwen3-32b-bf16, score: 0, 
+Evaluating 1...
+question: e4ee35e76ddb5c90ccea3e6aa41f00de01b44122d4d602dd4a0da6892757e3af, model: qwen3-32b-bf16, score: 1, 
+Evaluating 1...
+question: db5240d8bb9da989f3ffea465538592857f8fa5b7d4293579356c8456253e721, model: qwen3-32b-bf16, score: 0, 
+Evaluating 1...
+question: 5afb74e155e6538cd76e64fc9df21bd78073b280f0b95b675cbb86aa877b2a59, model: qwen3-32b-bf16, score: 0, 
+Evaluating 1...
+question: 55893da1c59947e4e7469ad4b0683142b475556a6368135400c20a3d8f43def8, model: qwen3-32b-bf16, score: 0, 
+Evaluating 1...
+question: 7439c76752648b2b25924c0810d91f130b7bea2192c80a2603d5662b0685391a, model: qwen3-32b-bf16, score: 0, 
+Evaluating 1...
+question: 89ca002eeeb0c60dbdd4ba3c8129b1d38672338a0375643ac3f942eca79bc7cc, model: qwen3-32b-bf16, score: 0, 
+Evaluating 1...
+question: d191855119f72c53a37db900f0fbf8d177bb12c255da8284af51335e57272f83, model: qwen3-32b-bf16, score: 0, 
+Evaluating 1...
+question: d761bf4d5741e128fca776f16db3dd1d6265291dc5dbe0831033d5918188ada0, model: qwen3-32b-bf16, score: 1, 
+Evaluating 1...
+question: 042b958543e9a61fd083dfd6067a91845b8e272295a282512ec9b527cff2e113, model: qwen3-32b-bf16, score: 0, 
+Evaluating 1...
+question: 388e39eefc4d3950ad99966e9c8dfbf64b59991d7e6cc2d9fb0a617f4025475e, model: qwen3-32b-bf16, score: 0, 
+Evaluating 1...
+question: e4386373494a3b0a70dc5acb7d3a21eb4dc8dc53d4afafcc2d057d16fb68a0a1, model: qwen3-32b-bf16, score: 0, 
+Evaluating 1...
+question: 232d3a9537df2b3af811ae7ba1baac43ebf6a1971c98c7bf0ea84d73eba4c506, model: qwen3-32b-bf16, score: 1, 
+Evaluating 1...
+question: 39d2dcf38a69f076f8cd3af146650328044014addb6c2f6abd7ae51d56c56869, model: qwen3-32b-bf16, score: 0, 
+Evaluating 1...
+question: b8637ee53e144cd0f68a891e7962df2b44c1949cbbdf46670c49b92f29b8bf46, model: qwen3-32b-bf16, score: 0, 
+Evaluating 1...
+question: af9c90d1566582311697d76693eb2be23401bc8fbb7e8b0e595a4080a53e3fa6, model: qwen3-32b-bf16, score: 0, 
+Evaluating 1...
+question: cd2f643fc3de0dbcb738ea9f8ca03f738a76bea2110d7dd97ccf0d8e418a8694, model: qwen3-32b-bf16, score: 0, 
+Evaluating 1...
+question: 87871f3ecdda8c4583b2834741bb312a3917c9035cd21d151902b9eae123e17c, model: qwen3-32b-bf16, score: 0, 
+Evaluating 1...
+question: 9026b23d1094bb0072bae31bd66f9a8cc7220e3951dc520c53a2f21c4e8a472c, model: qwen3-32b-bf16, score: 1, 
+Evaluating 1...
+question: 2cb17950d950274fe6858fb7157bc44e160006e47657e9ca7d3b669ec9a0ff07, model: qwen3-32b-bf16, score: 0, 
+Evaluating 1...
+question: 5d2c5a95687741962e9fa5f3a5c8ca8cda81c66617f61c3ce119349914f9f1d4, model: qwen3-32b-bf16, score: 0, 
+Evaluating 1...
+question: 7f4101a7131ddc370238e7180e5a6b07a534141417b01a5b83a9ab33ea26b0d6, model: qwen3-32b-bf16, score: 0, 
+Evaluating 1...
+question: f78df88e6755702752e1c216f9734cbf1803a006546503128acb8747aee1a738, model: qwen3-32b-bf16, score: 0, 
+Evaluating 1...
+question: 556eb10bbb584e5dc57d787eede0ca725d3d509ff39849a89b568e4ca9f2dc8e, model: qwen3-32b-bf16, score: 0, 
+Evaluating 1...
+question: 588bc5f2d796806fc8d50bb1746f5bdf495dce0f1a752ea2dc5fe89d3e1b5f60, model: qwen3-32b-bf16, score: 0, 
+Evaluating 1...
+question: d9c8393373b3a80ed8f75ad3fbfbe74740f1799b3f2ae7a12486ec41a14aca53, model: qwen3-32b-bf16, score: 0, 
+Evaluating 1...
+question: df2028f3f71248ce456f02f00f5e542660904738e6cd45061a0c7c5662c3d2b4, model: qwen3-32b-bf16, score: 0, 
+Evaluating 1...
+question: cf932b62f91764e164fa14f8b4f50ad8346b1b653765fb9fdec13d372b10be73, model: qwen3-32b-bf16, score: 0, 
+Evaluating 1...
+question: 640e8e5a789f35ff19127fc822b980499f8db1eb0127e0ad642f0f01c425e463, model: qwen3-32b-bf16, score: 0, 
+Evaluating 1...
+question: 6a84becb148316106cde53436e3c0b4033d7957dc1e2e3e2d7d30e712a49ecbf, model: qwen3-32b-bf16, score: 0, 
+Evaluating 1...
+question: 30cd4633ff2a6f4acc868ddd9dcc076c4a8eae5a7a18c736c9c7504c1e55a516, model: qwen3-32b-bf16, score: 0, 
+Evaluating 1...
+question: b6a1eeb2bf7e0899432085c68d3f2a5e2395cb6adf1334495db344b742950c6c, model: qwen3-32b-bf16, score: 0, 
+Evaluating 1...
+question: 2a0f52cd0d54e167a9d1b9bcb7fcb76d565f37019a19971b7377297c5835cec1, model: qwen3-32b-bf16, score: 0, 
+Evaluating 1...
+question: 67a7d1cc72639935a09a3256d5a1aec2e55403972912391e7f5f079e69ee1cc7, model: qwen3-32b-bf16, score: 0, 
+Evaluating 1...
+question: 1693afc152bb5f955ac7298d7381160294b7a32c0844c02817d7a66a0e028750, model: qwen3-32b-bf16, score: 0, 
+Evaluating 1...
+question: 2ac5a0878eb181cefc6922338f7b043368fa897d089955b97eb0b6210f94f3e9, model: qwen3-32b-bf16, score: 0, 
+Evaluating 1...
+question: 6755f738cebb3ae683e9dcd2e56007bfac992a804648cc315cd88d8dc13a17e7, model: qwen3-32b-bf16, score: 0, 
+Evaluating 1...
+question: 317b199a6aeaec75555a76bac287b3f795cc968930677de0fea1d039b055e90e, model: qwen3-32b-bf16, score: 0, 
+Evaluating 1...
+question: 795dd501310981efaa1cfe050e20d249d845dbc90df7e7c9b07bd1b1925b5263, model: qwen3-32b-bf16, score: 0, 
+Evaluating 1...
+question: 4952a5d420fa195e7b041251e85bce64c87b95e8f1cec05d7e16ce149e88c967, model: qwen3-32b-bf16, score: 0, 
+Evaluating 1...
+question: 5c9d7ade302709f4bdcf6e3b64127d1e67a3a3078b3a03ef241329547cf320c6, model: qwen3-32b-bf16, score: 0, 
+Evaluating 1...
+question: 5f7ac157843831b50cc45eb8991c1659e0196805ea75d99202624fa06cd61342, model: qwen3-32b-bf16, score: 1, 
+Evaluating 1...
+question: 7ad613404830cbc9bd478f52fb74f5c73a2c55405938406316a2409e744783c8, model: qwen3-32b-bf16, score: 0, 
+Evaluating 1...
+question: d5ecf69bb5d8e62278ed3d129812cdc0e9bfb90d8b6ca369847e6ed19edffffb, model: qwen3-32b-bf16, score: 0, 
+Evaluating 1...
+question: 0119bdbf9e79f05e988b6d3408e2fdc0b7e4bc11e81ff9f24bed96268c503801, model: qwen3-32b-bf16, score: 0, 
+Evaluating 1...
+question: b8e56097d9b5740294ef468314833c875b1ffe610edae1c1c79b91f7c09b5ece, model: qwen3-32b-bf16, score: 0, 
+Evaluating 1...
+question: a902525e385453571494ab18eaac931c67b171c8106286ba55221bbc89aa1d3b, model: qwen3-32b-bf16, score: 0, 
+Evaluating 1...
+question: 049ed4055f772aa9bccfda47ae425ee8a3c16d2c74330818d0397890795ea7fb, model: qwen3-32b-bf16, score: 0, 
+Evaluating 1...
+question: b122f7e6e1fa155665d3553c4cddf946c021fe467225f39dbd4dec56b813db1d, model: qwen3-32b-bf16, score: 0, 
+Evaluating 1...
+question: 298828230337781810c328f815976e74c6c89c7b14b22beea1cb3d0dc1a7bcae, model: qwen3-32b-bf16, score: 0, 
+Evaluating 1...
+question: 59c63e484f7d21595c2122342662bfc1b0c57f63f168f96fc45a27dc7bbc0a07, model: qwen3-32b-bf16, score: 0, 
+Evaluating 1...
+question: 009f4f7e8275c73de2eae601d76ff7163f613880788d870c1484b1c2a1383fbd, model: qwen3-32b-bf16, score: 0, 
+Evaluating 1...
+question: ab88e681245c5c93976393e5ee7f61a122aa12f9f5d970701d874335bf5a6362, model: qwen3-32b-bf16, score: 0, 
+Evaluating 1...
+question: 16503edeb04a3a1af42e446248632951a149ca0cb3253c2e4fc91716ad53b5c7, model: qwen3-32b-bf16, score: 0, 
+Evaluating 1...
+question: 9e895f817a6a867671d8735578f058a34a19dde837957b1a9c9347d7e13a8e38, model: qwen3-32b-bf16, score: 0, 
+Evaluating 1...
+question: ebde77f9af990a37740871b38788987a907d4ab08556978324a42c3293bb68a9, model: qwen3-32b-bf16, score: 0, 
+Evaluating 1...
+question: 7ae9d085e0923cd5063163ca2628c4b9ecdf0a7ca192f3806bbaf16c735d4946, model: qwen3-32b-bf16, score: 0, 
+Evaluating 1...
+question: 59811e99700ace9d7a98d352e7970f6cd244e25344d349c12e96b18067777d54, model: qwen3-32b-bf16, score: 0, 
+Evaluating 1...
+question: 6f128ce8389efae085f84f835f4678a214c45ca94cf7933178b07562789bc4d7, model: qwen3-32b-bf16, score: 0, 
+Evaluating 1...
+question: e25750fd4c8fae19856e77a875093ab90a6333a680ccbd45dbabdaddb205bf2a, model: qwen3-32b-bf16, score: 0, 
+Evaluating 1...
+question: e1553e31f9f0e93848a8e06d452fa0d6b8c4bf21580def1d98237dbac399baca, model: qwen3-32b-bf16, score: 0, 
+Evaluating 1...
+question: fe6312c9e8cb798517e3695c245cbbfbf4fd6dc737903628abc4a2b55c3f4af5, model: qwen3-32b-bf16, score: 0, 
+Evaluating 1...
+question: 786432ddcf555d879432b906560955b9d464831f713946ce0210dcba478becd2, model: qwen3-32b-bf16, score: 0, 
+Evaluating 1...
+question: 37a9bdb633709429b87eae7e703feaf3ea5a8bd9ea41a33cb23c4c657d918768, model: qwen3-32b-bf16, score: 0, 
+Evaluating 1...
+question: 9ccb5f2d887b739bf9fa290e9b3098ed5c86da0de11b50b8128de0f8a7ff8e42, model: qwen3-32b-bf16, score: 0, 
+Evaluating 1...
+question: eae492105162057ac07f4920749d2125f86b5a335557c61d328d49f198af3343, model: qwen3-32b-bf16, score: 0, 
+Evaluating 1...
+question: 541fd30fbc3ff5b8845fdef7e228778a903adab9d122280003aa2e8596aa2c63, model: qwen3-32b-bf16, score: 0, 
+Evaluating 1...
+question: 4f4e5b4d83cbc334fc40c3702b6abaaaa5c87ddf73d3103a8e0ef6c8002ecb01, model: qwen3-32b-bf16, score: 0, 
+Evaluating 1...
+question: 4b6062ff2bb0859fc70acfbdca5f67617a5d5e631cb2fc650b8f641c237acb44, model: qwen3-32b-bf16, score: 0, 
+Evaluating 1...
+question: a62c56a25fd1a6fb193268c07d5fa714d8fe8ef25aa8884d4f910e3f58dd51fe, model: qwen3-32b-bf16, score: 0, 
+Evaluating 1...
+question: 15b97089ff238df02cdec621f3bd0d14e0b096e4d26d463e2bcb66a0fcb57a9c, model: qwen3-32b-bf16, score: 0, 
+Evaluating 1...
+question: 945b77d39f64bc7e9076de58b48806c99c26ca7a45f94737fa80f0702625969c, model: qwen3-32b-bf16, score: 0, 
+Evaluating 1...
+question: 7795fc4543dfb60b56345359d525454c6ec3af02be98fe13f98b34af41356500, model: qwen3-32b-bf16, score: 0, 
+Evaluating 1...
+question: 030471ea2fc50a29f82560555033ceaec6b127c9ad0f68d34565ba221279d54b, model: qwen3-32b-bf16, score: 0, 
+Evaluating 1...
+question: 5ced71fafeb7058ec2edec54fe4022058381689584152f36fba4aec109081931, model: qwen3-32b-bf16, score: 0, 
+Evaluating 1...
+question: 26aa1d9bdee3ca21ecb30b18871b017f5013da90f96af113e433e9172f600342, model: qwen3-32b-bf16, score: 0, 
+Evaluating 1...
+question: 368b91cf69b159b1a3ef4740009cb201b46ea95478c9c5fc17df884b825ccacb, model: qwen3-32b-bf16, score: 0, 
+Evaluating 1...
+question: 7878539e8dd4fe1d4bc66a440e16c102d66f158fed7828a84f3765505ba8f1d3, model: qwen3-32b-bf16, score: 0, 
+Evaluating 1...
+question: 3cd8c16a338ab1b2d081add09e47c05cd4bad6c4ddd20c12356d911502fc54a0, model: qwen3-32b-bf16, score: 0, 
+Evaluating 1...
+question: e2ee8ea63cf9d79d7695c7e310de966d5cf7f96f103b706faa930557991fc816, model: qwen3-32b-bf16, score: 0, 
+Evaluating 1...
+question: 45d51d0927f37783772c554d860a9c17db83a3e8e31dd02abeb93150acdaba55, model: qwen3-32b-bf16, score: 0, 
+Evaluating 1...
+question: 447b358040b99c91a12a17ec5e81ee3bdc257155200b3cec64c115166f7e12a9, model: qwen3-32b-bf16, score: 0, 
+Evaluating 1...
+question: 73642dac6679890d1c7303e79ee6dbc93b28c3943fd8733371bcf9e73cb06948, model: qwen3-32b-bf16, score: 0, 
+Evaluating 1...
+question: 100c6ce0a28db0672fc9a23207f72ad7decfc90c81f03baf2ecdbb30297993a3, model: qwen3-32b-bf16, score: 0, 
+question: 7c99777b2f4c5a9c88cc1f04d0345ac7b1e9dea2c7ac74b3fbf683e59bbf38f4, model: qwen3-32b-bf16, score: 0.0, 
+question: 7d3b232a7df622492efaa9230b09fe5a5e45c12d35ed346a99b6ec201497a1e3, model: qwen3-32b-bf16, score: 0.0, 
+question: d89584191190995d5cb7307c938dbfb201e3af17ed7f666c2afae0fe2ad55985, model: qwen3-32b-bf16, score: 0.0, 
+question: 1620e3381c6b9ba1ff0bcde15d816ec23ce445e1de6ed45de56ca41b0d1ae855, model: qwen3-32b-bf16, score: 0.0, 
+question: 01fc14e123214c67cbf235824d1ec952a825d5f78464ecc18fb9609c2781f50c, model: qwen3-32b-bf16, score: 1.0, 
+question: 490dfdc0383f199c870aa7710499c4081c35ff3545415dab3904f64e7526a809, model: qwen3-32b-bf16, score: 0.0, 
+question: 0764131eaf30bb8af36ad749f144da01c0113b1cee00092dde2919287df2ba78, model: qwen3-32b-bf16, score: 0.0, 
+question: 55d610b0b74c049e9664df825f1bffcb7999fffc0576ff3317960a2124c3feaf, model: qwen3-32b-bf16, score: 0.0, 
+question: 9d53b3ca366bedc7b149a5d41a4dc5c52cd76f1989a0cb6020d304fef6eb8d8d, model: qwen3-32b-bf16, score: 0.5, 
+question: d4b2efd567053821eedf1ea3f759d4948f50264b94bd6ff37b18bc92e79d4fc1, model: qwen3-32b-bf16, score: 0.0, 
+question: d60522bc74ae4e6d7ba1a5e0401e53e4a3d7a7182fed328e72825445ceafba9d, model: qwen3-32b-bf16, score: 0.0, 
+question: e824359153d4fea96a9257ecceb44a3bb95dd0c84f95e2e3964ebdcdf8e8b32b, model: qwen3-32b-bf16, score: 0.0, 
+question: 519653e1054c2c48e303e4f8fb1fa2e5fe01d1fd1fb4d26fa45a33b5eb781a3c, model: qwen3-32b-bf16, score: 0.0, 
+question: a783dc9652728632d05f85ac5f944f71ffdfb2cc9dc6ea27e21ad80a96f44e48, model: qwen3-32b-bf16, score: 0.0, 
+question: 4d351c29bdddf5c41d59cd7bd1b70bb4d2ae2a071ada382d7690066b1cd7764c, model: qwen3-32b-bf16, score: 0.0, 
+question: 44953ce33916e7caae16bbce54fbd5a4e00d438924e5e53c0b5c5765ce5a583f, model: qwen3-32b-bf16, score: 0.0, 
+question: a9622ef291b2ff5dac8ee5335d50d52a7bc8bd9fa001130fabaf3ae3d1505100, model: qwen3-32b-bf16, score: 1.0, 
+question: 0bf086ff674cfda54c0293a3ae03a3720d2d1cb755748cc4800d43b375d20a3c, model: qwen3-32b-bf16, score: 0.0, 
+question: dd7ff515b9cd4c4a6e1d3fe3cb5e14c77123225c73193ce89c104b4f3f80cf22, model: qwen3-32b-bf16, score: 0.0, 
+question: 52b2630e360ae523378662c58b554046d5086033761e830cee61d24e46850889, model: qwen3-32b-bf16, score: 0.0, 
+question: a215b90180b104679133c979614fe0feeb770b6a3d1df4d41065e15be2ed7051, model: qwen3-32b-bf16, score: 0.0, 
+question: d03bcee55bda5e582cc13547ab9bf898fbd1324fd5690481cc0d8a4ae9fd24f9, model: qwen3-32b-bf16, score: 0.0, 
+question: b8a3e0f6c177bbef546e0dd490a0193b02124e193d5ffe093d86963449cba596, model: qwen3-32b-bf16, score: 0.0, 
+question: 2f1500d37ffd0e42cd2c89c04011cbbf5dd6b1f71f495156b016a967270cdded, model: qwen3-32b-bf16, score: 0.0, 
+question: b2c9accaab7ee5cac67f482c19dcda8942fb409b25b604ef1136367f56d07fd0, model: qwen3-32b-bf16, score: 1.0, 
+question: 9318064da8b360eff10f17cdbde9ee624a2112203d8239516e536a0e5bec44e9, model: qwen3-32b-bf16, score: 0.0, 
+question: 04ba0a2b8fe86cdd255723961356723f6de221cbe6bbc7af4b9ac93d45cd40ec, model: qwen3-32b-bf16, score: 0.0, 
+question: 145cfcc10c148be13cc52c96a77611ff6fa5a2b2f756b7f8f9bc0220404a83d7, model: qwen3-32b-bf16, score: 0.0, 
+question: 1555bac3606cf98dc257767598c8a85738893f74b07a0a7f2d150751d0ab4939, model: qwen3-32b-bf16, score: 1.0, 
+question: fd0046f3c752ad7a6ce735aff42247b449563c3c664852793c698369c0046c93, model: qwen3-32b-bf16, score: 1.0, 
+question: 31b308131501939d06a5af26b6e26500ab71fc1585a16324abda514a2276ed14, model: qwen3-32b-bf16, score: 0.0, 
+question: 27da7f0ed5df368fa2d311fe3be17bbece8769109b41fc6e7768706d5d26f662, model: qwen3-32b-bf16, score: 0.0, 
+question: eeec6c1afcb16c44895a770343d4c21c6eb88d2902ac8dc1568a6940d9502610, model: qwen3-32b-bf16, score: 0.0, 
+question: cb29bb1e6915d8366ff58783e47c9939d3d30712f2643cd23d6cbecc4210a2b2, model: qwen3-32b-bf16, score: 0.0, 
+question: 2e645a9a481f16ce14b5d069b62520852babd3b55383e00a75f675707088fddc, model: qwen3-32b-bf16, score: 0.0, 
+question: 539fd06729e1f852302dd51aab15ffa115225362425ef04808cdef88d000d300, model: qwen3-32b-bf16, score: 0.0, 
+question: a50e16a7dec04c766f864754305d6b28a99fe54602c7c913c525c067c405d279, model: qwen3-32b-bf16, score: 0.0, 
+question: 75fca1a433c6e663241c1941e6034cd7625cd4b5981159c7f4ad74703df98b53, model: qwen3-32b-bf16, score: 1.0, 
+question: 140b7ab87b7be33e80fff3cfc052077d34cc51b5038c1c390cfb9780ad948c04, model: qwen3-32b-bf16, score: 0.0, 
+question: 5063b77b06647a10818a76a2feda884741860ca4ef5816ae4580babafea11fb0, model: qwen3-32b-bf16, score: 0.0, 
+question: ac146c48d703160bded02521568583372fc6b10bdbd98f36f57fcff7d0790d10, model: qwen3-32b-bf16, score: 0.0, 
+question: 10047d040ef1e563f1db3278979d56d1182617b3484c63ed53a388a0d006a7e4, model: qwen3-32b-bf16, score: 0.0, 
+question: a8995a220d4b23e751dded30067eb09897b7269b0ec3632762c9e97d41b80c95, model: qwen3-32b-bf16, score: 0.67, 
+question: 8b842182b7cbb2b961d8cdc64a1b4b28aff1f8ed4f4dd3fb58e3533baa754043, model: qwen3-32b-bf16, score: 0.0, 
+question: dc753a46614f7f4d1c839d06ec864324f8b6142e30bf804dae6aae8b6eb91941, model: qwen3-32b-bf16, score: 0.0, 
+question: 4840c0c5075383274db75d8610087c3a725f4be885832e5fa97a46933e7485ae, model: qwen3-32b-bf16, score: 0.0, 
+question: da9f424fc770103fa6b2639920d84fd8be3c448031ed96d13b975289356f4a67, model: qwen3-32b-bf16, score: 0.0, 
+question: ae4654298c694908b994dd999e784904f1c22e2978e6e958d71cf0e5d5ab5975, model: qwen3-32b-bf16, score: 0.0, 
+question: 587e13e04d18246f787cc8d41da67701eb1343795150a63b1996c5ec8270b20e, model: qwen3-32b-bf16, score: 0.0, 
+question: bd4b2031ad50538f365ac3312534d813fb7326fd90cf5056ac80b31d189cbb15, model: qwen3-32b-bf16, score: 0.0, 
+Could not read the LLM output
+GROUND TRUTH
+ {"69":{"swsLengthHR":0.40387,"swsTimeHR":0.125,"swsLengthT":0.08702,"swsTimeT":0.03448,"decreasePercentageT":0.6986,"swsTimeM":0.05263,"swsLengthM":-0.73889,"decreasePercentageM":0.74472},"88":{"swsLengthHR":0.0,"swsTimeHR":0.0,"swsLengthT":0.0,"swsTimeT":0.0,"decreasePercentageT":0.68042,"swsTimeM":0.18421,"swsLengthM":0.21577,"decreasePercentageM":0.79564},"73":{"swsLengthHR":0.35725,"swsTimeHR":0.125,"swsLengthT":0.17935,"swsTimeT":0.10345,"decreasePercentageT":0.75992,"swsTimeM":0.28947,"swsLengthM":1.02812,"decreasePercentageM":0.88919},"54":{"swsLengthHR":0.08659,"swsTimeHR":0.04167,"swsLengthT":0.0,"swsTimeT":0.0,"decreasePercentageT":0.7441,"swsTimeM":0.0,"swsLengthM":-1.00196,"decreasePercentageM":0.61898},"23":{"swsLengthHR":0.33737,"swsTimeHR":0.16667,"swsLengthT":0.12945,"swsTimeT":0.06897,"decreasePercentageT":0.64663,"swsTimeM":0.05263,"swsLengthM":-0.79333,"decreasePercentageM":0.62288},"201":{"swsLengthHR":0.05548,"swsTimeHR":0.04167,"swsLengthT":0.11269,"swsTimeT":0.03448,"decreasePercentageT":0.7798,"swsTimeM":0.23684,"swsLengthM":1.20461,"decreasePercentageM":0.71585},"211":{"swsLengthHR":0.32591,"swsTimeHR":0.58333,"swsLengthT":0.02467,"swsTimeT":0.03448,"decreasePercentageT":0.66134,"swsTimeM":0.55263,"swsLengthM":0.73997,"decreasePercentageM":0.53467},"198":{"swsLengthHR":0.0,"swsTimeHR":0.0,"swsLengthT":0.03896,"swsTimeT":0.03448,"decreasePercentageT":0.66269,"swsTimeM":0.15789,"swsLengthM":2.84312,"decreasePercentageM":0.65916},"35":{"swsLengthHR":0.06369,"swsTimeHR":0.04167,"swsLengthT":0.39228,"swsTimeT":0.13793,"decreasePercentageT":0.73069,"swsTimeM":0.18421,"swsLengthM":0.45976,"decreasePercentageM":0.67106},"79":{"swsLengthHR":0.0,"swsTimeHR":0.0,"swsLengthT":0.43818,"swsTimeT":0.13793,"decreasePercentageT":0.68326,"swsTimeM":0.13158,"swsLengthM":-0.3926,"decreasePercentageM":0.81514},"44":{"swsLengthHR":0.0,"swsTimeHR":0.0,"swsLengthT":0.0,"swsTimeT":0.0,"decreasePercentageT":0.67266,"swsTimeM":0.0,"swsLengthM":-1.00196,"decreasePercentageM":0.96306}}
+END OF OUTPUT
+ 
+
+[
+  {
+    "swsLengthHR": 0.40387,
+    "swsTimeHR": 0.125,
+    "swsLengthT": 0.08702,
+    "swsTimeT": 0.03448,
+    "decreasePercentageT": 0.6986,
+    "swsTimeM": 0.05263,
+    "swsLengthM": -0.73889,
+    "decreasePercentageM": 0.74472
+  },
+  {
+    "swsLengthHR": 0.0,
+    "swsTimeHR": 0.0,
+    "swsLengthT": 0.0,
+    "swsTimeT": 0.0,
+    "decreasePercentageT": 0.68042,
+    "swsTimeM": 0.18421,
+    "swsLengthM": 0.21577,
+    "decreasePercentageM": 0.79564
+  },
+  {
+    "swsLengthHR": 0.35725,
+    "swsTimeHR": 0.125,
+    "swsLengthT": 0.17935,
+    "swsTimeT": 0.10345,
+    "decreasePercentageT": 0.75992,
+    "swsTimeM": 0.28947,
+    "swsLengthM": 1.02812,
+    "decreasePercentageM": 0.88919
+  },
+  {
+    "swsLengthHR": 0.08659,
+    "swsTimeHR": 0.04167,
+    "swsLengthT": 0
+question: e114ea800daa6938bd7bbc29c6fde32844324662764b5cb63d7e4e78c3b66c65, model: qwen3-32b-bf16, score: 0, 
+question: 09752b3d3e355017282301de1735bd903221368e1fadf3e64aa9594ef7730e62, model: qwen3-32b-bf16, score: 1, 
+Could not read the LLM output
+GROUND TRUTH
+ {"6792":{"country":"Low-income countries","code country":"0","Year":1993,"Maize yield":"1.675.252"},"2266":{"country":"Lebanon","code country":"LBN","Year":1971,"Maize yield":"82.339.996"},"8256":{"country":"United Kingdom","code country":"GBR","Year":1999,"Maize yield":"0"},"2530":{"country":"Small Island Develop","code country":"0","Year":1972,"Maize yield":"1.0519"},"799":{"country":"Cuba","code country":"CUB","Year":1964,"Maize yield":"9.474"}}
+END OF OUTPUT
+  they are, even if they're "0".
+
+Next, the "Maize yield" values. The first row has "1.675.252". Wait, that looks like a number with periods as thousand separators. But in some countries, periods are used as decimal points. However, given the context of yield, which is typically a larger number, it's more likely to be 1,675,252 with periods as thousand separators. But in JSON, numbers shouldn't have commas or periods as thousand separators. They should be plain numbers. However, if the value is a string, it can have those separators. But the user might expect numerical values. Hmm, this is a bit tricky. Let me check the other entries. The second row has "82.339.996", which follows the same pattern. The third row has "0", which is straightforward. The fourth row is "1.0519" and the fifth is "9.474". The fourth entry seems to have a decimal point, possibly a decimal number. So "1.0519" might be 1.0519, and "9.474" is 9.474. But the first two entries have periods as thousand separators. This inconsistency is a problem. How should I handle this?
+
+Maybe the user intended the numbers to be in a specific format. Since JSON numbers don't support thousand separators, I should either convert them to numbers without separators or keep them as strings. But converting "1.675.252" to a number would require removing the periods, making it 1675252. However, if the original data uses periods as decimal points, like in some European countries, that would be different. For example, "1.0519" could be 1.0519 in decimal. But how can I know? The problem is the ambiguity in the data format. 
+
+Given that the user hasn't specified, I'll have to make an assumption. Let's look at the entries again. The first two entries have three digits after the first period (e.g., 1.675.252), which is typical for thousand separators. The fourth entry has "1.0519", which is a decimal number. The fifth is "9.474", which could be either a decimal (9.474) or a thousand separator (9,474). But since the first two entries have three digits after the first period, it's more likely that they are using periods as thousand separators. The fourth entry, "1.0519", is a decimal with four decimal places. The fifth, "9.474", could be 9.474 (a decimal) or 9,474 (a thousand). 
+
+This inconsistency is problematic. To handle this, perhaps the safest approach is to treat all "Maize yield" values as strings to preserve the original formatting. Alternatively, if the user expects numerical values, I need to parse them correctly. But without knowing the exact format, it's risky. Since the user hasn't provided additional context, I'll proceed by converting the "Maize yield" values to numbers by removing all periods, assuming they are thousand separators. However, this might not be accurate for entries like "1.0519" which is a decimal. 
+
+Wait, if "1.0519" is a decimal, removing the period would make it 10519, which is incorrect. So perhaps the correct approach is to treat the "Maize yield" as strings. Alternatively,
+question: eb8aebddc3e1eff35a92de9e8306dfcfebd25201eefda2921b830226b5347dc5, model: qwen3-32b-bf16, score: 0, 
+Could not read the LLM output
+GROUND TRUTH
+ {"plan_strategy":"Regional Rail","rtpid":"21-T11-107","title":"Rail | Service Frequ","scope":"This program include","open_period":"2036 - 2050","funding_millions_yoe":2840,"county":"Various"}
+{"plan_strategy":"Regional Rail","rtpid":"21-T11-097","title":"Ferry | Service Expa","scope":"This program include","open_period":"2021 - 2035","funding_millions_yoe":271,"county":"San Francisco"}
+{"plan_strategy":"Interchanges and Bot","rtpid":"21-T06-041","title":"Corridor & Interchan","scope":"This program include","open_period":"2021 - 2035","funding_millions_yoe":40,"county":"Alameda"}
+{"plan_strategy":"Regional Rail","rtpid":"21-T11-101","title":"Rail | Modernization","scope":"This program include","open_period":"2021 - 2035","funding_millions_yoe":1980,"county":"Various"}
+{"plan_strategy":"Regional Rail","rtpid":"21-T11-201","title":"Rail | New Station |","scope":"This program include","open_period":"2021 - 2035","funding_millions_yoe":14,"county":"Sonoma"}
+{"plan_strategy":"Interchanges and Bot","rtpid":"21-T06-020","title":"Corridor & Interchan","scope":"This program include","open_period":"2021 - 2035","funding_millions_yoe":173,"county":"Various"}
+
+END OF OUTPUT
+ that the number of values in each row matches the number of headers. If there's a mismatch, that could cause issues. Also, some of the data fields might contain special characters or formatting that need to be properly escaped in JSON, but looking at the sample data, it seems straightforward.
+
+Let me start by listing out the headers:
+
+1. plan_strategy
+2. rtpid
+3. title
+4. scope
+5. open_period
+6. funding_millions_yoe
+7. county
+
+Now, for each data row, I'll split by tabs and assign each value to the corresponding header. For example, the first data row is:
+
+Regional Rail	21-T11-107	Rail | Service Frequ	This program include	2036 - 2050	2840	Various
+
+Splitting by tabs gives:
+
+- plan_strategy: "Regional Rail"
+- rtpid: "21-T11-107"
+- title: "Rail | Service Frequ"
+- scope: "This program include"
+- open_period: "2036 - 2050"
+- funding_millions_yoe: "2840"
+- county: "Various"
+
+Then, converting this into a JSON object:
+
+{
+  "plan_strategy": "Regional Rail",
+  "rtpid": "21-T11-107",
+  "title": "Rail | Service Frequ",
+  "scope": "This program include",
+  "open_period": "2036 - 2050",
+  "funding_millions_yoe": 2840,
+  "county": "Various"
+}
+
+Wait, the funding_millions_yoe is a number, so in JSON, it should be a number, not a string. The user didn't specify whether to keep numbers as strings or convert them. Since the input is TSV, which is text-based, all values are strings. However, in JSON, numbers should be numbers. So I should check if the funding_millions_yoe can be parsed as a number and convert it accordingly. Looking at the data, they are all numbers, so converting them to numeric values makes sense.
+
+So for the funding_millions_yoe field, I'll convert the string to a number. The same applies to other numeric fields if any. In this case, only funding_millions_yoe seems to be a numeric field.
+
+Now, repeating this process for each row. Let's check another row to ensure consistency. The second row is:
+
+Regional Rail	21-T11-097	Ferry | Service Expa	This program include	2021 - 2035	271	San Francisco
+
+Splitting by tabs:
+
+- plan_strategy: "Regional Rail"
+- rtpid: "21-T11-097"
+- title: "Ferry | Service Expa"
+- scope: "This program include"
+- open_period: "2021 - 2035"
+- funding_millions_yoe: 271
+- county: "San Francisco"
+
+So the JSON object would be similar, with the funding value as 271 instead of 2840.
+
+Now, for JSONL, each JSON object should be on a separate line without commas between them. So the final output should be each JSON object on its own line.
+
+Another thing to consider is the "title" field. Some entries have "Rail | Service Frequ" and "Corridor & Interchan". The pipe (|) and ampersand (&) are allowed in JSON strings, so no escaping is needed unless they are part of a special character sequence. Since they are just text, they can be included as-is.
+
+Also, the "scope" field has "This program include" which seems like it might be cut off. But since that's the data provided, I'll include it as is.
+
+Now, putting it all together. Each line in the JSON
+question: 57772b38ab8d4f9f2e30d5e0cca6e007f228786523ed027bdbf37b59fe20e3b1, model: qwen3-32b-bf16, score: 0, 
+question: 8b25c07592f100c7c61af45d3de6eec07f4996d0a211f613cc1e224db02bba4c, model: qwen3-32b-bf16, score: 1, 
+Could not read the LLM output
+GROUND TRUTH
+ {"Calendar Year":2008,"Active Duty":1402227,"Full-Time (est) Guard+Reserve":73000,"Selected Reserve FTE":207917,"Total Military FTE":1683144,"Total Deaths":1440,"Accident ":506.0,"Hostile Action":352}
+{"Calendar Year":1988,"Active Duty":2121659,"Full-Time (est) Guard+Reserve":72000,"Selected Reserve FTE":115836,"Total Military FTE":2309495,"Total Deaths":1819,"Accident ":1080.0,"Hostile Action":0}
+{"Calendar Year":1981,"Active Duty":2093032,"Full-Time (est) Guard+Reserve":22000,"Selected Reserve FTE":91719,"Total Military FTE":2206751,"Total Deaths":2380,"Accident ":1524.0,"Hostile Action":0}
+{"Calendar Year":2003,"Active Duty":1423348,"Full-Time (est) Guard+Reserve":66000,"Selected Reserve FTE":243284,"Total Military FTE":1732632,"Total Deaths":1399,"Accident ":597.0,"Hostile Action":312}
+{"Calendar Year":1984,"Active Duty":2138339,"Full-Time (est) Guard+Reserve":55000,"Selected Reserve FTE":104583,"Total Military FTE":2297922,"Total Deaths":1999,"Accident ":1293.0,"Hostile Action":1}
+{"Calendar Year":2004,"Active Duty":1411287,"Full-Time (est) Guard+Reserve":66000,"Selected Reserve FTE":234629,"Total Military FTE":1711916,"Total Deaths":1847,"Accident ":605.0,"Hostile Action":735}
+{"Calendar Year":1995,"Active Duty":1502343,"Full-Time (est) Guard+Reserve":65000,"Selected Reserve FTE":94585,"Total Military FTE":1661928,"Total Deaths":1040,"Accident ":538.0,"Hostile Action":0}
+{"Calendar Year":1982,"Active Duty":2112609,"Full-Time (est) Guard+Reserve":41000,"Selected Reserve FTE":97458,"Total Military FTE":2251067,"Total Deaths":2319,"Accident ":1493.0,"Hostile Action":0}
+{"Calendar Year":1994,"Active Duty":1581649,"Full-Time (est) Guard+Reserve":65000,"Selected Reserve FTE":99833,"Total Military FTE":1746482,"Total Deaths":1075,"Accident ":544.0,"Hostile Action":0}
+{"Calendar Year":1980,"Active Duty":2050758,"Full-Time (est) Guard+Reserve":22000,"Selected Reserve FTE":86872,"Total Military FTE":2159630,"Total Deaths":2392,"Accident ":1556.0,"Hostile Action":0}
+{"Calendar Year":1997,"Active Duty":1418773,"Full-Time (est) Guard+Reserve":65000,"Selected Reserve FTE":94609,"Total Military FTE":1578382,"Total Deaths":817,"Accident ":433.0,"Hostile Action":0}
+{"Calendar Year":1999,"Active Duty":1367838,"Full-Time (est) Guard+Reserve":65000,"Selected Reserve FTE":93104,"Total Military FTE":1525942,"Total Deaths":796,"Accident ":439.0,"Hostile Action":0}
+
+END OF OUTPUT
+ 
+
+{"Calendar Year":2008,"Active Duty":1402227,"Full-Time (est) Guard+Reserve":73000,"Selected Reserve FTE":207917,"Total Military FTE":1683144,"Total Deaths":1440,"Acc
+question: ce1fa8f673c3d33b3986e4f4f148ab1a11e42cd2b7f15390f0f4f2acb530a6e3, model: qwen3-32b-bf16, score: 0, 
+question: 56ace477670fa1527771dc1a4f2babac3b704f1c313b8981a53ce892f55b6c05, model: qwen3-32b-bf16, score: 1, 
+question: 3f9091ebb24ea69d1e9ad7a20e3a617f47548595e9b0b0a46a95061ec3e81740, model: qwen3-32b-bf16, score: 0, 
+question: 35b3098f43e9129b80af5263066ffad973670da10a3bbc4d350fa88cea4d980f, model: qwen3-32b-bf16, score: 0, 
+Could not read the LLM output
+GROUND TRUTH
+ {"188":{"app_no":6067396,"type":"HDR","app_date":"2024-02-05T00:00:00.","status":"Incomplete","fru_interview_scheduled":"Not Applicable","drug_test":"Complete","wav_course":"Complete","defensive_driving":"Complete"},"951":{"app_no":6070694,"type":"HDR","app_date":"2024-03-20T00:00:00.","status":"Incomplete","fru_interview_scheduled":"Not Applicable","drug_test":"Needed","wav_course":"Needed","defensive_driving":"Complete"},"650":{"app_no":6068735,"type":"HDR","app_date":"2024-02-22T00:00:00.","status":"Incomplete","fru_interview_scheduled":"Not Applicable","drug_test":"Needed","wav_course":"Complete","defensive_driving":"Complete"},"823":{"app_no":6070320,"type":"HDR","app_date":"2024-03-14T00:00:00.","status":"Incomplete","fru_interview_scheduled":"Not Applicable","drug_test":"Complete","wav_course":"Complete","defensive_driving":"Complete"},"118":{"app_no":6071839,"type":"HDR","app_date":"2024-04-04T00:00:00.","status":"Approved - License I","fru_interview_scheduled":"Not Applicable","drug_test":"Complete","wav_course":"Complete","defensive_driving":"Complete"},"62":{"app_no":6070328,"type":"HDR","app_date":"2024-03-14T00:00:00.","status":"Incomplete","fru_interview_scheduled":"Not Applicable","drug_test":"Needed","wav_course":"Needed","defensive_driving":"Needed"},"115":{"app_no":6070076,"type":"HDR","app_date":"2024-03-11T00:00:00.","status":"Incomplete","fru_interview_scheduled":"Not Applicable","drug_test":"Complete","wav_course":"Complete","defensive_driving":"Needed"},"549":{"app_no":6070287,"type":"HDR","app_date":"2024-03-14T00:00:00.","status":"Approved - License I","fru_interview_scheduled":"Not Applicable","drug_test":"Complete","wav_course":"Complete","defensive_driving":"Complete"},"531":{"app_no":6070315,"type":"HDR","app_date":"2024-03-14T00:00:00.","status":"Approved - License I","fru_interview_scheduled":"Not Applicable","drug_test":"Complete","wav_course":"Complete","defensive_driving":"Complete"},"495":{"app_no":6067471,"type":"HDR","app_date":"2024-02-06T00:00:00.","status":"Approved - License I","fru_interview_scheduled":"Not Applicable","drug_test":"Complete","wav_course":"Complete","defensive_driving":"Complete"},"654":{"app_no":6071018,"type":"HDR","app_date":"2024-03-24T00:00:00.","status":"Incomplete","fru_interview_scheduled":"Not Applicable","drug_test":"Needed","wav_course":"Complete","defensive_driving":"Complete"},"908":{"app_no":6069877,"type":"HDR","app_date":"2024-03-08T00:00:00.","status":"Incomplete","fru_interview_scheduled":"Not Applicable","drug_test":"Complete","wav_course":"Complete","defensive_driving":"Complete"},"720":{"app_no":6070400,"type":"HDR","app_date":"2024-03-16T00:00:00.","status":"Incomplete","fru_interview_scheduled":"Not Applicable","drug_test":"Complete","wav_course":"Complete","defensive_driving":"Complete"},"874":{"app_no":6067570,"type":"HDR","app_date":"2024-02-07T00:00:00.","status":"Approved - License I","fru_interview_scheduled":"Not Applicable","drug_test":"Complete","wav_course":"Complete","defensive_driving":"Complete"}}
+END OF OUTPUT
+ 
+
+[{"app_no":6067396,"type":"HDR","app_date":"2024-02-05T00:00:00.","status":"Incomplete","fru_interview_scheduled":"Not Applicable","drug_test":"Complete","wav_course":"Complete","defensive_driving":"Complete"},{"app_no":6070694,"type":"HDR","app_date":"2024-03-20T00:00:00.","status":"Incomplete","fru_interview_scheduled":"Not Applicable","drug_test":"Needed","wav_course":"Needed","defensive_driving":"Complete"},{"app_no":6068735,"type":"HDR","app_date":"2024-02-22T00:00:00.","status":"Incomplete","fru_interview_scheduled":"Not Applicable","drug_test":"Needed","wav_course":"Complete","defensive_driving":"Complete"},{"app_no":6070320,"type":"HDR","app_date":"2024-03-14T00:00:00.","status":"Incomplete","fru_interview_scheduled":"Not Applicable","drug_test":"Complete","wav_course":"Complete","defensive_driving":"Complete"},{"app_no":6071839,"type":"HDR","app_date":"2024-04-04T00:00:00.","status":"Approved - License I","fru_interview_scheduled":"Not Applicable","drug_test":"Complete","wav_course":"Complete","defensive_driving":"Complete"},{"app_no":6070328,"type":"HDR","app_date":"2024-03-14T00:00:00.","status":"Incomplete","fru_interview_scheduled":"Not Applicable","drug_test":"Needed","wav_course":"Needed","defensive_driving":"Needed"},{"app_no":6070076,"type":"HDR","app_date":"2024-03-11T00:00:00.","
+question: 0cbc79763d1930cd7c78821f52cbb8c368eacbee9ea3b9bb9ece1e79167deb4a, model: qwen3-32b-bf16, score: 0, 

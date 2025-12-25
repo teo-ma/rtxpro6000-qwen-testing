@@ -1,0 +1,368 @@
+/data/bench/LiveBench/.venv/lib/python3.10/site-packages/syllapy/data_loader.py:3: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  import pkg_resources
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+[nltk_data] Downloading package punkt to /home/azureuser/nltk_data...
+[nltk_data]   Package punkt is already up-to-date!
+[nltk_data] Downloading package punkt_tab to
+[nltk_data]     /home/azureuser/nltk_data...
+[nltk_data]   Package punkt_tab is already up-to-date!
+[nltk_data] Downloading package averaged_perceptron_tagger to
+[nltk_data]     /home/azureuser/nltk_data...
+[nltk_data]   Package averaged_perceptron_tagger is already up-to-
+[nltk_data]       date!
+  0%|          | 0/800 [00:00<?, ?it/s]
+  0%|          | 0/1 [00:00<?, ?it/s][A100%|██████████| 1/1 [00:00<00:00,  9.56it/s]
+  0%|          | 1/800 [00:00<01:44,  7.64it/s]
+  0%|          | 0/1 [00:00<?, ?it/s][A100%|██████████| 1/1 [00:00<00:00, 14.09it/s]
+
+  0%|          | 0/1 [00:00<?, ?it/s][A100%|██████████| 1/1 [00:00<00:00, 14.17it/s]
+  0%|          | 3/800 [00:00<01:09, 11.45it/s]
+  0%|          | 0/1 [00:00<?, ?it/s][A100%|██████████| 1/1 [00:00<00:00, 14.31it/s]
+
+  0%|          | 0/1 [00:00<?, ?it/s][A100%|██████████| 1/1 [00:00<00:00, 13.73it/s]
+  1%|          | 5/800 [00:00<01:03, 12.53it/s]
+  0%|          | 0/1 [00:00<?, ?it/s][A100%|██████████| 1/1 [00:00<00:00, 10.32it/s]
+
+  0%|          | 0/1 [00:00<?, ?it/s][A
+100%|██████████| 1/1 [00:00<00:00,  5.01it/s][A100%|██████████| 1/1 [00:00<00:00,  4.81it/s]
+  1%|          | 7/800 [00:00<02:00,  6.61it/s]
+  0%|          | 0/1 [00:00<?, ?it/s][A100%|██████████| 1/1 [00:00<00:00, 14.40it/s]
+
+  0%|          | 0/1 [00:00<?, ?it/s][A100%|██████████| 1/1 [00:00<00:00, 13.71it/s]
+  1%|          | 9/800 [00:01<01:36,  8.22it/s]
+  0%|          | 0/1 [00:00<?, ?it/s][A
+100%|██████████| 1/1 [00:00<00:00,  3.57it/s][A100%|██████████| 1/1 [00:00<00:00,  3.46it/s]
+
+  0%|          | 0/1 [00:00<?, ?it/s][A
+100%|██████████| 1/1 [00:00<00:00,  9.12it/s][A100%|██████████| 1/1 [00:00<00:00,  8.59it/s]
+  1%|▏         | 11/800 [00:01<02:36,  5.03it/s]
+  0%|          | 0/1 [00:00<?, ?it/s][A100%|██████████| 1/1 [00:00<00:00, 14.49it/s]
+
+  0%|          | 0/1 [00:00<?, ?it/s][A100%|██████████| 1/1 [00:00<00:00, 13.75it/s]
+  2%|▏         | 13/800 [00:01<02:03,  6.39it/s]
+  0%|          | 0/1 [00:00<?, ?it/s][A100%|██████████| 1/1 [00:00<00:00, 13.71it/s]
+
+  0%|          | 0/1 [00:00<?, ?it/s][A100%|██████████| 1/1 [00:00<00:00, 11.59it/s]
+  2%|▏         | 15/800 [00:02<01:45,  7.41it/s]
+  0%|          | 0/1 [00:00<?, ?it/s][A100%|██████████| 1/1 [00:00<00:00, 12.70it/s]
+
+  0%|          | 0/1 [00:00<?, ?it/s][A100%|██████████| 1/1 [00:00<00:00, 12.93it/s]
+  2%|▏         | 17/800 [00:02<01:33,  8.34it/s]
+  0%|          | 0/1 [00:00<?, ?it/s][A
+100%|██████████| 1/1 [00:00<00:00,  5.85it/s][A100%|██████████| 1/1 [00:00<00:00,  5.61it/s]
+
+  0%|          | 0/1 [00:00<?, ?it/s][A100%|██████████| 1/1 [00:00<00:00, 10.53it/s]
+  2%|▏         | 19/800 [00:02<01:47,  7.24it/s]
+  0%|          | 0/1 [00:00<?, ?it/s][A100%|██████████| 1/1 [00:00<00:00, 13.54it/s]
+
+  0%|          | 0/1 [00:00<?, ?it/s][A100%|██████████| 1/1 [00:00<00:00, 14.28it/s]
+  3%|▎         | 21/800 [00:02<01:32,  8.47it/s]
+  0%|          | 0/1 [00:00<?, ?it/s][A
+100%|██████████| 1/1 [00:00<00:00,  3.79it/s][A100%|██████████| 1/1 [00:00<00:00,  3.66it/s]
+
+  0%|          | 0/1 [00:00<?, ?it/s][A100%|██████████| 1/1 [00:00<00:00, 12.73it/s]
+  3%|▎         | 23/800 [00:03<02:04,  6.23it/s]
+  0%|          | 0/1 [00:00<?, ?it/s][A100%|██████████| 1/1 [00:00<00:00, 15.22it/s]
+
+  0%|          | 0/1 [00:00<?, ?it/s][A100%|██████████| 1/1 [00:00<00:00, 13.13it/s]
+  3%|▎         | 25/800 [00:03<01:43,  7.48it/s]
+  0%|          | 0/1 [00:00<?, ?it/s][A100%|██████████| 1/1 [00:00<00:00, 14.02it/s]
+
+  0%|          | 0/1 [00:00<?, ?it/s][A100%|██████████| 1/1 [00:00<00:00, 14.76it/s]
+  3%|▎         | 27/800 [00:03<01:28,  8.71it/s]
+  0%|          | 0/1 [00:00<?, ?it/s][A100%|██████████| 1/1 [00:00<00:00, 11.52it/s]
+
+  0%|          | 0/1 [00:00<?, ?it/s][A
+100%|██████████| 1/1 [00:00<00:00,  9.62it/s][A100%|██████████| 1/1 [00:00<00:00,  9.06it/s]
+  4%|▎         | 29/800 [00:03<01:27,  8.77it/s]
+  0%|          | 0/1 [00:00<?, ?it/s][A100%|██████████| 1/1 [00:00<00:00, 14.37it/s]
+
+  0%|          | 0/1 [00:00<?, ?it/s][A
+100%|██████████| 1/1 [00:00<00:00,  2.07it/s][A100%|██████████| 1/1 [00:00<00:00,  2.04it/s]
+  4%|▍         | 31/800 [00:04<03:03,  4.18it/s]
+  0%|          | 0/1 [00:00<?, ?it/s][A100%|██████████| 1/1 [00:00<00:00, 13.88it/s]
+
+  0%|          | 0/1 [00:00<?, ?it/s][A100%|██████████| 1/1 [00:00<00:00, 14.47it/s]
+  4%|▍         | 33/800 [00:04<02:24,  5.29it/s]
+  0%|          | 0/1 [00:00<?, ?it/s][A100%|██████████| 1/1 [00:00<00:00, 14.22it/s]
+
+  0%|          | 0/1 [00:00<?, ?it/s][A
+100%|██████████| 1/1 [00:00<00:00,  4.53it/s][A100%|██████████| 1/1 [00:00<00:00,  4.38it/s]
+  4%|▍         | 35/800 [00:05<02:38,  4.82it/s]
+  0%|          | 0/1 [00:00<?, ?it/s][A
+100%|██████████| 1/1 [00:00<00:00,  9.10it/s][A100%|██████████| 1/1 [00:00<00:00,  8.55it/s]
+  4%|▍         | 36/800 [00:05<02:26,  5.22it/s]
+  0%|          | 0/1 [00:00<?, ?it/s][A100%|██████████| 1/1 [00:00<00:00, 12.71it/s]
+
+  0%|          | 0/1 [00:00<?, ?it/s][A100%|██████████| 1/1 [00:00<00:00, 13.79it/s]
+  5%|▍         | 38/800 [00:05<01:56,  6.53it/s]
+  0%|          | 0/1 [00:00<?, ?it/s][A
+100%|██████████| 1/1 [00:00<00:00,  2.32it/s][A100%|██████████| 1/1 [00:00<00:00,  2.28it/s]
+  5%|▍         | 39/800 [00:06<03:44,  3.39it/s]
+  0%|          | 0/1 [00:00<?, ?it/s][A100%|██████████| 1/1 [00:00<00:00, 13.90it/s]
+
+  0%|          | 0/1 [00:00<?, ?it/s][A100%|██████████| 1/1 [00:00<00:00, 13.36it/s]
+  5%|▌         | 41/800 [00:06<02:44,  4.61it/s]
+  0%|          | 0/1 [00:00<?, ?it/s][A
+100%|██████████| 1/1 [00:00<00:00,  6.48it/s][A100%|██████████| 1/1 [00:00<00:00,  6.19it/s]
+  5%|▌         | 42/800 [00:07<02:47,  4.53it/s]
+  0%|          | 0/1 [00:00<?, ?it/s][A100%|██████████| 1/1 [00:00<00:00, 15.63it/s]
+
+  0%|          | 0/1 [00:00<?, ?it/s][A100%|██████████| 1/1 [00:00<00:00, 14.30it/s]
+  6%|▌         | 44/800 [00:07<02:04,  6.07it/s]
+  0%|          | 0/1 [00:00<?, ?it/s][A100%|██████████| 1/1 [00:00<00:00, 12.94it/s]
+
+  0%|          | 0/1 [00:00<?, ?it/s][A
+100%|██████████| 1/1 [00:00<00:00,  9.85it/s][A100%|██████████| 1/1 [00:00<00:00,  9.24it/s]
+  6%|▌         | 46/800 [00:07<01:45,  7.12it/s]
+  0%|          | 0/1 [00:00<?, ?it/s][A
+100%|██████████| 1/1 [00:00<00:00,  8.03it/s][A100%|██████████| 1/1 [00:00<00:00,  7.61it/s]
+  6%|▌         | 47/800 [00:07<01:53,  6.64it/s]
+  0%|          | 0/1 [00:00<?, ?it/s][A100%|██████████| 1/1 [00:00<00:00, 11.14it/s]
+  6%|▌         | 48/800 [00:07<01:45,  7.11it/s]
+  0%|          | 0/1 [00:00<?, ?it/s][A100%|██████████| 1/1 [00:00<00:00, 13.55it/s]
+
+  0%|          | 0/1 [00:00<?, ?it/s][A100%|██████████| 1/1 [00:00<00:00, 10.53it/s]
+  6%|▋         | 50/800 [00:07<01:32,  8.08it/s]
+  0%|          | 0/1 [00:00<?, ?it/s][A100%|██████████| 1/1 [00:00<00:00, 14.05it/s]
+
+  0%|          | 0/1 [00:00<?, ?it/s][A
+100%|██████████| 1/1 [00:00<00:00,  4.64it/s][A100%|██████████| 1/1 [00:00<00:00,  4.48it/s]
+  6%|▋         | 52/800 [00:08<01:57,  6.35it/s]
+  0%|          | 0/1 [00:00<?, ?it/s][A
+100%|██████████| 1/1 [00:00<00:00,  8.58it/s][A100%|██████████| 1/1 [00:00<00:00,  8.10it/s]
+  7%|▋         | 53/800 [00:08<01:52,  6.63it/s]
+  0%|          | 0/1 [00:00<?, ?it/s][A
+100%|██████████| 1/1 [00:00<00:00,  2.21it/s][A100%|██████████| 1/1 [00:00<00:00,  2.18it/s]
+  7%|▋         | 54/800 [00:09<04:01,  3.09it/s]
+  0%|          | 0/1 [00:00<?, ?it/s][A
+100%|██████████| 1/1 [00:00<00:00,  3.29it/s][A100%|██████████| 1/1 [00:00<00:00,  3.20it/s]
+  7%|▋         | 55/800 [00:09<04:35,  2.70it/s]
+  0%|          | 0/1 [00:00<?, ?it/s][A100%|██████████| 1/1 [00:00<00:00, 11.65it/s]
+
+  0%|          | 0/1 [00:00<?, ?it/s][A
+100%|██████████| 1/1 [00:00<00:00,  8.96it/s][A100%|██████████| 1/1 [00:00<00:00,  8.50it/s]
+  7%|▋         | 57/800 [00:10<03:16,  3.78it/s]
+  0%|          | 0/1 [00:00<?, ?it/s][A
+100%|██████████| 1/1 [00:00<00:00,  4.72it/s][A100%|██████████| 1/1 [00:00<00:00,  4.55it/s]
+  7%|▋         | 58/800 [00:10<03:32,  3.50it/s]
+  0%|          | 0/1 [00:00<?, ?it/s][A100%|██████████| 1/1 [00:00<00:00, 12.12it/s]
+
+  0%|          | 0/1 [00:00<?, ?it/s][A100%|██████████| 1/1 [00:00<00:00,  9.92it/s]
+  8%|▊         | 60/800 [00:10<02:39,  4.64it/s]
+  0%|          | 0/1 [00:00<?, ?it/s][A100%|██████████| 1/1 [00:00<00:00, 13.27it/s]
+
+  0%|          | 0/1 [00:00<?, ?it/s][A100%|██████████| 1/1 [00:00<00:00, 13.10it/s]
+  8%|▊         | 62/800 [00:10<02:02,  6.02it/s]
+  0%|          | 0/1 [00:00<?, ?it/s][A100%|██████████| 1/1 [00:00<00:00, 13.10it/s]
+
+  0%|          | 0/1 [00:00<?, ?it/s][A
+100%|██████████| 1/1 [00:00<00:00,  6.00it/s][A100%|██████████| 1/1 [00:00<00:00,  5.75it/s]
+  8%|▊         | 64/800 [00:11<02:02,  5.98it/s]
+  0%|          | 0/1 [00:00<?, ?it/s][A100%|██████████| 1/1 [00:00<00:00, 13.93it/s]
+
+  0%|          | 0/1 [00:00<?, ?it/s][A100%|██████████| 1/1 [00:00<00:00, 10.11it/s]
+  8%|▊         | 66/800 [00:11<01:45,  6.94it/s]
+  0%|          | 0/1 [00:00<?, ?it/s][A100%|██████████| 1/1 [00:00<00:00, 14.41it/s]
+
+  0%|          | 0/1 [00:00<?, ?it/s][A100%|██████████| 1/1 [00:00<00:00, 12.60it/s]
+  8%|▊         | 68/800 [00:11<01:30,  8.10it/s]
+  0%|          | 0/1 [00:00<?, ?it/s][A
+100%|██████████| 1/1 [00:00<00:00,  3.27it/s][A100%|██████████| 1/1 [00:00<00:00,  3.18it/s]
+  9%|▊         | 69/800 [00:12<02:25,  5.02it/s]
+  0%|          | 0/1 [00:00<?, ?it/s][A100%|██████████| 1/1 [00:00<00:00, 10.51it/s]
+  9%|▉         | 70/800 [00:12<02:12,  5.53it/s]
+  0%|          | 0/1 [00:00<?, ?it/s][A100%|██████████| 1/1 [00:00<00:00, 11.09it/s]
+  9%|▉         | 71/800 [00:12<01:59,  6.12it/s]
+  0%|          | 0/1 [00:00<?, ?it/s][A
+100%|██████████| 1/1 [00:00<00:00,  1.60it/s][A100%|██████████| 1/1 [00:00<00:00,  1.58it/s]
+  9%|▉         | 72/800 [00:13<06:10,  1.96it/s]
+  0%|          | 0/1 [00:00<?, ?it/s][A100%|██████████| 1/1 [00:00<00:00, 10.51it/s]
+
+  0%|          | 0/1 [00:00<?, ?it/s][A
+100%|██████████| 1/1 [00:00<00:00,  8.60it/s][A100%|██████████| 1/1 [00:00<00:00,  7.91it/s]
+  9%|▉         | 74/800 [00:14<04:13,  2.87it/s]
+  0%|          | 0/1 [00:00<?, ?it/s][A
+100%|██████████| 1/1 [00:00<00:00,  2.58it/s][A100%|██████████| 1/1 [00:00<00:00,  2.53it/s]
+  9%|▉         | 75/800 [00:14<04:52,  2.48it/s]
+  0%|          | 0/1 [00:00<?, ?it/s][A100%|██████████| 1/1 [00:00<00:00, 13.36it/s]
+
+  0%|          | 0/1 [00:00<?, ?it/s][A100%|██████████| 1/1 [00:00<00:00, 14.61it/s]
+ 10%|▉         | 77/800 [00:14<03:17,  3.66it/s]
+  0%|          | 0/1 [00:00<?, ?it/s][A
+100%|██████████| 1/1 [00:00<00:00,  7.10it/s][A100%|██████████| 1/1 [00:00<00:00,  6.75it/s]
+ 10%|▉         | 78/800 [00:14<03:08,  3.83it/s]
+  0%|          | 0/1 [00:00<?, ?it/s][A100%|██████████| 1/1 [00:00<00:00, 13.28it/s]
+
+  0%|          | 0/1 [00:00<?, ?it/s][A100%|██████████| 1/1 [00:00<00:00, 13.43it/s]
+ 10%|█         | 80/800 [00:15<02:18,  5.21it/s]
+  0%|          | 0/1 [00:00<?, ?it/s][A100%|██████████| 1/1 [00:00<00:00, 13.50it/s]
+
+  0%|          | 0/1 [00:00<?, ?it/s][A100%|██████████| 1/1 [00:00<00:00, 14.08it/s]
+ 10%|█         | 82/800 [00:15<01:47,  6.67it/s]
+  0%|          | 0/1 [00:00<?, ?it/s][A100%|██████████| 1/1 [00:00<00:00, 13.79it/s]
+
+  0%|          | 0/1 [00:00<?, ?it/s][A100%|██████████| 1/1 [00:00<00:00, 13.32it/s]
+ 10%|█         | 84/800 [00:15<01:29,  8.02it/s]
+  0%|          | 0/1 [00:00<?, ?it/s][A100%|██████████| 1/1 [00:00<00:00, 12.45it/s]
+
+  0%|          | 0/1 [00:00<?, ?it/s][A100%|██████████| 1/1 [00:00<00:00, 14.11it/s]
+ 11%|█         | 86/800 [00:15<01:17,  9.15it/s]
+  0%|          | 0/1 [00:00<?, ?it/s][A100%|██████████| 1/1 [00:00<00:00, 13.37it/s]
+
+  0%|          | 0/1 [00:00<?, ?it/s][A100%|██████████| 1/1 [00:00<00:00, 11.27it/s]
+ 11%|█         | 88/800 [00:15<01:11,  9.91it/s]
+  0%|          | 0/1 [00:00<?, ?it/s][A100%|██████████| 1/1 [00:00<00:00, 13.41it/s]
+
+  0%|          | 0/1 [00:00<?, ?it/s][A100%|██████████| 1/1 [00:00<00:00, 14.13it/s]
+ 11%|█▏        | 90/800 [00:15<01:05, 10.80it/s]
+  0%|          | 0/1 [00:00<?, ?it/s][A100%|██████████| 1/1 [00:00<00:00,  9.96it/s]
+
+  0%|          | 0/1 [00:00<?, ?it/s][A
+100%|██████████| 1/1 [00:00<00:00,  7.18it/s][A100%|██████████| 1/1 [00:00<00:00,  6.83it/s]
+ 12%|█▏        | 92/800 [00:16<01:21,  8.73it/s]
+  0%|          | 0/1 [00:00<?, ?it/s][A100%|██████████| 1/1 [00:00<00:00, 11.19it/s]
+
+  0%|          | 0/1 [00:00<?, ?it/s][A100%|██████████| 1/1 [00:00<00:00, 10.49it/s]
+ 12%|█▏        | 94/800 [00:16<01:20,  8.79it/s]
+  0%|          | 0/1 [00:00<?, ?it/s][A100%|██████████| 1/1 [00:00<00:00, 13.12it/s]
+
+  0%|          | 0/1 [00:00<?, ?it/s][A100%|██████████| 1/1 [00:00<00:00, 13.75it/s]
+ 12%|█▏        | 96/800 [00:16<01:12,  9.74it/s]
+  0%|          | 0/1 [00:00<?, ?it/s][A100%|██████████| 1/1 [00:00<00:00, 13.34it/s]
+
+  0%|          | 0/1 [00:00<?, ?it/s][A100%|██████████| 1/1 [00:00<00:00, 10.38it/s]
+ 12%|█▏        | 98/800 [00:16<01:11,  9.87it/s]
+  0%|          | 0/1 [00:00<?, ?it/s][A
+100%|██████████| 1/1 [00:00<00:00,  9.43it/s][A100%|██████████| 1/1 [00:00<00:00,  8.90it/s]
+
+  0%|          | 0/1 [00:00<?, ?it/s][A100%|██████████| 1/1 [00:00<00:00, 14.15it/s]
+ 12%|█▎        | 100/800 [00:17<01:11,  9.85it/s]
+  0%|          | 0/1 [00:00<?, ?it/s][A100%|██████████| 1/1 [00:00<00:00, 13.37it/s]
+
+  0%|          | 0/1 [00:00<?, ?it/s][A100%|██████████| 1/1 [00:00<00:00, 13.38it/s]
+ 13%|█▎        | 102/800 [00:17<01:05, 10.63it/s]
+  0%|          | 0/1 [00:00<?, ?it/s][A100%|██████████| 1/1 [00:00<00:00, 13.00it/s]
+
+  0%|          | 0/1 [00:00<?, ?it/s][A100%|██████████| 1/1 [00:00<00:00, 14.91it/s]
+ 13%|█▎        | 104/800 [00:17<01:01, 11.38it/s]
+  0%|          | 0/1 [00:00<?, ?it/s][A100%|██████████| 1/1 [00:00<00:00, 11.36it/s]
+
+  0%|          | 0/1 [00:00<?, ?it/s][A100%|██████████| 1/1 [00:00<00:00, 10.19it/s]
+ 13%|█▎        | 106/800 [00:17<01:05, 10.55it/s]
+  0%|          | 0/1 [00:00<?, ?it/s][A100%|██████████| 1/1 [00:00<00:00,  9.94it/s]
+
+  0%|          | 0/1 [00:00<?, ?it/s][A100%|██████████| 1/1 [00:00<00:00, 11.95it/s]
+ 14%|█▎        | 108/800 [00:17<01:08, 10.09it/s]
+  0%|          | 0/1 [00:00<?, ?it/s][A100%|██████████| 1/1 [00:00<00:00, 12.60it/s]
+
+  0%|          | 0/1 [00:00<?, ?it/s][A100%|██████████| 1/1 [00:00<00:00, 10.49it/s]
+ 14%|█▍        | 110/800 [00:17<01:08, 10.13it/s]
+  0%|          | 0/1 [00:00<?, ?it/s][A100%|██████████| 1/1 [00:00<00:00, 13.87it/s]
+
+  0%|          | 0/1 [00:00<?, ?it/s][A100%|██████████| 1/1 [00:00<00:00, 11.68it/s]
+ 14%|█▍        | 112/800 [00:18<01:04, 10.59it/s]
+  0%|          | 0/1 [00:00<?, ?it/s][A100%|██████████| 1/1 [00:00<00:00, 14.25it/s]
+
+  0%|          | 0/1 [00:00<?, ?it/s][A100%|██████████| 1/1 [00:00<00:00, 13.34it/s]
+ 14%|█▍        | 114/800 [00:18<01:00, 11.33it/s]
+  0%|          | 0/1 [00:00<?, ?it/s][A100%|██████████| 1/1 [00:00<00:00, 10.17it/s]
+
+  0%|          | 0/1 [00:00<?, ?it/s][A100%|██████████| 1/1 [00:00<00:00, 13.40it/s]
+ 14%|█▍        | 116/800 [00:18<01:03, 10.85it/s]
+  0%|          | 0/1 [00:00<?, ?it/s][A100%|██████████| 1/1 [00:00<00:00, 10.77it/s]
+
+  0%|          | 0/1 [00:00<?, ?it/s][A100%|██████████| 1/1 [00:00<00:00,  9.58it/s]
+ 15%|█▍        | 118/800 [00:18<01:08, 10.02it/s]
+  0%|          | 0/1 [00:00<?, ?it/s][A
+100%|██████████| 1/1 [00:00<00:00,  9.88it/s][A100%|██████████| 1/1 [00:00<00:00,  9.20it/s]
+
+  0%|          | 0/1 [00:00<?, ?it/s][A100%|██████████| 1/1 [00:00<00:00, 12.79it/s]
+ 15%|█▌        | 120/800 [00:18<01:09,  9.77it/s]
+  0%|          | 0/1 [00:00<?, ?it/s][A100%|██████████| 1/1 [00:00<00:00, 13.72it/s]
+
+  0%|          | 0/1 [00:00<?, ?it/s][A100%|██████████| 1/1 [00:00<00:00, 13.85it/s]
+ 15%|█▌        | 122/800 [00:19<01:03, 10.66it/s]
+  0%|          | 0/1 [00:00<?, ?it/s][A100%|██████████| 1/1 [00:00<00:00, 11.98it/s]
+
+  0%|          | 0/1 [00:00<?, ?it/s][A100%|██████████| 1/1 [00:00<00:00, 13.52it/s]
+ 16%|█▌        | 124/800 [00:19<01:00, 11.14it/s]
+  0%|          | 0/1 [00:00<?, ?it/s][A100%|██████████| 1/1 [00:00<00:00,  9.44it/s]
+
+  0%|          | 0/1 [00:00<?, ?it/s][A100%|██████████| 1/1 [00:00<00:00, 10.58it/s]
+ 16%|█▌        | 126/800 [00:19<01:06, 10.14it/s]
+  0%|          | 0/1 [00:00<?, ?it/s][A100%|██████████| 1/1 [00:00<00:00, 10.87it/s]
+
+  0%|          | 0/1 [00:00<?, ?it/s][A
+100%|██████████| 1/1 [00:00<00:00,  9.34it/s][A100%|██████████| 1/1 [00:00<00:00,  8.55it/s]
+ 16%|█▌        | 128/800 [00:19<01:10,  9.50it/s] 25%|██▍       | 199/800 [00:19<00:04, 127.66it/s] 28%|██▊       | 222/800 [00:19<00:03, 146.98it/s]/data/bench/LiveBench/.venv/lib/python3.10/site-packages/sympy/parsing/latex/_parse_latex_antlr.py:23: UserWarning: antlr4.error.ErrorListener module is not installed
+  ErrorListener = import_module('antlr4.error.ErrorListener',
+/data/bench/LiveBench/livebench/process_results/math/AMPS_Hard/utils.py:168: UserWarning: couldn't parse 5 \sqrt[6]{-3} \sqrt[3]{7} 5^{2/5}
+  warnings.warn(f"couldn't parse {x}")
+ 35%|███▍      | 279/800 [00:20<00:02, 174.21it/s]/data/bench/LiveBench/livebench/process_results/math/AMPS_Hard/utils.py:168: UserWarning: couldn't parse 88 \sqrt[6]{-15} \sqrt[3]{2} \sqrt{11}
+  warnings.warn(f"couldn't parse {x}")
+ 38%|███▊      | 301/800 [00:20<00:03, 149.28it/s]/data/bench/LiveBench/livebench/process_results/math/AMPS_Hard/utils.py:217: UserWarning: Had some trouble simplifying when comparing -\lambda^3+\frac{173 \lambda^2}{16}-\frac{4627 \lambda }{256}+\frac{4253145}{4096} and  -\frac{41}{16} \times \frac{213}{16} : cannot determine truth value of Relational: Abs(lambda**3 - 173*lambda**2/16 + 4627*lambda/256 - 4392873/4096) < 0.001
+  warnings.warn(error)
+/data/bench/LiveBench/livebench/process_results/math/AMPS_Hard/utils.py:168: UserWarning: couldn't parse \begin{pmatrix}-7 - λ & 13 & 2 \\-3 & 13 - λ & -14 \\14 & 3 & -10 - λ \\\end{pmatrix}
+  warnings.warn(f"couldn't parse {x}")
+/data/bench/LiveBench/livebench/process_results/math/AMPS_Hard/utils.py:217: UserWarning: couldn't subtract \lambda^2-11 \lambda -\frac{95}{4} and \begin{pmatrix} a & b \\ c & d \end{pmatrix}: unsupported operand type(s) for +: 'MutableDenseMatrix' and 'Add'
+  warnings.warn(error)
+/data/bench/LiveBench/livebench/process_results/math/AMPS_Hard/utils.py:168: UserWarning: couldn't parse , 
+  warnings.warn(f"couldn't parse {x}")
+/data/bench/LiveBench/livebench/process_results/math/AMPS_Hard/utils.py:217: UserWarning: couldn't subtract -\lambda^3+\frac{14 \lambda^2}{3}+\frac{2264 \lambda }{9}-\frac{14072}{9} and \begin{pmatrix}-\frac{38}{3} - \lambda & \frac{10}{3} \\\frac{40}{3} & \frac{10}{3} - \lambda \\\end{pmatrix}: unsupported operand type(s) for +: 'MutableDenseMatrix' and 'Add'
+  warnings.warn(error)
+/data/bench/LiveBench/livebench/process_results/math/AMPS_Hard/utils.py:168: UserWarning: couldn't parse \begin{pmatrix}-9 & 10 - λ \\12 & -5 \\\end{pmatrix}
+  warnings.warn(f"couldn't parse {x}")
+/data/bench/LiveBench/livebench/process_results/math/AMPS_Hard/utils.py:168: UserWarning: couldn't parse \begin{pmatrix}-4 & -11 - λ \\5 & 3 \\\end{pmatrix}
+  warnings.warn(f"couldn't parse {x}")
+/data/bench/LiveBench/livebench/process_results/math/AMPS_Hard/utils.py:168: UserWarning: couldn't parse So, I need to compute four 3x3 determinants. Let me start with M11.Calculating det(M11):
+  warnings.warn(f"couldn't parse {x}")
+ 40%|████      | 320/800 [00:21<00:09, 50.81it/s] /data/bench/LiveBench/livebench/process_results/math/AMPS_Hard/utils.py:217: UserWarning: Had some trouble simplifying when comparing 12 (x+\frac{1}{12})^2+\frac{131}{12} and -\frac{1}{12} + 11: cannot determine truth value of Relational: Abs((12*x + 1)**2)/12 < 0.001
+  warnings.warn(error)
+ 42%|████▏     | 335/800 [00:22<00:09, 47.34it/s]/data/bench/LiveBench/livebench/process_results/math/AMPS_Hard/utils.py:217: UserWarning: Had some trouble simplifying when comparing -3 (\sqrt{2}-x) (x-\frac{1}{\sqrt{2}}) and  (x - \sqrt{2})(x - 1/\sqrt{2}) : cannot determine truth value of Relational: Abs((x - sqrt(2))*(2*x - sqrt(2))) < 0.001
+  warnings.warn(error)
+/data/bench/LiveBench/livebench/process_results/math/AMPS_Hard/utils.py:168: UserWarning: couldn't parse \frac{\sqrt{5} \pm \sqrt{2645}}{2}
+  warnings.warn(f"couldn't parse {x}")
+/data/bench/LiveBench/livebench/process_results/math/AMPS_Hard/utils.py:217: UserWarning: Had some trouble simplifying when comparing -5 (-x-26) (x-8) and 2^4 \times 13: cannot determine truth value of Relational: Abs(5*(x - 8)*(x + 26) - 208) < 0.001
+  warnings.warn(error)
+/data/bench/LiveBench/livebench/process_results/math/AMPS_Hard/utils.py:217: UserWarning: Had some trouble simplifying when comparing -8 (-x-\frac{97}{4}) (x+7) and c: cannot determine truth value of Relational: Abs(c - 2*(x + 7)*(4*x + 97)) < 0.001
+  warnings.warn(error)
+/data/bench/LiveBench/livebench/process_results/math/AMPS_Hard/utils.py:217: UserWarning: Had some trouble simplifying when comparing 9 (-x-9 \sqrt{7}) (6 \sqrt{7}-x) and 0: cannot determine truth value of Relational: Abs(9*x**2 + 27*sqrt(7)*x - 3402) < 0.001
+  warnings.warn(error)
+/data/bench/LiveBench/livebench/process_results/math/AMPS_Hard/utils.py:217: UserWarning: Had some trouble simplifying when comparing -2 (-x-20) (x-\frac{8}{3}) and -480: cannot determine truth value of Relational: Abs(2*x**2 + 104*x/3 + 1120/3) < 0.001
+  warnings.warn(error)
+ 43%|████▎     | 346/800 [00:23<00:16, 27.33it/s]/data/bench/LiveBench/livebench/process_results/math/AMPS_Hard/utils.py:217: UserWarning: Had some trouble simplifying when comparing 10 (-x-\frac{35}{\sqrt{3}}) (3 \sqrt{3}-x) and \frac{y^2}{3} + \frac{26y}{3} - 105: cannot determine truth value of Relational: Abs(-10*x**2 - 260*sqrt(3)*x/3 + y**2/3 + 26*y/3 + 945) < 0.001
+  warnings.warn(error)
+/data/bench/LiveBench/livebench/process_results/math/AMPS_Hard/utils.py:168: UserWarning: couldn't parse e^{3 x^5-6} x (2 \sec^2(x^2+9)+15 x^3 \tan (x^2+9))
+  warnings.warn(f"couldn't parse {x}")
+/data/bench/LiveBench/livebench/process_results/math/AMPS_Hard/utils.py:168: UserWarning: couldn't parse e^{3x^5 - 6} is indeed e^{same} times derivative of exponent, which is 15x^4. Correct. Then derivative of tan(x² + 9) is sec²(x² + 9) times 2x. Correct. Then product rule: u'v + uv'. So multiplying u' and v, and u and v'. Then factoring. All steps seem okay.Alternatively, maybe I can write the answer as:
+  warnings.warn(f"couldn't parse {x}")
+/data/bench/LiveBench/livebench/process_results/math/AMPS_Hard/utils.py:168: UserWarning: couldn't parse 4 x^3 (5 e^{4 x^5-4} x-2 \sin (2 (x^4+4)))
+  warnings.warn(f"couldn't parse {x}")
+/data/bench/LiveBench/livebench/process_results/math/AMPS_Hard/utils.py:168: UserWarning: couldn't parse :
+  warnings.warn(f"couldn't parse {x}")
+ 44%|████▍     | 354/800 [00:23<00:18, 24.66it/s]/data/bench/LiveBench/livebench/process_results/math/AMPS_Hard/utils.py:168: UserWarning: couldn't parse -\frac{27}{8} (x+2)^3 \cos (e^{\frac{13 x}{2}-\frac{11}{2}})
+  warnings.warn(f"couldn't parse {x}")
+/data/bench/LiveBench/livebench/process_results/math/AMPS_Hard/utils.py:168: UserWarning: couldn't parse 3(x+2)^2 cos(u) - (x+2)^3 sin(u) * (13/2) u.Hmm, comparing this to the integrand. Let me write down the integrand again:Original integrand is:
+  warnings.warn(f"couldn't parse {x}")
+ 45%|████▌     | 363/800 [00:24<00:15, 27.38it/s]/data/bench/LiveBench/livebench/process_results/math/AMPS_Hard/utils.py:217: UserWarning: Had some trouble simplifying when comparing 0 and C: cannot determine truth value of Relational: Abs(C) < 0.001
+  warnings.warn(error)
+/data/bench/LiveBench/livebench/process_results/math/AMPS_Hard/utils.py:168: UserWarning: couldn't parse \text{$\$$Aborted}
+  warnings.warn(f"couldn't parse {x}")
+/data/bench/LiveBench/livebench/process_results/math/AMPS_Hard/utils.py:168: UserWarning: couldn't parse :First term: 
+  warnings.warn(f"couldn't parse {x}")
+ 46%|████▌     | 369/800 [00:24<00:14, 29.64it/s]/data/bench/LiveBench/livebench/process_results/math/AMPS_Hard/utils.py:217: UserWarning: couldn't subtract 320 and \begin{pmatrix}-3 & -4 & -2 & 3 \\0 & 4 & -4 & -2 \\3 & -3 & 4 & -2 \\4 & 2 & -2 & -1 \\\end{pmatrix}: unsupported operand type(s) for +: 'MutableDenseMatrix' and 'Integer'
+  warnings.warn(error)
+/data/bench/LiveBench/livebench/process_results/math/AMPS_Hard/utils.py:168: UserWarning: couldn't parse  M_{12} 
+  warnings.warn(f"couldn't parse {x}")
+/data/bench/LiveBench/livebench/process_results/math/AMPS_Hard/utils.py:217: UserWarning: couldn't subtract -530 and \begin{pmatrix}-5 & -5 & 5 & 1 \\-3 & -3 & -4 & -1 \\-4 & 1 & 1 & 4 \\2 & 2 & 4 & 4 \\\end{pmatrix}: unsupported operand type(s) for +: 'MutableDenseMatrix' and 'Integer'
+  warnings.warn(error)
+/data/bench/LiveBench/livebench/process_results/math/AMPS_Hard/utils.py:217: UserWarning: couldn't subtract -\frac{1469}{100} and \begin{pmatrix} -\frac{13}{5} & -\frac{37}{10} \\ -\frac{39}{10} & \frac{1}{10} \\\end{pmatrix}: unsupported operand type(s) for +: 'MutableDenseMatrix' and 'Rational'
+  warnings.warn(error)
+ 47%|████▋     | 375/800 [00:24<00:20, 21.19it/s]/data/bench/LiveBench/livebench/process_results/math/AMPS_Hard/utils.py:217: UserWarning: couldn't subtract -5 and \begin{pmatrix}1 & -3 \\-3 & 5 \\\end{pmatrix}: unsupported operand type(s) for +: 'MutableDenseMatrix' and 'Integer'
+  warnings.warn(error)
+/data/bench/LiveBench/livebench/process_results/math/AMPS_Hard/utils.py:217: UserWarning: couldn't subtract -\frac{109079}{432} and \begin{pmatrix}\frac{4}{3} & 1 & -\frac{9}{2} & -\frac{13}{3} \\-\frac{13}{3} & \frac{25}{6} & -\frac{19}{6} & \frac{11}{6} \\-\frac{23}{6} & \frac{29}{6} & -\frac{10}{3} & -\frac{19}{6} \\-\frac{17}{6} & -\frac{7}{6} & \frac{5}{2} & \frac{7}{3} \\\end{pmatrix}: unsupported operand type(s) for +: 'MutableDenseMatrix' and 'Rational'
+  warnings.warn(error)
+/data/bench/LiveBench/livebench/process_results/math/AMPS_Hard/utils.py:168: UserWarning: couldn't parse a * det\begin{pmatrix} e & f \\ h & i \end{pmatrix} - b * det\begin{pmatrix} d & f \\ g & i \end{pmatrix}  * det\begin{pmatrix} d & e \\ g & h \end{pmatrix}
+  warnings.warn(f"couldn't parse {x}")
+ 48%|████▊     | 380/800 [00:25<00:28, 14.55it/s] 89%|████████▉ | 711/800 [00:25<00:00, 223.02it/s] 95%|█████████▍| 758/800 [00:31<00:00, 44.77it/s] 100%|██████████| 800/800 [00:31<00:00, 25.53it/s]

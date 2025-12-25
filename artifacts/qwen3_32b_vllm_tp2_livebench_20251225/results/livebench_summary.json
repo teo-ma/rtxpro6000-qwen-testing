@@ -1,0 +1,101 @@
+{
+  "models": {
+    "qwen3-32b-bf16": {
+      "n": 1000,
+      "mean": 0.2785556852943724,
+      "by_category": {
+        "coding": {
+          "n": 128,
+          "mean": 0.0546875
+        },
+        "data_analysis": {
+          "n": 150,
+          "mean": 0.30113333333333336
+        },
+        "instruction_following": {
+          "n": 200,
+          "mean": 0.7875416666666669
+        },
+        "language": {
+          "n": 140,
+          "mean": 0.3165786611569421
+        },
+        "math": {
+          "n": 232,
+          "mean": 0.08860491120287592
+        },
+        "reasoning": {
+          "n": 150,
+          "mean": 0.02666666666666667
+        }
+      }
+    },
+    "qwen3-32b-fp8": {
+      "n": 1000,
+      "mean": 0.2683264679870726,
+      "by_category": {
+        "coding": {
+          "n": 128,
+          "mean": 0.0546875
+        },
+        "data_analysis": {
+          "n": 150,
+          "mean": 0.3171333333333333
+        },
+        "instruction_following": {
+          "n": 200,
+          "mean": 0.7741250000000004
+        },
+        "language": {
+          "n": 140,
+          "mean": 0.31217223909178465
+        },
+        "math": {
+          "n": 232,
+          "mean": 0.051087734975097325
+        },
+        "reasoning": {
+          "n": 150,
+          "mean": 0.0225
+        }
+      }
+    },
+    "qwen3-32b-nvfp4": {
+      "n": 1000,
+      "mean": 0.27926884638586974,
+      "by_category": {
+        "coding": {
+          "n": 128,
+          "mean": 0.0390625
+        },
+        "data_analysis": {
+          "n": 150,
+          "mean": 0.31446666666666667
+        },
+        "instruction_following": {
+          "n": 200,
+          "mean": 0.8238333333333336
+        },
+        "language": {
+          "n": 140,
+          "mean": 0.33357514621274215
+        },
+        "math": {
+          "n": 232,
+          "mean": 0.0539080140061169
+        },
+        "reasoning": {
+          "n": 150,
+          "mean": 0.020833333333333332
+        }
+      }
+    }
+  },
+  "source": {
+    "release": "2024-11-25",
+    "bench_name": "live_bench",
+    "question_source": "huggingface",
+    "judgment_files": 18,
+    "dedup_records": 3000
+  }
+}
