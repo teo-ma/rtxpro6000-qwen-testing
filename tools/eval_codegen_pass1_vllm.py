@@ -114,7 +114,19 @@ def main() -> None:
     ap.add_argument("--model", required=True, help="HF model id for vLLM")
     ap.add_argument("--download-dir", default=None, help="HF download dir for vLLM")
     ap.add_argument("--max-model-len", type=int, default=4096)
+    ap.add_argument(
+        "--tensor-parallel-size",
+        type=int,
+        default=1,
+        help="vLLM tensor parallel size (set to 2 for 2 GPUs with TP=2)",
+    )
     ap.add_argument("--gpu-memory-utilization", type=float, default=0.95)
+    ap.add_argument(
+        "--max-num-seqs",
+        type=int,
+        default=16,
+        help="vLLM max_num_seqs to cap concurrency (helps avoid warmup OOM on some MIG/TP setups)",
+    )
     ap.add_argument("--max-tokens", type=int, default=512)
     ap.add_argument("--temperature", type=float, default=0.0)
     ap.add_argument("--limit", type=int, default=0, help="limit number of samples (0 = all)")
@@ -133,9 +145,10 @@ def main() -> None:
     llm = LLM(
         model=args.model,
         download_dir=args.download_dir,
-        tensor_parallel_size=1,
+        tensor_parallel_size=args.tensor_parallel_size,
         max_model_len=args.max_model_len,
         gpu_memory_utilization=args.gpu_memory_utilization,
+        max_num_seqs=args.max_num_seqs,
         enforce_eager=False,
     )
     sampling = SamplingParams(

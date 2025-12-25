@@ -1,0 +1,67 @@
+{
+  "config": {
+    "max_model_len": 2048,
+    "n_wikitext": 200,
+    "n_ultrachat": 200,
+    "batch_size": 16
+  },
+  "results": {
+    "bf16": {
+      "load_s": 39.956106185913086,
+      "datasets": {
+        "wikitext2_test": {
+          "nll": 0.5230017160294862,
+          "ppl": 1.6870842044309677,
+          "tokens": 23922,
+          "kept_texts": 132,
+          "eval_s": 12.23457407951355
+        },
+        "ultrachat_test_sft": {
+          "nll": 0.37916733973733335,
+          "ppl": 1.4610675099410773,
+          "tokens": 228323,
+          "kept_texts": 200,
+          "eval_s": 21.21583580970764
+        }
+      }
+    },
+    "ours_nvfp4": {
+      "load_s": 6.197430372238159,
+      "datasets": {
+        "wikitext2_test": {
+          "nll": 0.5360324950050546,
+          "ppl": 1.7092120844581662,
+          "tokens": 23922,
+          "kept_texts": 132,
+          "eval_s": 10.961029529571533
+        },
+        "ultrachat_test_sft": {
+          "nll": 0.3854493361892121,
+          "ppl": 1.470274820721954,
+          "tokens": 228323,
+          "kept_texts": 200,
+          "eval_s": 10.44696593284607
+        }
+      }
+    },
+    "nvidia_nvfp4": {
+      "load_s": 6.274691581726074,
+      "datasets": {
+        "wikitext2_test": {
+          "nll": 0.5533526267523695,
+          "ppl": 1.7390737201727475,
+          "tokens": 23922,
+          "kept_texts": 132,
+          "eval_s": 10.761975288391113
+        },
+        "ultrachat_test_sft": {
+          "nll": 0.39279070984639824,
+          "ppl": 1.4811083754895669,
+          "tokens": 228323,
+          "kept_texts": 200,
+          "eval_s": 10.541624784469604
+        }
+      }
+    }
+  }
+}
