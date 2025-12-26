@@ -1,0 +1,64 @@
+{
+  "config": {
+    "max_model_len": 2048,
+    "n_wikitext": 200,
+    "n_ultrachat": 200,
+    "batch_size": 1,
+    "bf16_model": "Qwen/Qwen2.5-72B-Instruct",
+    "nvfp4_model": "/mnt/data/models/Qwen2.5-72B-Instruct-NVFP4",
+    "bf16_cpu_offload_gb": 220,
+    "bf16_gpu_memory_utilization": 0.75
+  },
+  "results": {
+    "bf16": {
+      "load_s": 1189.3977980613708,
+      "datasets": {
+        "wikitext2_test": {
+          "nll": 0.5410979474703184,
+          "ppl": 1.7178919822702836,
+          "tokens": 23922,
+          "kept_texts": 132,
+          "eval_s": 1803.2934503555298
+        },
+        "ultrachat_test_sft": {
+          "nll": 0.32160339083548656,
+          "ppl": 1.379337609521913,
+          "tokens": 228323,
+          "kept_texts": 200,
+          "eval_s": 16429.522783994675
+        }
+      },
+      "overall": {
+        "nll": 0.34241945769040316,
+        "ppl": 1.4083509172584763,
+        "tokens": 252245,
+        "score_bf16_100": 100.0
+      }
+    },
+    "nvfp4": {
+      "load_s": 134.5657331943512,
+      "datasets": {
+        "wikitext2_test": {
+          "nll": 0.5597471733931724,
+          "ppl": 1.7502299396560947,
+          "tokens": 23922,
+          "kept_texts": 132,
+          "eval_s": 18.230684518814087
+        },
+        "ultrachat_test_sft": {
+          "nll": 0.3272682086709252,
+          "ppl": 1.3871734792461936,
+          "tokens": 228323,
+          "kept_texts": 200,
+          "eval_s": 40.3541944026947
+        }
+      },
+      "overall": {
+        "nll": 0.34931566964769617,
+        "ppl": 1.4180967698023668,
+        "tokens": 252245,
+        "score_bf16_100": 99.3127512345121
+      }
+    }
+  }
+}

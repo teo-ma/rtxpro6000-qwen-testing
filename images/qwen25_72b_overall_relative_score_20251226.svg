@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="860" height="440" viewBox="0 0 860 440">
+  <rect x="0" y="0" width="100%" height="100%" fill="#ffffff"/>
+
+  <text x="430" y="32" text-anchor="middle" font-size="20" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Arial">Qwen2.5-72B BF16 vs NVFP4（BF16=100% 相对分数）</text>
+  <text x="430" y="54" text-anchor="middle" font-size="13" fill="#555" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Arial">PPL proxy（WikiText-2 / UltraChat / Overall，token-weighted overall）· 2025-12-26</text>
+
+  <!-- plot area -->
+  <!-- y scale: 0..100, y_top=70, y_bottom=330, height=260 -->
+
+  <!-- gridlines + labels (0%..100%) -->
+  <line x1="90" y1="330" x2="820" y2="330" stroke="#e6e6e6" stroke-width="1"/>
+  <text x="80" y="334" text-anchor="end" font-size="12" fill="#555" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Arial">0%</text>
+
+  <line x1="90" y1="278" x2="820" y2="278" stroke="#e6e6e6" stroke-width="1"/>
+  <text x="80" y="282" text-anchor="end" font-size="12" fill="#555" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Arial">20%</text>
+
+  <line x1="90" y1="226" x2="820" y2="226" stroke="#e6e6e6" stroke-width="1"/>
+  <text x="80" y="230" text-anchor="end" font-size="12" fill="#555" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Arial">40%</text>
+
+  <line x1="90" y1="174" x2="820" y2="174" stroke="#e6e6e6" stroke-width="1"/>
+  <text x="80" y="178" text-anchor="end" font-size="12" fill="#555" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Arial">60%</text>
+
+  <line x1="90" y1="122" x2="820" y2="122" stroke="#e6e6e6" stroke-width="1"/>
+  <text x="80" y="126" text-anchor="end" font-size="12" fill="#555" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Arial">80%</text>
+
+  <line x1="90" y1="70" x2="820" y2="70" stroke="#e6e6e6" stroke-width="1"/>
+  <text x="80" y="74" text-anchor="end" font-size="12" fill="#555" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Arial">100%</text>
+
+  <!-- axes -->
+  <line x1="90" y1="70" x2="90" y2="330" stroke="#333" stroke-width="1"/>
+  <line x1="90" y1="330" x2="820" y2="330" stroke="#333" stroke-width="1"/>
+
+  <!-- Bars (grouped by dimension). Values are relative scores (BF16=100). -->
+  <!-- Scale: y = 330 - (value/100) * 260 -->
+
+  <!-- Group 1: WikiText-2 (test) -->
+  <!-- BF16: 100.00 -->
+  <rect x="127" y="70" width="90" height="260" fill="#1f77b4"/>
+  <text x="172" y="62" text-anchor="middle" font-size="13" font-weight="600" fill="#111" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Arial">100.00%</text>
+  <text x="172" y="354" text-anchor="middle" font-size="12" fill="#111" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Arial">BF16</text>
+  <text x="172" y="372" text-anchor="middle" font-size="11" fill="#555" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Arial">+0.00pp</text>
+
+  <!-- NVFP4: 98.15 -->
+  <rect x="229" y="74.804" width="90" height="255.196" fill="#2ca02c"/>
+  <text x="274" y="66.804" text-anchor="middle" font-size="13" font-weight="600" fill="#111" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Arial">98.15%</text>
+  <text x="274" y="354" text-anchor="middle" font-size="12" fill="#111" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Arial">NVFP4</text>
+  <text x="274" y="372" text-anchor="middle" font-size="11" fill="#555" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Arial">-1.85pp</text>
+
+  <text x="223" y="404" text-anchor="middle" font-size="12" fill="#111" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Arial">WikiText-2</text>
+  <text x="223" y="420" text-anchor="middle" font-size="11" fill="#555" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Arial">test</text>
+
+  <!-- Group 2: UltraChat (test_sft) -->
+  <!-- BF16: 100.00 -->
+  <rect x="359" y="70" width="90" height="260" fill="#1f77b4"/>
+  <text x="404" y="62" text-anchor="middle" font-size="13" font-weight="600" fill="#111" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Arial">100.00%</text>
+  <text x="404" y="354" text-anchor="middle" font-size="12" fill="#111" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Arial">BF16</text>
+  <text x="404" y="372" text-anchor="middle" font-size="11" fill="#555" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Arial">+0.00pp</text>
+
+  <!-- NVFP4: 99.44 -->
+  <rect x="461" y="71.469" width="90" height="258.531" fill="#2ca02c"/>
+  <text x="506" y="63.469" text-anchor="middle" font-size="13" font-weight="600" fill="#111" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Arial">99.44%</text>
+  <text x="506" y="354" text-anchor="middle" font-size="12" fill="#111" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Arial">NVFP4</text>
+  <text x="506" y="372" text-anchor="middle" font-size="11" fill="#555" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Arial">-0.56pp</text>
+
+  <text x="455" y="404" text-anchor="middle" font-size="12" fill="#111" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Arial">UltraChat</text>
+  <text x="455" y="420" text-anchor="middle" font-size="11" fill="#555" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Arial">test_sft</text>
+
+  <!-- Group 3: Overall -->
+  <!-- BF16: 100.00 -->
+  <rect x="591" y="70" width="90" height="260" fill="#1f77b4"/>
+  <text x="636" y="62" text-anchor="middle" font-size="13" font-weight="600" fill="#111" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Arial">100.00%</text>
+  <text x="636" y="354" text-anchor="middle" font-size="12" fill="#111" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Arial">BF16</text>
+  <text x="636" y="372" text-anchor="middle" font-size="11" fill="#555" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Arial">+0.00pp</text>
+
+  <!-- NVFP4: 99.31 -->
+  <rect x="693" y="71.787" width="90" height="258.213" fill="#2ca02c"/>
+  <text x="738" y="63.787" text-anchor="middle" font-size="13" font-weight="600" fill="#111" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Arial">99.31%</text>
+  <text x="738" y="354" text-anchor="middle" font-size="12" fill="#111" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Arial">NVFP4</text>
+  <text x="738" y="372" text-anchor="middle" font-size="11" fill="#555" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Arial">-0.69pp</text>
+
+  <text x="687" y="404" text-anchor="middle" font-size="12" fill="#111" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Arial">Overall</text>
+  <text x="687" y="420" text-anchor="middle" font-size="11" fill="#555" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Arial">token-weighted</text>
+
+  <text x="90" y="52" text-anchor="start" font-size="12" fill="#555" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Arial">Relative score (BF16=100%)</text>
+</svg>

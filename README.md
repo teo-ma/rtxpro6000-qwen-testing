@@ -98,6 +98,17 @@
 ![Qwen3-14B Relative Score（BF16=100，PPL proxy）](images/qwen3_14b_nvfp4_ppl_proxy_score.png)
 
 
+### 6) Qwen2.5-72B（BF16 基线 / 自制量化 NVFP4（有校准））准确度对比
+
+- 报告：[`qwen2_5_72b_nvfp4_quant_and_eval.md`](qwen2_5_72b_nvfp4_quant_and_eval.md)
+- 测试方式：Perplexity（PPL）代理（vLLM `prompt_logprobs` → token-level NLL/PPL）；并给出 BF16=100 的 Relative Score。
+- 结果速览（两套数据按 token 加权汇总，BF16=100）：
+  - BF16：Overall PPL=1.408351，Score=100.00
+  - 自制量化 NVFP4（有校准）：Overall PPL=1.418097，Score=99.31（-0.69pp）
+
+![Qwen2.5-72B Overall Relative Score（BF16=100，PPL proxy）](images/qwen25_72b_overall_relative_score_20251226.svg)
+
+
 
 ## 仓库结构
 
