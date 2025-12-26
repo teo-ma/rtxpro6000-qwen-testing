@@ -1,8 +1,8 @@
-# Qwen3-32B TP=2（BF16 / FP8 / NVFP4）GSM8K 准确度对比（B 方法：think + final numeric）
+# Qwen3-32B TP=2（BF16 vs FP8 vs NVFP4）GSM8K 准确度对比（B 方法：think + final numeric）
 
 ## 1. 目的
 
-在相同硬件与相同推理栈（vLLM + lm-eval，TP=2）下，对比 Qwen3-32B 三种精度（BF16 / FP8 / NVFP4）在 GSM8K 上的可判定答案准确度。
+在相同硬件与相同推理栈（vLLM + lm-eval，TP=2）下，对比 Qwen3-32B 三种精度（BF16 vs FP8 vs NVFP4）在 GSM8K 上的可判定答案准确度。
 
 由于数学题常见“推理过程 + 最终答案”输出，本次采用 **B 方法**：允许模型输出 `<think>...</think>`，但要求 `</think>` 后用单行 `#### <number>` 给出最终答案；评分使用 lm-eval 内置 filter。
 

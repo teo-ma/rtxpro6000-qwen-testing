@@ -1,4 +1,4 @@
-# Qwen3-32B（1× RTX Pro 6000 / MIG）标准基准“准确度”对比（NVFP4 / FP8 / BF16）
+# Qwen3-32B（1× RTX Pro 6000 / MIG）标准基准“准确度”对比（NVFP4 vs FP8 vs BF16）
 
 > 日期：2025-12-22
 >
@@ -115,5 +115,5 @@ export VLLM_ATTENTION_BACKEND=TRITON_ATTN
 
 ## 6. 下一步
 
-- 恢复 VM SSH 连通性后：按同口径依次跑 NVFP4 / FP8 / BF16，落盘 JSON 到 `artifacts/` 并回填表格。
+- 恢复 VM SSH 连通性后：按同口径依次跑 NVFP4 vs FP8 vs BF16，落盘 JSON 到 `artifacts/` 并回填表格。
 - 如要跑 HLE：需要用 HF 账号申请 `cais/hle` 访问权限，并在 VM 上 `huggingface-cli login`。

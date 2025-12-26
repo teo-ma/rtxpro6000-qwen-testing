@@ -1,4 +1,4 @@
-# Qwen3-32B（2× RTX Pro 6000 / MIG，TP=2）准确率小规模对比（NVFP4 / FP8 / BF16）
+# Qwen3-32B（2× RTX Pro 6000 / MIG，TP=2）准确率小规模对比（NVFP4 vs FP8 vs BF16）
 
 > 日期：2025-12-24
 >

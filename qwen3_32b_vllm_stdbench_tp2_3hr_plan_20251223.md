@@ -1,6 +1,6 @@
-# Qwen3-32B（NVFP4 / FP8 / BF16）2×GPU（TP=2）3 小时内小样本准确度测试计划（vLLM）
+# Qwen3-32B（NVFP4 vs FP8 vs BF16）2×GPU（TP=2）3 小时内小样本准确度测试计划（vLLM）
 
-目标：在 Azure VM `Standard_NC256ds_xl_RTXPRO6000BSE_v6`（2× RTX Pro 6000 Blackwell，MIG 开启）上，使用 **2 个 GPU（TP=2）**，对 Qwen3-32B 的 **3 种精度（NVFP4/FP8/BF16）** 在 7 项基准上做 **中小量样本**准确度评测，整体 **≤ 3 小时**完成并产出可对比结果。
+目标：在 Azure VM `Standard_NC256ds_xl_RTXPRO6000BSE_v6`（2× RTX Pro 6000 Blackwell，MIG 开启）上，使用 **2 个 GPU（TP=2）**，对 Qwen3-32B 的 **3 种精度（NVFP4 vs FP8 vs BF16）** 在 7 项基准上做 **中小量样本**准确度评测，整体 **≤ 3 小时**完成并产出可对比结果。
 
 约束与原则：
 - 必须使用 vLLM（lm-eval 的 vLLM backend + code pass@1 的 in-process vLLM）。

@@ -1,8 +1,8 @@
-# Qwen3-32B（BF16 / FP8 / NVFP4）LiveBench 准确度对比（vLLM + TP=2，2× RTX Pro 6000 Blackwell / MIG）
+# Qwen3-32B（BF16 vs FP8 vs NVFP4）LiveBench 准确度对比（vLLM + TP=2，2× RTX Pro 6000 Blackwell / MIG）
 
 ## 1. 测试目的
 
-在同一台 Azure VM（Standard_NC256ds_xl_RTXPRO6000BSE_v6，2× RTX Pro 6000 Blackwell，MIG 4g.96gb×2，TP=2）上，使用 vLLM OpenAI-compatible API 作为推理后端，对比 Qwen3-32B 三种精度（BF16 / FP8 / NVFP4）在 LiveBench（release `2024-11-25`）上的分数。
+在同一台 Azure VM（Standard_NC256ds_xl_RTXPRO6000BSE_v6，2× RTX Pro 6000 Blackwell，MIG 4g.96gb×2，TP=2）上，使用 vLLM OpenAI-compatible API 作为推理后端，对比 Qwen3-32B 三种精度（BF16 vs FP8 vs NVFP4）在 LiveBench（release `2024-11-25`）上的分数。
 
 ## 2. 运行方式（概要）
 

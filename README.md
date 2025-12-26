@@ -3,7 +3,7 @@
 这个仓库用于沉淀在同一台 Azure VM（Standard_NC256ds_xl_RTXPRO6000BSE_v6，2× RTX Pro 6000 Blackwell，MIG 强制开启）上完成的：
 
 - vLLM 推理吞吐压测（OpenAI-compatible `/v1/chat/completions`）
-- Qwen3-32B 三精度（NVFP4 / FP8 / BF16）准确度/一致性小集合评测
+- Qwen3-32B 三精度（NVFP4 vs FP8 vs BF16）准确度/一致性小集合评测
 - Qwen3-32B 三精度标准基准（MMLU Pro / GPQA / HLE / LiveCodeBench / SciCode / MATH-500 / AIME 2024）评测方案与进展
 
 > README 只做“概览与导航”。详细过程、完整命令与原始结果以各自报告为准。
@@ -20,7 +20,7 @@
 
 ![1gpu-vs-2gpu-rtxpro6000](images/1gpu-vs-2gpu-rtxpro6000.jpg)
 
-### 2) Qwen3-32B（NVFP4 / FP8 / BF16）吞吐（1× MIG）
+### 2) Qwen3-32B（NVFP4 vs FP8 vs BF16）吞吐（1× MIG）
 
 - 报告：[`qwen3_32b_vllm_1gpu_nvfp4_fp8_bf16_report_20251222.md`](qwen3_32b_vllm_1gpu_nvfp4_fp8_bf16_report_20251222.md)
 - 结果速览（同口径：c=16 / r=64 / max_tokens=256）：
@@ -32,7 +32,7 @@
 ![QPS-qwen-30B-3Precision](images/QPS-qwen-30B-3Precision.png)
 ![Latency-qwen-30B-3Precision](images/Latency-qwen-30B-3Precision.png)
 
-### 3) Qwen3-32B（NVFP4 / FP8 / BF16）“可判定答案”准确度（40 题小集合）
+### 3) Qwen3-32B（NVFP4 vs FP8 vs BF16）“可判定答案”准确度（40 题小集合）
 
 - 报告：[`qwen3_32b_vllm_1gpu_accuracy_nvfp4_fp8_bf16_report_20251223.md`](qwen3_32b_vllm_1gpu_accuracy_nvfp4_fp8_bf16_report_20251223.md)
 -   测试目的：使用小题集进行粗粒度测试，评估三种精度模型的正确率差异，为后续复杂综合测试场景中的模型选择提供基础参考依据。
@@ -46,7 +46,7 @@
 
 ![Qwen3-32B（40 题）可判定答案准确度对比](images/qwen3_32b_vllm_1gpu_accuracy_nvfp4_fp8_bf16_40questions.png)
 
-### 4) Qwen3-32B（BF16 / FP8 / NVFP4）LiveBench 准确度对比（TP=2）
+### 4) Qwen3-32B（BF16 vs FP8 vs NVFP4）LiveBench 准确度对比（TP=2）
 
 - 报告：[`qwen3_32b_vllm_tp2_livebench_report_20251225.md`](qwen3_32b_vllm_tp2_livebench_report_20251225.md)
 - 原始产物：`artifacts/qwen3_32b_vllm_tp2_livebench_20251225/`
@@ -67,7 +67,7 @@
 
 ![LiveBench relative score bar](images/qwen3_32b_tp2_livebench_relative_bar_20251225.svg)
 
-**NVFP4 在 LiveBench 上的 +0.26pp 优势属于统计误差范围，并非真实性能提升。** 三种精度（BF16/FP8/NVFP4）的准确度整体处于同一水平线。
+**NVFP4 在 LiveBench 上的 +0.26pp 优势属于统计误差范围，并非真实性能提升。** 三种精度（BF16 vs FP8 vs NVFP4）的准确度整体处于同一水平线。
 
 
 ### 5) Qwen3-14B（BF16 基线 / 自制量化 NVFP4（有校准） / NVIDIA NVFP4 / 自制量化 NVFP4（无校准））准确度对比

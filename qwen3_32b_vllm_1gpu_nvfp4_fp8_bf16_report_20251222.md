@@ -1,4 +1,4 @@
-# Qwen3-32B（1× RTX Pro 6000 / MIG）vLLM 推理吞吐测试（NVFP4 / FP8 / BF16）
+# Qwen3-32B（1× RTX Pro 6000 / MIG）vLLM 推理吞吐测试（NVFP4 vs FP8 vs BF16）
 
 > 日期：2025-12-22
 >

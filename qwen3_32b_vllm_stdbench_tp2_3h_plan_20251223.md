@@ -1,8 +1,8 @@
-# Qwen3-32B（2× RTX Pro 6000 / MIG，TP=2）三精度“3 小时内”标准基准准确度测试计划（NVFP4 / FP8 / BF16）
+# Qwen3-32B（2× RTX Pro 6000 / MIG，TP=2）三精度“3 小时内”标准基准准确度测试计划（NVFP4 vs FP8 vs BF16）
 
 > 日期：2025-12-23
 >
-> 目标：在 Azure VM（Standard_NC256ds_xl_RTXPRO6000BSE_v6）上使用 **2 个 MIG device（2×GPU）**，以 **vLLM** 作为推理引擎，开启 **TP=2**，对 Qwen3-32B 的 **NVFP4 / FP8 / BF16** 三种精度进行 7 个维度的“中小量样本”准确度测试，并保证 **总时长约 3 小时内**可跑完一轮，产出可复现的 JSON 与日志。
+> 目标：在 Azure VM（Standard_NC256ds_xl_RTXPRO6000BSE_v6）上使用 **2 个 MIG device（2×GPU）**，以 **vLLM** 作为推理引擎，开启 **TP=2**，对 Qwen3-32B 的 **NVFP4 vs FP8 vs BF16** 三种精度进行 7 个维度的“中小量样本”准确度测试，并保证 **总时长约 3 小时内**可跑完一轮，产出可复现的 JSON 与日志。
 
 ## 0. 前置说明与约束
 
